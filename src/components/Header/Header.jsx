@@ -12,7 +12,7 @@ const Header = ({ selectedRole, setSelectedRole }) => {
 
   return (
     <Wrapper>
-      <h2>Welcome to Attendance Management System</h2>
+      <h2>Welcome to AttendEase</h2>
       <p>Select your role:</p>
       <div>
         <button onClick={() => handleRoleClick("student") }>

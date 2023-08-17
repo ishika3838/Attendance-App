@@ -108,6 +108,7 @@ const App = () => {
         <Routes>
         <Route path="/" element={<Header selectedRole={selectedRole}
               setSelectedRole={setSelectedRole} />} />
+  
           
           <Route
             path="/register"

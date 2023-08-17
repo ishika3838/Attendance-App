@@ -13,6 +13,7 @@ const Register=({ handleRegister,selectedRole })=> {
   const [subject, setSubject] = useState(''); 
   const [branch, setBranch] = useState('');
   const [section, setSection] = useState('');
+  const [photoUrl,setPhotoUrl] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -32,6 +33,7 @@ const Register=({ handleRegister,selectedRole })=> {
       branch: selectedRole === 'student' ? branch : '',
       section: setSection ==='student' ? section:'',
       subject: selectedRole === 'faculty' ? subject : '',
+      photoUrl:selectedRole === 'student' ? photoUrl: '',
       attendance: [],
     };
 
@@ -44,6 +46,7 @@ const Register=({ handleRegister,selectedRole })=> {
     setYear('');
     setSubject(''); 
     setBranch('');
+    setPhotoUrl('');
     alert('Registration successful! Please proceed to login.');
     navigate('/login');
   };
@@ -79,28 +82,42 @@ const Register=({ handleRegister,selectedRole })=> {
           <div>
             <input
               type="text"
-              placeholder="Year"
-              value={year}
-              onChange={(e) => setYear(e.target.value)}
-            />
-            <input
-              type="text"
               placeholder="Rollnumber"
               value={rollno}
               onChange={(e) => setRollno(e.target.value)}
             />
-            <input
-              type="text"
-              placeholder="Branch"
-              value={branch}
-              onChange={(e) => setBranch(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Section"
-              value={section}
-              onChange={(e) => setSection(e.target.value)}
-            />
+            <label>
+              Select Year:
+              <select value={year} onChange={(e) => setYear(e.target.value)}>
+                <option value="">Select Year</option>
+                <option value="year1">1 Year</option>
+                <option value="year2">2 Year</option>
+                <option value="year2">3 Year</option>
+                <option value="year2">4 Year</option>
+                {/* Add more years here */}
+              </select>
+            </label>
+            
+            <label>
+              Select Branch:
+              <select value={branch} onChange={(e) => setBranch(e.target.value)}>
+                <option value="">Select Branch</option>
+                <option value="branch1">Computer Science Engineering</option>
+                <option value="branch2">Information Technology</option>
+                {/* Add more branches here */}
+              </select>
+            </label>
+            <label>
+              Select Section:
+              <select value={section} onChange={(e) => setSection(e.target.value)}>
+                <option value="">Select Section</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                {/* Add more years here */}
+              </select>
+            </label>
           </div>
         )}
         {selectedRole === 'faculty' && (
@@ -136,7 +153,14 @@ const Register=({ handleRegister,selectedRole })=> {
             </label>
             </div>
         )}
-
+          <label>
+          Choose Profile Photo:
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => setPhotoUrl(URL.createObjectURL(e.target.files[0]))}
+          />
+        </label>
         <button type="submit">Register</button>
       </form>
      

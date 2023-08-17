@@ -1,4 +1,8 @@
-
+*{
+  padding:0;
+  margin:0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
 h1{
   background-color: rgb(176, 172, 167);
@@ -7,7 +11,7 @@ h1{
   
 }
 nav{
-  background-color: darkkhaki;
+  background-color: rgb(53, 53, 53);
   color:black;
   display: block;
 }
@@ -17,4 +21,8 @@ nav li{
   display:flex;
   justify-content: center;
   
+}
+nav li a{
+  text-decoration:none;
+  color:rgb(240, 237, 237);
 }

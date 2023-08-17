@@ -4,7 +4,9 @@ const StudentProfile=({ user })=> {
   return (
     <div>
       <h3>Student Profile</h3>
-      <img width="120" height="120" src="https://img.icons8.com/ios-glyphs/90/user--v1.png" alt="user--v1"/>
+      {user.photoUrl && (
+        <img width="120" height="120" src={user.photoUrl} alt="Profile" />
+      )}
       <p>Username: {user.username}</p>
       <p>Year: {user.year}</p>
       <p>Branch: {user.branch}</p>
