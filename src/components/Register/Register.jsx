@@ -3,28 +3,50 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const Register=({ handleRegister })=> {
+const Register=({ handleRegister,selectedRole })=> {
  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('');
-  const[rollno, setId] = useState(0);
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [rollno, setRollno] = useState('');
   const [year, setYear] = useState('');
+  const [subject, setSubject] = useState(''); 
   const [branch, setBranch] = useState('');
- const navigate = useNavigate();
+  const [section, setSection] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleRegister({ username, password, role, rollno, year, branch, attendance: [] });
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match. Please try again.');
+      return;
+    }
+
+    const user = {
+      username,
+      password,
+      role: selectedRole,
+      rollno: selectedRole === 'student' ? rollno : '',
+      year: selectedRole === 'student' ? year : '',
+      branch: selectedRole === 'student' ? branch : '',
+      section: setSection ==='student' ? section:'',
+      subject: selectedRole === 'faculty' ? subject : '',
+      attendance: [],
+    };
+
+    handleRegister(user);
+
     setUsername('');
     setPassword('');
+    setConfirmPassword('');
+    setRollno('');
     setYear('');
-    setId('');
+    setSubject(''); 
     setBranch('');
-    navigate("/login")
-    
+    alert('Registration successful! Please proceed to login.');
+    navigate('/login');
   };
-
 
 
   return (
@@ -43,11 +65,17 @@ const Register=({ handleRegister })=> {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <select value={role} onChange={(e) => setRole(e.target.value)}>
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
+        {/* <select value={role} onChange={(e) => setRole(e.target.value)}>
           <option value="student">Student</option>
           <option value="faculty">Faculty</option>
-        </select>
-        {role === 'student' && (
+        </select> */}
+        {selectedRole === 'student' && (
           <div>
             <input
               type="text"
@@ -56,10 +84,10 @@ const Register=({ handleRegister })=> {
               onChange={(e) => setYear(e.target.value)}
             />
             <input
-              type="Number"
+              type="text"
               placeholder="Rollnumber"
               value={rollno}
-              onChange={(e) => setId(e.target.value)}
+              onChange={(e) => setRollno(e.target.value)}
             />
             <input
               type="text"
@@ -67,8 +95,48 @@ const Register=({ handleRegister })=> {
               value={branch}
               onChange={(e) => setBranch(e.target.value)}
             />
+            <input
+              type="text"
+              placeholder="Section"
+              value={section}
+              onChange={(e) => setSection(e.target.value)}
+            />
           </div>
         )}
+        {selectedRole === 'faculty' && (
+          <div>
+            <label>
+              Select Subject:
+              <select value={subject} onChange={(e) => setSubject(e.target.value)}>
+                <option value="">Select Subject</option>
+                <option value="subject1">Dbms</option>
+                <option value="subject2">Oops</option>
+                {/* Add more subjects here */}
+              </select>
+            </label>
+            <label>
+              Select Branch:
+              <select value={branch} onChange={(e) => setBranch(e.target.value)}>
+                <option value="">Select Branch</option>
+                <option value="branch1">Computer Science Engineering</option>
+                <option value="branch2">Information Technology</option>
+                {/* Add more branches here */}
+              </select>
+            </label>
+            <label>
+              Select Year:
+              <select value={year} onChange={(e) => setYear(e.target.value)}>
+                <option value="">Select Year</option>
+                <option value="year1">1 Year</option>
+                <option value="year2">2 Year</option>
+                <option value="year2">3 Year</option>
+                <option value="year2">4 Year</option>
+                {/* Add more years here */}
+              </select>
+            </label>
+            </div>
+        )}
+
         <button type="submit">Register</button>
       </form>
      

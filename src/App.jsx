@@ -7,7 +7,6 @@ import StudentDashboard from "./components/StudentDashboard/StudentDashboard";
 import Faculty from "./components/Faculty/Faculty";
 import StudentProfile from "./components/StudentProfile/StudentProfile";
 import Header from "./components/Header/Header";
-
 import Footer from "./components/Footer/Footer";
 
 const initialUsers = [
@@ -34,18 +33,27 @@ const initialUsers = [
 const App = () => {
   const [users, setUsers] = useState(initialUsers);
   const [currentUser, setCurrentUser] = useState(null);
+  const [selectedRole, setSelectedRole] = useState('student');
+
+  
 
   const handleRegister = (user) => {
-    setUsers([...users, user]);
+    
+      setUsers([...users, user]);
+    
   };
+  
 
   const handleLogin = (username, password) => {
     const user = users.find(
       (u) => u.username === username && u.password === password
     );
     if (user) {
-      setCurrentUser(user);
-    } else {
+      
+        setCurrentUser(user);
+      } 
+   
+    else {
       alert("Invalid username or password.");
     }
   };
@@ -56,9 +64,8 @@ const App = () => {
 
   return (
     <Router>
-      <h1>Attendance Management System</h1>
-      <div className="App">
-        <nav>
+      <div className="App"> 
+      <nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -99,12 +106,15 @@ const App = () => {
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<Header />} />
-          <Route path="/login" element={<Login handleLogin={handleLogin} />} />
+        <Route path="/" element={<Header selectedRole={selectedRole}
+              setSelectedRole={setSelectedRole} />} />
+          
           <Route
             path="/register"
-            element={<Register handleRegister={handleRegister} />}
+            element={<Register handleRegister={handleRegister} selectedRole={selectedRole}   />}
           />
+          <Route path="/login" element={<Login handleLogin={handleLogin} />} />
+          
           <Route
             path="/dashboard/*"
             element={
@@ -142,6 +152,7 @@ const App = () => {
               )
             }
           />
+          
         </Routes>
       </div>
 
