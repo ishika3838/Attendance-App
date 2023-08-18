@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Wrapper from './style';
 const Register=({ handleRegister,selectedRole })=> {
  
   const [username, setUsername] = useState('');
@@ -75,7 +76,7 @@ const Register=({ handleRegister,selectedRole })=> {
 
 
   return (
-    <div>
+    <Wrapper>
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -193,7 +194,7 @@ const Register=({ handleRegister,selectedRole })=> {
       </form>
      
     
-    </div>
+    </Wrapper>
     
   );
 }

@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Wrapper from './style';
+import contact_icon from '../assets/contact_icon.png'
+import password_icon from '../assets/password_icon.png'
+
 const Login=({ handleLogin  }) =>{
   //const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -50,8 +54,11 @@ const Login=({ handleLogin  }) =>{
   };
 
   return (
-    <div>
+    <Wrapper className='container'>
+
       <h2>Login</h2>
+      <div className="underline"></div>
+
       <form onSubmit={handleSubmit}>
         {/* <input
           type="text"
@@ -59,23 +66,40 @@ const Login=({ handleLogin  }) =>{
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         /> */}
+
+ <div className='inputs'>
+
+        <div className='input'>
+          <img src={contact_icon} alt='contact_icon'/>
         <input
           type="text"
           placeholder="contact"
           value={contact}
           onChange={(e) => setContact(e.target.value)}
-        />
+          />
+          </div>
 
+        <div className='input'>
+        <img src={password_icon} alt='contact_icon'/>
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        />
+          />
+          </div>
+  
         <button type="submit">Login</button>
+
+  </div>
+
       </form>
-      <p>Not registered yet? <Link to="/register">Register here</Link></p>
-    </div>
+
+      <p>
+          Not registered yet? <Link to="/register">Register here</Link>
+      </p>
+
+    </Wrapper>
   );
 }
 
