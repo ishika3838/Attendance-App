@@ -2,6 +2,8 @@ import React from "react";
 import {  useNavigate } from "react-router-dom";
 import { Wrapper } from "./style";
 
+import user_icon from '../assets/user.png'
+
 const Homepage = ({ selectedRole, setSelectedRole }) => {
   const navigate = useNavigate();
 
@@ -20,13 +22,13 @@ const Homepage = ({ selectedRole, setSelectedRole }) => {
       </div>
       <div className="main">
         <button onClick={() => handleRoleClick("student") }>
-          <img src="https://img.icons8.com/ios-glyphs/90/user--v1.png" alt="Student" />
+          <img src={user_icon} alt="Student" />
           <h1>Student</h1>
         </button>
         </div>
         <div className="main">
         <button onClick={() => handleRoleClick("faculty")}>
-          <img src="https://img.icons8.com/ios-glyphs/90/user--v1.png" alt="Faculty" />
+          <img src={user_icon} alt="Faculty" />
           <h1>Faculty</h1>
         </button>
       </div>
