@@ -157,7 +157,7 @@ const App = () => {
         </Routes>
       </div>
 
-      <Footer />
+      <Footer /> 
     </Router>
   );
 };
