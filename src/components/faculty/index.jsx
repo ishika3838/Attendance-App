@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ViewAttendance from '../ViewAttendance/ViewAttendance';
+import ViewAttendance from '../viewAttendance';
 
 function Faculty({ users, handleLogout }) {
   const [attendanceData, setAttendanceData] = useState({});

@@ -18,14 +18,15 @@ text-align: center;
     margin-right: 10px;
     font-size: 16px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: purple;
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: #0056b3;
+      background-color:rgba(0,0,0,.03);
+      color:black;
     }
   }
 
@@ -33,3 +34,4 @@ text-align: center;
     width: 90px;
   }
   `;
+  //#007bff

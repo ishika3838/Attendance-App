@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-
-
+import axios from 'axios';
 const Register=({ handleRegister,selectedRole })=> {
  
   const [username, setUsername] = useState('');
+  const [contact,setContact] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [rollno, setRollno] = useState('');
@@ -14,6 +13,7 @@ const Register=({ handleRegister,selectedRole })=> {
   const [branch, setBranch] = useState('');
   const [section, setSection] = useState('');
   const [photoUrl,setPhotoUrl] = useState('');
+  
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -23,10 +23,11 @@ const Register=({ handleRegister,selectedRole })=> {
       alert('Passwords do not match. Please try again.');
       return;
     }
-
+    
     const user = {
       username,
       password,
+      contact,
       role: selectedRole,
       rollno: selectedRole === 'student' ? rollno : '',
       year: selectedRole === 'student' ? year : '',
@@ -36,6 +37,26 @@ const Register=({ handleRegister,selectedRole })=> {
       photoUrl:selectedRole === 'student' ? photoUrl: '',
       attendance: [],
     };
+    
+    e.target.value="registering";
+    e.target.succeed='true';
+    axios
+      .post('https://server-api1-li2k.onrender.com/api/user/add', {username,contact,password})
+      .then((response) => {
+       console.log(response.data)
+       alert("successfully registered")
+      })
+      .catch((error) => {
+        console.error('Error registering user:', error);
+      })
+      .finally(() => {
+        e.target.value="signup";
+        e.target.succeed='false';
+        setUsername('');
+        setContact('');
+        setPassword('');
+        
+      });
 
     handleRegister(user);
 
@@ -49,6 +70,7 @@ const Register=({ handleRegister,selectedRole })=> {
     setPhotoUrl('');
     alert('Registration successful! Please proceed to login.');
     navigate('/login');
+
   };
 
 
@@ -61,6 +83,12 @@ const Register=({ handleRegister,selectedRole })=> {
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Contact"
+          value={contact}
+          onChange={(e) => setContact(e.target.value)}
         />
         <input
           type="password"
@@ -90,10 +118,10 @@ const Register=({ handleRegister,selectedRole })=> {
               Select Year:
               <select value={year} onChange={(e) => setYear(e.target.value)}>
                 <option value="">Select Year</option>
-                <option value="year1">1 Year</option>
-                <option value="year2">2 Year</option>
-                <option value="year2">3 Year</option>
-                <option value="year2">4 Year</option>
+                <option value="1">1 Year</option>
+                <option value="2">2 Year</option>
+                <option value="3">3 Year</option>
+                <option value="4">4 Year</option>
                 {/* Add more years here */}
               </select>
             </label>
@@ -102,8 +130,8 @@ const Register=({ handleRegister,selectedRole })=> {
               Select Branch:
               <select value={branch} onChange={(e) => setBranch(e.target.value)}>
                 <option value="">Select Branch</option>
-                <option value="branch1">Computer Science Engineering</option>
-                <option value="branch2">Information Technology</option>
+                <option value="Computer Science Engineering">Computer Science Engineering</option>
+                <option value="Information Technology">Information Technology</option>
                 {/* Add more branches here */}
               </select>
             </label>

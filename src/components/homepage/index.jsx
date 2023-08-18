@@ -2,12 +2,12 @@ import React from "react";
 import {  useNavigate } from "react-router-dom";
 import { Wrapper } from "./style";
 
-const Header = ({ selectedRole, setSelectedRole }) => {
+const Homepage = ({ selectedRole, setSelectedRole }) => {
   const navigate = useNavigate();
 
-  const handleRoleClick = (role) => {
-    navigate("/login");
-    setSelectedRole(role);
+  const handleRoleClick = (selectedRole) => {
+    navigate(`/login`);
+    setSelectedRole(selectedRole);
   };
 
   return (
@@ -29,4 +29,4 @@ const Header = ({ selectedRole, setSelectedRole }) => {
   );
 };
 
-export default Header;
+export default Homepage;

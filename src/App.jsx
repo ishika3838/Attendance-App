@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-import StudentDashboard from "./components/StudentDashboard/StudentDashboard";
-import Faculty from "./components/Faculty/Faculty";
-import StudentProfile from "./components/StudentProfile/StudentProfile";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Login from "./components/login";
+import Register from "./components/register";
+import StudentDashboard from "./components/studentDashboard";
+import Faculty from "./components/faculty";
+import StudentProfile from "./components/studentProfile";
+import Homepage from "./components/homepage";
+import Footer from "./components/footer";
 
 const initialUsers = [
   {
@@ -44,12 +44,12 @@ const App = () => {
   };
   
 
-  const handleLogin = (username, password) => {
+  const handleLogin = (contact,password) => {
     const user = users.find(
-      (u) => u.username === username && u.password === password
-    );
+      (u) =>   u.contact === contact && u.password === password );
+     
     if (user) {
-      
+        
         setCurrentUser(user);
       } 
    
@@ -104,9 +104,9 @@ const App = () => {
               </>
             )}
           </ul>
-        </nav>
+        </nav> 
         <Routes>
-        <Route path="/" element={<Header selectedRole={selectedRole}
+        <Route path="/" element={<Homepage selectedRole={selectedRole}
               setSelectedRole={setSelectedRole} />} />
   
           
@@ -163,3 +163,5 @@ const App = () => {
 };
 
 export default App;
+//("link",{ name,contact,password,role}).then(res=>{res.data....,
+//res.data.besuccess=''true' conosle }).catch(err=>{}).finally(()=>{sbko set empty ,button work disabled})--request
