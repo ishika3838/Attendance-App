@@ -12,16 +12,22 @@ const Homepage = ({ selectedRole, setSelectedRole }) => {
 
   return (
     <Wrapper>
+      <div className="header">
+
       <h2>Welcome to AttendEase</h2>
-      <p>Select your role:</p>
-      <div>
+      <div className="underline"></div>
+      <p>Select Your Role</p>
+      </div>
+      <div className="main">
         <button onClick={() => handleRoleClick("student") }>
-          Student
           <img src="https://img.icons8.com/ios-glyphs/90/user--v1.png" alt="Student" />
+          <h1>Student</h1>
         </button>
+        </div>
+        <div className="main">
         <button onClick={() => handleRoleClick("faculty")}>
-          Faculty
           <img src="https://img.icons8.com/ios-glyphs/90/user--v1.png" alt="Faculty" />
+          <h1>Faculty</h1>
         </button>
       </div>
      

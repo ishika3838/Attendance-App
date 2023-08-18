@@ -4,7 +4,7 @@ import { Wrapper } from './style'
 const Footer = () => {
   return (
    <Wrapper>
-      copyright@2023 Attendance Management App || All rights reserved.
+      copyright@2023 AttendEase || All rights reserved.
       </Wrapper>
   )
 }
