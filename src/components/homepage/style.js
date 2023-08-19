@@ -6,9 +6,10 @@ export const Wrapper = styled.div`
   flex-direction:column;
   align-items: center;
   justify-content: center;
-  width:80%;
+  width:70%;
   margin : 80px auto;
   border-radius:16px;
+  box-shadow: 3px 3px 3px;
 
   .underline{
     width:60%;

@@ -1,106 +1,106 @@
-import axios from 'axios';
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Wrapper from './style';
-import contact_icon from '../assets/contact_icon.png'
-import password_icon from '../assets/password_icon.png'
+import axios from "axios";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Wrapper from "./style";
+import contact_icon from "../assets/contact_icon.png";
+import password_icon from "../assets/password_icon.png";
 
-const Login=({ handleLogin  }) =>{
+const Login = ({ handleLogin ,setSelectedRole,currentUser }) => {
   //const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [contact,setContact] = useState('');
+  const [password, setPassword] = useState("");
+  const [contact, setContact] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    
     e.preventDefault();
-    console.log('Logging in with:', contact, password);
-    e.target.value="singingin";
-    e.target.succeed='true';
-    handleLogin(contact,password);
+    handleLogin(contact, password);
+    console.log("Logging in with:", contact, password);
+    e.target.value = "singingin";
+    e.target.disabled = "true";
+
     axios
-      .post('https://server-api1-li2k.onrender.com/api/user/login', {contact,password})
-      .then((response) => {
-       console.log(response.data)
-       if (response.data.besucceed) {
-        localStorage.setItem('authToken', response.data.authToken);
+      .post("https://server-api1-li2k.onrender.com/api/user/login", {
+        contact: contact,
+        password: password
         
-        if (response.data.role === 'student') {
-          navigate(`/dashboard/student-profile/${response.data.username}`);
+      })
+      .then((response) => {
+        console.log(response.data);
+        alert("welcome");
+       
+        if (response.data.bsuccess) {
+          setSelectedRole(response.data.role);
+
+          if (response.data.role === "student") {
+            navigate(`/dashboard/student-profile/${currentUser.username}`);
+          } else {
+            navigate("/dashboard/faculty");
+          }
         } else {
-          navigate('/dashboard/faculty');
+          alert("Login failed. Please check your credentials.");
         }
-      } else {
-        alert('Login failed. Please check your credentials.');
-      }
       })
       .catch((error) => {
-        console.error('Error in login user:', error);
+        console.error("Error in login user:", error);
       })
       .finally(() => {
-        e.target.value="signup";
-        e.target.succeed='false';
-        //setUsername('');
-        setPassword('');
-        setContact('');
+        e.target.value = "signup";
+        e.target.disabled = "false";
+        setPassword("");
+        setContact("");
+        setSelectedRole("");
       });
-   
-      
-    // if(role === 'student'){
-    // navigate(`/dashboard/student-profile/${currentUser.username})`)}
-    // else{
-    //   navigate('/dashboard/faculty');
-    // }
+     
+
   };
 
   return (
-    <Wrapper className='container'>
-
+    <Wrapper className="container">
       <h2>Login</h2>
       <div className="underline"></div>
 
       <form onSubmit={handleSubmit}>
-        {/* <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        /> */}
-
- <div className='inputs'>
-
-        <div className='input'>
-          <img src={contact_icon} alt='contact_icon'/>
-        <input
-          type="text"
-          placeholder="contact"
-          value={contact}
-          onChange={(e) => setContact(e.target.value)}
-          />
+        <div className="inputs">
+          <div className="input">
+            <img src={contact_icon} alt="contact_icon" />
+            <input
+              type="text"
+              placeholder="contact"
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+            />
           </div>
 
-        <div className='input'>
-        <img src={password_icon} alt='contact_icon'/>
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="input">
+            <img src={password_icon} alt="contact_icon" />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
-  
-        <button type="submit">Login</button>
 
-  </div>
-
+          <button type="submit">Login</button>
+        </div>
       </form>
 
       <p>
-          Not registered yet? <Link to="/register">Register here</Link>
+        Not registered yet? <Link to="/register">Register here</Link>
       </p>
-
     </Wrapper>
   );
-}
+};
 
 export default Login;
+// if (response.data.bsuccess) {
+//   setSelectedRole(response.data.role);
+
+//   if (response.data.role === "student") {
+//     navigate(`/dashboard/student-profile/${currentUser.username}`);
+//   } else {
+//     navigate("/dashboard/faculty");
+//   }
+// } else {
+//   alert("Login failed. Please check your credentials.");
+// }

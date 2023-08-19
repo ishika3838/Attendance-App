@@ -9,6 +9,8 @@ import StudentProfile from "./components/studentProfile";
 import Homepage from "./components/homepage";
 import Footer from "./components/footer";
 
+import axios from "axios";
+
 const initialUsers = [
   {
     username: "student1",
@@ -35,8 +37,6 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [selectedRole, setSelectedRole] = useState('student');
 
-  
-
   const handleRegister = (user) => {
     
       setUsers([...users, user]);
@@ -57,7 +57,7 @@ const App = () => {
       alert("Invalid username or password.");
     }
   };
-
+ 
   const handleLogout = () => {
     setCurrentUser(null);
   };
@@ -112,9 +112,9 @@ const App = () => {
           
           <Route
             path="/register"
-            element={<Register handleRegister={handleRegister} selectedRole={selectedRole}   />}
+            element={<Register handleRegister={handleRegister} selectedRole={selectedRole} setSelectedRole={setSelectedRole}  />}
           />
-          <Route path="/login" element={<Login handleLogin={handleLogin} />} />
+          <Route path="/login" element={<Login handleLogin={handleLogin}  setSelectedRole={setSelectedRole} currentUser={currentUser}/>} />
           
           <Route
             path="/dashboard/*"

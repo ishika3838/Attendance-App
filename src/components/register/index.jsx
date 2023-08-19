@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Wrapper from './style';
-const Register=({ handleRegister,selectedRole })=> {
+const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
  
   const [username, setUsername] = useState('');
   const [contact,setContact] = useState('');
@@ -40,9 +40,9 @@ const Register=({ handleRegister,selectedRole })=> {
     };
     
     e.target.value="registering";
-    e.target.succeed='true';
+    e.target.disabled='true';
     axios
-      .post('https://server-api1-li2k.onrender.com/api/user/add', {username,contact,password})
+      .post('https://server-api1-li2k.onrender.com/api/user/add', {username,contact,password,selectedRole})
       .then((response) => {
        console.log(response.data)
        alert("successfully registered")
@@ -52,10 +52,11 @@ const Register=({ handleRegister,selectedRole })=> {
       })
       .finally(() => {
         e.target.value="signup";
-        e.target.succeed='false';
+        e.target.disabled='false';
         setUsername('');
         setContact('');
         setPassword('');
+        setSelectedRole('');
         
       });
 
