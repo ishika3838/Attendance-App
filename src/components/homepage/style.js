@@ -1,26 +1,37 @@
 import { styled } from "styled-components";
 export const Wrapper = styled.div`
+background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237)); 
+height:100vh;
+margin: 0 auto;
+width:100%;
 
+  .container{
+    position:relative;
   background-color: white;
   display:flex;
   flex-direction:column;
   align-items: center;
   justify-content: center;
-  width:70%;
-  margin : 80px auto;
+  width:80%;
+  margin : 0px auto;
   border-radius:16px;
-  box-shadow: 3px 3px 3px;
+  box-shadow: grey 4px 4px 4px;
+ top:18%;
+  }
 
   .underline{
     width:60%;
     height:6px;
-    background:black;
+    background: black;
+
     border-radius:6px;
   }
   
   h2 {
     font-size: 24px;
     margin-top:10px;
+    margin-bottom:6px;
+    // color: #773ced;
   }
 
   h1{
@@ -69,8 +80,11 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width:500px){
-    width:40%;
+      width:100%;
+
+    .container{width:35%;
     // background:black;
+    }
 
     h2 {
       font-size: 44px;
@@ -93,7 +107,7 @@ export const Wrapper = styled.div`
     }
 
     img{
-      width : 180px;
+      width : 140px;
     }
   }
 

@@ -55,7 +55,9 @@ const Login = ({ handleLogin ,setSelectedRole,currentUser }) => {
   };
 
   return (
-    <Wrapper className="container">
+    <Wrapper >
+      <div className="container">
+
       <h2>Login</h2>
       <div className="underline"></div>
 
@@ -88,6 +90,7 @@ const Login = ({ handleLogin ,setSelectedRole,currentUser }) => {
       <p>
         Not registered yet? <Link to="/register">Register here</Link>
       </p>
+</div>
     </Wrapper>
   );
 };

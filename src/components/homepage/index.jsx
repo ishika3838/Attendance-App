@@ -14,11 +14,13 @@ const Homepage = ({ selectedRole, setSelectedRole }) => {
 
   return (
     <Wrapper>
+      <div className="container">
+
       <div className="header">
 
       <h2>Welcome to AttendEase</h2>
       <div className="underline"></div>
-      <p>Select Your Role</p>
+      {/* <p>Select Your Role</p> */}
       </div>
       <div className="main">
         <button onClick={() => handleRoleClick("student") }>
@@ -33,6 +35,7 @@ const Homepage = ({ selectedRole, setSelectedRole }) => {
         </button>
       </div>
      
+      </div>
     </Wrapper>
   );
 };
