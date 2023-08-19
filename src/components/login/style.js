@@ -46,7 +46,7 @@ form{
 }
 
 img{
-    width:46px;
+    width:26ççpx;
     margin:5px 5px;
 }
 .inputs{
@@ -63,7 +63,7 @@ img{
     display:flex;
     gap :10px;
     width:80%;
-    font-size:2rem;
+    font-size:1.5rem;
     border: solid grey 1px;
     border-radius:6px;
     outline:none;
@@ -94,28 +94,17 @@ button{
 
   
 
-// @media (min-width:500px){
-//     width:40%;
-//     background:black;
+@media (min-width:500px){
+    width:100%;
 
-//     h1{
-//       font-size:2rem;
-//     }
-  
-//     p {
-//       font-size: 26px;
+  .container{
+    margin: 0 auto;
+    width : 35%;
+    top:80px;
 
-//     }
+  background:black;
 
-//     button{
-//       padding:20px 20px;
-
-//     }
-
-//     img{
-//       width : 60px;
-//     }
-//   }
+}
 
 `
 export default Wrapper

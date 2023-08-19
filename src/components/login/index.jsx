@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Wrapper from './style';
-import contact_icon from '../assets/contact_icon.png'
-import password_icon from '../assets/password_icon.png'
+import contact_icon from '../assets/contact_icon_n.png'
+import password_icon from '../assets/padlock_icon.png'
 
 const Login=({ handleLogin  }) =>{
   //const [username, setUsername] = useState('');
