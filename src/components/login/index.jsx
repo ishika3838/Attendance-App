@@ -54,7 +54,8 @@ const Login=({ handleLogin  }) =>{
   };
 
   return (
-    <Wrapper className='container'>
+    <Wrapper >
+      <div className="container">
 
       <h2>Login</h2>
       <div className="underline"></div>
@@ -98,7 +99,7 @@ const Login=({ handleLogin  }) =>{
       <p>
           Not registered yet? <Link to="/register">Register here</Link>
       </p>
-
+</div>
     </Wrapper>
   );
 }

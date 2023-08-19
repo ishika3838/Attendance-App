@@ -2,6 +2,13 @@ import { styled } from "styled-components";
 
 const Wrapper = styled.div`
 
+background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237)); 
+height:100vh;
+margin: 0 auto;
+width:100%;
+
+.container{
+    position:relative;
 
 background-color: white;
 display:flex;
@@ -9,19 +16,28 @@ flex-direction:column;
 align-items: center;
 justify-content: center;
 width:80%;
-margin : 10% auto;
+margin : 0 auto;
 padding:10px 10px;
 border-radius:16px;
+box-shadow: grey 2px 2px 3px;
+top:18%;
+}
 
 p a{
     text-decoration: none;
 
 }
 
+h2{
+    margin-bottom:6px;
+    color : #773ced;
+
+}
+
 .underline{
     width:15%;
     height:6px;
-    background:black;
+    background: #773ced;
     border-radius:6px;
   }
 form{
@@ -62,11 +78,11 @@ input{
 }
 
 button{
-    width:80%;
+    // width:80%;
     margin-bottom:30px;
     font-size:26px;
-    background:black;
-    color:white;
+    background:#773ced;
+    color: white;
     border-radius:6px;
     padding:5px 5px;
 

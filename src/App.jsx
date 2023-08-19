@@ -65,7 +65,7 @@ const App = () => {
   return (
     <Router>
       <div className="App"> 
-      <nav>
+      {/* <nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -104,7 +104,7 @@ const App = () => {
               </>
             )}
           </ul>
-        </nav> 
+        </nav>  */}
         <Routes>
         <Route path="/" element={<Homepage selectedRole={selectedRole}
               setSelectedRole={setSelectedRole} />} />
