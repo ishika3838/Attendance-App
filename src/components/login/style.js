@@ -9,7 +9,7 @@ flex-direction:column;
 align-items: center;
 justify-content: center;
 width:80%;
-margin : 160px auto;
+margin : 10% auto;
 padding:10px 10px;
 border-radius:16px;
 
@@ -92,12 +92,12 @@ button{
 //     }
 
 //     button{
-//       padding:40px 40px;
+//       padding:20px 20px;
 
 //     }
 
 //     img{
-//       width : 80px;
+//       width : 60px;
 //     }
 //   }
 

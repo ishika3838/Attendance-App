@@ -9,17 +9,21 @@ export const Wrapper = styled.div`
   width:80%;
   margin : 80px auto;
   border-radius:16px;
+  box-shadow: grey 2px 2px 3px;
+
 
   .underline{
     width:60%;
     height:6px;
-    background:black;
+    background: #773ced;
+
     border-radius:6px;
   }
   
   h2 {
     font-size: 24px;
     margin-top:10px;
+    color: #773ced;
   }
 
   h1{
@@ -68,7 +72,7 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width:500px){
-    width:40%;
+    width:35%;
     // background:black;
 
     h2 {
@@ -92,7 +96,7 @@ export const Wrapper = styled.div`
     }
 
     img{
-      width : 180px;
+      width : 140px;
     }
   }
 
