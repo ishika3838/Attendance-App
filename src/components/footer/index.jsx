@@ -3,7 +3,7 @@ import { Wrapper } from './style'
 
 const Footer = () => {
   return (
-   <Wrapper className=''>
+   <Wrapper>
       copyright@2023 AttendEase || All rights reserved.
       </Wrapper>
  
