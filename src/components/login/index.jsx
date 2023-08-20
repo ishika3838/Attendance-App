@@ -5,6 +5,11 @@ import Wrapper from './style';
 import contact_icon from '../assets/contact_icon_n.png'
 import password_icon from '../assets/padlock_icon.png'
 
+
+
+
+
+
 const Login = ({ handlelogin,selectedRole,setSelectedRole }) => {
   //const [username, setUsername] = useState('');
   const [password, setPassword] = useState("");
@@ -85,15 +90,24 @@ const Login = ({ handlelogin,selectedRole,setSelectedRole }) => {
       <div className="underline"></div>
 
       <form onSubmit={handleSubmit}>
-        <div className="inputs">
-          <div className="input">
-            <img src={contact_icon} alt="contact_icon" />
-            <input
-              type="text"
-              placeholder="contact"
-              value={contact}
-              onChange={(e) => setContact(e.target.value)}
-            />
+        {/* <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        /> */}
+     
+
+ <div className='inputs'>
+
+        <div className='input'>
+          <img src={contact_icon} alt='contact_icon'/>
+        <input
+          type="text"
+          placeholder="contact"
+          value={contact}
+          onChange={(e) => setContact(e.target.value)}
+          />
           </div>
 
           <div className="input">

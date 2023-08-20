@@ -31,12 +31,14 @@ width:100%;
     margin-top:10px;
     margin-bottom:6px;
     color: #773ced;
+    color: #773ced;
   }
 
   h1{
     font-size:1rem;
     background:transparent;
     font-weight: 500;
+
     color: #773ced;
 
   }

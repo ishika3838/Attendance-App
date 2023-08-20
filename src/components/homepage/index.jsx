@@ -2,7 +2,7 @@ import React from "react";
 import {  useNavigate } from "react-router-dom";
 import { Wrapper } from "./style";
 
-import user_icon from '../assets/user.png'
+import user_icon from '../assets/user_icon_empty.png'
 
 const Homepage = ({ selectedRole, setSelectedRole }) => {
   const navigate = useNavigate();
