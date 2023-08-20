@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ViewAttendance from '../viewAttendance';
 import { Wrapper } from './style';
-function Faculty({ users }) {
+function Faculty({ users ,setSelectedRole }) {
   const [attendanceData, setAttendanceData] = useState({});
 // Filter out faculty users from the list
   const studentUsers = users.filter(user => user.role === 'student');
@@ -16,12 +16,17 @@ function Faculty({ users }) {
 
   // Store updated attendance data in local storage
     localStorage.setItem('attendanceData', JSON.stringify(updatedAttendance));
-      
- 
+    
   };
+  const handleLogout =()=>{
+    setSelectedRole('');
+    window.location='/';
+  }
+
   return (
        <Wrapper>
      <h2>Faculty Dashboard</h2>
+     
       <h3>Mark Attendance</h3>
       {studentUsers.map(u => (
         <div key={u.username}>
@@ -31,6 +36,7 @@ function Faculty({ users }) {
         </div>
       ))}
       <ViewAttendance studentUsers={studentUsers} attendanceData={attendanceData} />
+      <button type="submit" onClick={handleLogout}>logout</button>
       </Wrapper>
   );
 }
