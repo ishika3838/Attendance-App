@@ -66,6 +66,7 @@ const App = () => {
   return (
     <Router>
       <div className="App"> 
+       {/*
         <nav>
           <ul>
             <li>
@@ -88,7 +89,8 @@ const App = () => {
               <button onClick={handleLogout}>Logout</button>
             </li>
           </ul>
-        </nav>  
+        </nav>   */
+        }
 
         <Routes>
           <Route path="/" element={<Homepage selectedRole={selectedRole} setSelectedRole={setSelectedRole} />} />

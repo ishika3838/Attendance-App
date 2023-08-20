@@ -5,7 +5,7 @@ import Wrapper from './style';
 import contact_icon from '../assets/contact_icon_n.png'
 import password_icon from '../assets/padlock_icon.png'
 
-const Login = ({ handleLogin ,selectedRole,setSelectedRole }) => {
+const Login = ({ handlelogin,selectedRole,setSelectedRole }) => {
   //const [username, setUsername] = useState('');
   const [password, setPassword] = useState("");
   const [contact, setContact] = useState("");
@@ -59,7 +59,7 @@ const Login = ({ handleLogin ,selectedRole,setSelectedRole }) => {
           if (selectedRole === "student") {
             navigate(`/dashboard/student-profile`)
           } else {
-            navigate("/dashboard/faculty");
+            navigate("/dashboard/faculty/*");
           }
       })
       .catch((error) => {

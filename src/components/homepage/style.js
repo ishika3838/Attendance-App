@@ -21,9 +21,8 @@ width:100%;
 
   .underline{
     width:60%;
-    height:6px;
-    background: black;
-
+    height:4px;
+    background: #773ced;
     border-radius:6px;
   }
   
@@ -31,13 +30,15 @@ width:100%;
     font-size: 24px;
     margin-top:10px;
     margin-bottom:6px;
-    // color: #773ced;
+    color: #773ced;
   }
 
   h1{
     font-size:1rem;
     background:transparent;
     font-weight: 500;
+    color: #773ced;
+
   }
 
   p {
@@ -82,6 +83,8 @@ width:100%;
   @media (min-width:500px){
       width:100%;
 
+
+
     .container{
       margin: 0 auto;
       width:35%;
@@ -116,4 +119,6 @@ width:100%;
   }
 
   `
-  //#007bff
+
+  
+  //#007bff
