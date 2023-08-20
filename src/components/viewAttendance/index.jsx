@@ -1,5 +1,6 @@
 //import React from 'react';
 import React, { useState } from 'react';
+import { Wrapper } from '../viewAttendance/style';
 
 const ViewAttendance = ({ studentUsers, attendanceData })=> {
   const [selectedUser, setSelectedUser] = useState('');
@@ -12,7 +13,7 @@ const ViewAttendance = ({ studentUsers, attendanceData })=> {
   };
 
   return (
-    <div>
+    <Wrapper>
       <h3>View Attendance</h3>
       <div>
         <label>Select Student:</label>
@@ -47,7 +48,7 @@ const ViewAttendance = ({ studentUsers, attendanceData })=> {
           <p>No attendance data available.</p>
         )}
       </div>
-    </div>
+    </Wrapper>
   );
 }
 
