@@ -5,19 +5,48 @@ import Wrapper from "./style";
 import contact_icon from "../assets/contact_icon.png";
 import password_icon from "../assets/password_icon.png";
 
-const Login = ({ handleLogin ,setSelectedRole,currentUser }) => {
+const Login = ({ handleLogin ,selectedRole,setSelectedRole }) => {
   //const [username, setUsername] = useState('');
   const [password, setPassword] = useState("");
   const [contact, setContact] = useState("");
   const navigate = useNavigate();
+  
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   e.target.value = 'singingin';
+  //   e.target.disabled = 'true';
+  
+  //   try {
+  //     await handleLogin(contact, password, selectedRole, setSelectedRole);
+      
+  //     // Since handleLogin is async and will update the state (current user and selected role),
+      
+  //     // // you can access the updated values directly here
+  //     if (selectedRole === 'student') {
+  //       navigate(`/dashboard/student-profile`);
+  //     } else if (selectedRole === 'faculty') {
+  //       navigate('/dashboard/faculty');
+  //     } else {
+  //       // Handle other roles or conditions here
+  //      }
+  //   } catch (error) {
+  //     console.error('Error during login:', error);
+  //     alert('Login failed. Please try again.');
+  //   } finally {
+  //     e.target.value = 'signup';
+  //     e.target.disabled = 'false';
+  //   }
+  // };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin(contact, password);
+    
     console.log("Logging in with:", contact, password);
-    e.target.value = "singingin";
+    e.target.value = "wait";
     e.target.disabled = "true";
-
+ 
+   //handleLogin(contact, password);
     axios
       .post("https://server-api1-li2k.onrender.com/api/user/login", {
         contact: contact,
@@ -26,33 +55,27 @@ const Login = ({ handleLogin ,setSelectedRole,currentUser }) => {
       })
       .then((response) => {
         console.log(response.data);
-        alert("welcome");
-       
-        if (response.data.bsuccess) {
-          setSelectedRole(response.data.role);
-
-          if (response.data.role === "student") {
-            navigate(`/dashboard/student-profile/${currentUser.username}`);
+        alert("Logged In Succesfully ");
+          if (selectedRole === "student") {
+            navigate(`/dashboard/student-profile`)
           } else {
             navigate("/dashboard/faculty");
           }
-        } else {
-          alert("Login failed. Please check your credentials.");
-        }
       })
       .catch((error) => {
         console.error("Error in login user:", error);
+        alert("Login failed. Please check your credentials.");
       })
       .finally(() => {
         e.target.value = "signup";
         e.target.disabled = "false";
         setPassword("");
         setContact("");
-        setSelectedRole("");
+        
       });
      
-
-  };
+    
+    };
 
   return (
     <Wrapper >

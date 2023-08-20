@@ -5,7 +5,7 @@ color:black;
 background-color:white;
 text-align: center;
 margin-bottom:2px;
-position: absolute;
+position: fixed;
  bottom: 0;
 //  left: 1%;
 //  right: 1%;
