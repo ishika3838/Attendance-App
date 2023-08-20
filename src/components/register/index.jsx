@@ -104,6 +104,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        
 
         <input
           type="password"
