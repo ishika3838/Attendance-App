@@ -29,24 +29,25 @@ p a{
 }
 
 h2{
-    margin-bottom:6px;
+    margin-bottom:4px;
     color : #773ced;
 
 }
 
 .underline{
-    width:15%;
-    height:6px;
+    width:12%;
+    height:4px;
     background: #773ced;
     border-radius:6px;
   }
+
 form{
     width:100%;
     margin-bottom:10px;
 }
 
 img{
-    width:26ççpx;
+    width:26px;
     margin:5px 5px;
 }
 .inputs{
@@ -58,6 +59,7 @@ img{
     gap:30px;
     width:100%;
     // border: solid grey 1px;
+}
 
 .input{
     display:flex;
@@ -78,7 +80,7 @@ input{
 }
 
 button{
-    // width:80%;
+    width:40%;
     margin-bottom:30px;
     font-size:26px;
     background:#773ced;
@@ -102,7 +104,23 @@ button{
     width : 35%;
     top:80px;
 
-  background:black;
+//   background:black;
+img{
+    width:26px;
+}
+
+.underline{
+    width:8%;
+    height:4px;
+    background: #773ced;
+    border-radius:6px;
+  }
+
+  h2{
+    margin-bottom:4px;
+    color : #773ced;
+
+}
 
 }
 

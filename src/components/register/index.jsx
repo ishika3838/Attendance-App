@@ -77,36 +77,44 @@ const Register=({ handleRegister,selectedRole })=> {
 
   return (
     <Wrapper>
+
       <h2>Register</h2>
+
       <form onSubmit={handleSubmit}>
+
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
+
         <input
           type="text"
           placeholder="Contact"
           value={contact}
           onChange={(e) => setContact(e.target.value)}
         />
+
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+
         <input
           type="password"
           placeholder="Confirm Password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
+
         {/* <select value={role} onChange={(e) => setRole(e.target.value)}>
           <option value="student">Student</option>
           <option value="faculty">Faculty</option>
         </select> */}
+
         {selectedRole === 'student' && (
           <div>
             <input
@@ -115,10 +123,11 @@ const Register=({ handleRegister,selectedRole })=> {
               value={rollno}
               onChange={(e) => setRollno(e.target.value)}
             />
+            
             <label>
-              Select Year:
+              {/* Select Year: */}
               <select value={year} onChange={(e) => setYear(e.target.value)}>
-                <option value="">Select Year</option>
+                <option value="" selected disabled>--Select Year--</option>
                 <option value="1">1 Year</option>
                 <option value="2">2 Year</option>
                 <option value="3">3 Year</option>
@@ -128,18 +137,18 @@ const Register=({ handleRegister,selectedRole })=> {
             </label>
             
             <label>
-              Select Branch:
+              {/* Select Branch: */}
               <select value={branch} onChange={(e) => setBranch(e.target.value)}>
-                <option value="">Select Branch</option>
+                <option value="" selected disabled>--Select Branch--</option>
                 <option value="Computer Science Engineering">Computer Science Engineering</option>
                 <option value="Information Technology">Information Technology</option>
                 {/* Add more branches here */}
               </select>
             </label>
             <label>
-              Select Section:
+              {/* Select Section: */}
               <select value={section} onChange={(e) => setSection(e.target.value)}>
-                <option value="">Select Section</option>
+                <option value="" selected disabled>Select Section</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
