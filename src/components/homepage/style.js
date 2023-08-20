@@ -82,7 +82,11 @@ width:100%;
   @media (min-width:500px){
       width:100%;
 
-    .container{width:35%;
+    .container{
+      margin: 0 auto;
+      width:35%;
+      top:80px;
+
     // background:black;
     }
 
@@ -102,12 +106,12 @@ width:100%;
     }
 
     button{
-      padding:40px 40px;
+      padding:20px 20px;
 
     }
 
     img{
-      width : 140px;
+      width : 100px;
     }
   }
 
