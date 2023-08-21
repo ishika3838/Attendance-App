@@ -15,7 +15,8 @@ const initialUsers = [
     role: "student",
     year: "1",
     rollno: "304",
-    branch: "Branch A",
+    branch: "Computer Science Engineering",
+    section:"A",
     attendance: [],
   },
   {
@@ -24,7 +25,8 @@ const initialUsers = [
     role: "student",
     year: "",
     rollno: "",
-    branch: "",
+    branch: "Information Technology",
+    section:"A",
     attendance: [],
   },
 ];
@@ -77,7 +79,7 @@ const App = () => {
               <Faculty users={users} setSelectedRole={setSelectedRole} />
             }
           />
-          
+
           <Route
             path="/studentdashboard/student-profile"
             element={<StudentProfile users={users} />}
