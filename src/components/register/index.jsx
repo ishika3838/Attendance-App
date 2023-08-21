@@ -155,8 +155,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
         <div className='input'>
 
           
-            {/* <label> */}
-              {/* Select Year: */}
+            
 
               <img src={user_icon} alt='user_icon'/>
               <select value={year} onChange={(e) => setYear(e.target.value)}>
@@ -165,32 +164,30 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
                 <option value="2">2 Year</option>
                 <option value="3">3 Year</option>
                 <option value="4">4 Year</option>
-                {/* Add more years here */}
+                
               </select>
-            {/* </label> */}
+            
         </div>
 
         <div className='input'>
 
           
-            {/* <label> */}
-              {/* Select Branch: */}
 
               <img src={user_icon} alt='user_icon'/>
               <select value={branch} onChange={(e) => setBranch(e.target.value)}>
                 <option value="" selected disabled>--Select Branch--</option>
                 <option value="Computer Science Engineering">Computer Science Engineering</option>
                 <option value="Information Technology">Information Technology</option>
-                {/* Add more branches here */}
+                
               </select>
-            {/* </label> */}
+            
         </div>
-            {/* <label> */}
+           
 
             <div className='input'>
 
 
-              {/* Select Section: */}
+            
 
               <img src={user_icon} alt='user_icon'/>
               <select value={section} onChange={(e) => setSection(e.target.value)}>
@@ -199,48 +196,45 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
                 <option value="B">B</option>
                 <option value="C">C</option>
                 <option value="D">D</option>
-                {/* Add more years here */}
+             
               </select>
-            {/* </label> */}
+           
             </div>
           </div>
         )}
-        {selectedRole === 'faculty' && (
+        {/* {selectedRole === 'faculty' && (
           <div>
-            {/* <label> */}
+            
 
    <div className='input'>
 
 
-              {/* Select Subject: */}
-
+            
               <img src={user_icon} alt='user_icon'/>
               <select value={subject} onChange={(e) => setSubject(e.target.value)}>
                 <option value="" selected disabled>--Select Subject--</option>
                 <option value="subject1">Dbms</option>
                 <option value="subject2">Oops</option>
-                {/* Add more subjects here */}
+              
               </select>
-            {/* </label> */}
+            
    </div>
-            {/* <label> */}
+            
 
    <div className='input'>
 
 
-              {/* Select Branch: */}
+              
 
                   <img src={user_icon} alt='user_icon'/>
               <select value={branch} onChange={(e) => setBranch(e.target.value)}>
                 <option value="" selected disabled>--Select Branch--</option>
                 <option value="branch1">Computer Science Engineering</option>
                 <option value="branch2">Information Technology</option>
-                {/* Add more branches here */}
+               
               </select>
-            {/* </label> */}
+           
    </div>
-            {/* <label> */}
-              {/* Select Year: */}
 
     <div className='input'>
 
@@ -251,13 +245,13 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
                 <option value="year2">2 Year</option>
                 <option value="year2">3 Year</option>
                 <option value="year2">4 Year</option>
-                {/* Add more years here */}
+             
               </select>
-            {/* </label> */}
+          
     </div>
             </div>
         )}
-          {/* <label> */}
+           */}
 
    <div className='input'>
 

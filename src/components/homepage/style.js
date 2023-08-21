@@ -31,14 +31,12 @@ width:100%;
     margin-top:10px;
     margin-bottom:6px;
     color: #773ced;
-    color: #773ced;
   }
 
   h1{
     font-size:1rem;
     background:transparent;
     font-weight: 500;
-
     color: #773ced;
 
   }
@@ -61,7 +59,6 @@ width:100%;
     display:flex;
     align-items: center;
     justify-content: center;
-    margin-top:30px;
   }
 
   button {
@@ -122,6 +119,4 @@ width:100%;
   }
 
   `
-
-  
   //#007bff

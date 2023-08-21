@@ -27,7 +27,8 @@ const Login = ({ selectedRole ,handleLogin }) => {
         alert("Logged In Succesfully ");
         if (response.data.selectedRole === "student") {
           navigate("/studentdashboard");
-        } else {
+        } 
+        if (response.data.selectedRole === "faculty") {
           navigate("/facultydashboard");
         }
       })

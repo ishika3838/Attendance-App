@@ -15,7 +15,8 @@ const initialUsers = [
     role: "student",
     year: "1",
     rollno: "304",
-    branch: "Branch A",
+    branch: "Computer Science Engineering",
+    section:"A",
     attendance: [],
   },
   {
@@ -25,6 +26,7 @@ const initialUsers = [
     year: "",
     rollno: "",
     branch: "",
+    section:"A",
     attendance: [],
   },
 ];
