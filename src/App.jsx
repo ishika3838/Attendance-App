@@ -77,6 +77,7 @@ const App = () => {
               <Faculty users={users} setSelectedRole={setSelectedRole} />
             }
           />
+          
           <Route
             path="/studentdashboard/student-profile"
             element={<StudentProfile users={users} />}
