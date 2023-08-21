@@ -6,7 +6,9 @@ const Footer = () => {
    <Wrapper>
       copyright@2023 AttendEase || All rights reserved.
       </Wrapper>
-  )
+ 
+
+ )
 }
 
 export default Footer
