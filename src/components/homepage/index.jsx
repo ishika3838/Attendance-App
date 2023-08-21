@@ -6,10 +6,12 @@ import user_icon from '../assets/user_icon_empty.png'
 
 const Homepage = ({ selectedRole, setSelectedRole }) => {
   const navigate = useNavigate();
-
+  
   const handleRoleClick = (selectedRole) => {
-    navigate(`/login`);
+    
     setSelectedRole(selectedRole);
+    console.log(selectedRole);
+    navigate(`/login`);
   };
 
   return (
