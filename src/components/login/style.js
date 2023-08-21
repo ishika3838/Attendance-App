@@ -2,26 +2,26 @@ import { styled } from "styled-components";
 
 const Wrapper = styled.div`
 
-background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237)); 
-height:100vh;
-margin: 0 auto;
-width:100%;
+// background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237)); 
+// height:100vh;
+// margin: 0 auto;
+// width:100%;
 
-.container{
-    position:relative;
+// .container{
+//     position:relative;
 
-background-color: white;
-display:flex;
-flex-direction:column;
-align-items: center;
-justify-content: center;
-width:80%;
-margin : 0 auto;
-padding:10px 10px;
-border-radius:16px;
-box-shadow: grey 2px 2px 3px;
-top:18%;
-}
+// background-color: white;
+// display:flex;
+// flex-direction:column;
+// align-items: center;
+// justify-content: center;
+// width:80%;
+// margin : 0 auto;
+// padding:10px 10px;
+// border-radius:16px;
+// box-shadow: grey 2px 2px 3px;
+// top:18%;
+// }
 
 p a{
     text-decoration: none;
@@ -33,6 +33,23 @@ h2{
     color : #773ced;
 
 }
+
+.header{
+    background:white;
+    margin : 0px auto;
+    
+}
+
+h1{
+    font-size:1.5rem;
+    background:transparent;
+    font-weight: 500;
+    margin : 6px 0;
+    color:black;
+    // border-bottom: solid 2px black;
+    // border-radius:6px;
+
+  }
 
 .underline{
     width:12%;
@@ -56,7 +73,7 @@ img{
     flex-direction:column;
     align-items: center;
     justify-content: center;
-    gap:30px;
+    // gap:30px;
     width:100%;
     // border: solid grey 1px;
 }
@@ -65,6 +82,7 @@ img{
     display:flex;
     gap :10px;
     width:80%;
+    margin :10px 0;
     font-size:1.5rem;
     border: solid grey 1px;
     border-radius:6px;
@@ -81,7 +99,8 @@ input{
 
 button{
     width:40%;
-    margin-bottom:30px;
+    // margin-bottom:30px;
+    margin : 10px 0;
     font-size:26px;
     background:#773ced;
     color: white;
@@ -96,33 +115,33 @@ button{
 
   
 
-@media (min-width:500px){
-    width:100%;
+// @media (min-width:500px){
+//     width:100%;
 
-  .container{
-    margin: 0 auto;
-    width : 35%;
-    top:80px;
+//   .container{
+//     margin: 0 auto;
+//     width : 35%;
+//     top:80px;
 
-//   background:black;
-img{
-    width:26px;
-}
+// //   background:black;
+// img{
+//     width:26px;
+// }
 
-.underline{
-    width:8%;
-    height:4px;
-    background: #773ced;
-    border-radius:6px;
-  }
+// .underline{
+//     width:8%;
+//     height:4px;
+//     background: #773ced;
+//     border-radius:6px;
+//   }
 
-  h2{
-    margin-bottom:4px;
-    color : #773ced;
+//   h2{
+//     margin-bottom:4px;
+//     color : #773ced;
 
-}
+// }
 
-}
+// }
 
 `
 export default Wrapper

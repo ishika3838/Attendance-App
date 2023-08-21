@@ -6,6 +6,12 @@ import user_icon from '../assets/user_icon.png'
 import contact_icon from '../assets/contact_icon_n.png'
 import pass from '../assets/padlock_icon.png'
 import confirm_pass from '../assets/confirm_pass.png'
+import rollnum from '../assets/id.png'
+import year_icon from '../assets/year.png'
+import branch_icon from '../assets/branch_icon.png'
+import sec from '../assets/section.png'
+import profile_icon from '../assets/image-gallery.png'
+import sub_icon from '../assets/subject.png'
 
 const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
  
@@ -83,7 +89,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
 
 
   return (
-    <Wrapper>
+    <Wrapper className='maincontainer'>
 <div className='container'>
 
       <h2>Register</h2>
@@ -122,7 +128,9 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
           onChange={(e) => setPassword(e.target.value)}
      
      />
+</div>
         
+<div className='input'>
 
 <img src={confirm_pass} alt='confirmpass_icon'/>
         <input
@@ -131,7 +139,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           />
-          </div>
+</div>
 
         {/* <select value={role} onChange={(e) => setRole(e.target.value)}>
           <option value="student">Student</option>
@@ -143,10 +151,10 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
 
 <div className='input'>
 
-<img src={user_icon} alt='user_icon'/>
+<img src={rollnum} alt='user_icon'/>
             <input
               type="text"
-              placeholder="Rollnumber"
+              placeholder="Roll Number"
               value={rollno}
               onChange={(e) => setRollno(e.target.value)}
               />
@@ -158,7 +166,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
             {/* <label> */}
               {/* Select Year: */}
 
-              <img src={user_icon} alt='user_icon'/>
+              <img src={year_icon} alt='user_icon'/>
               <select value={year} onChange={(e) => setYear(e.target.value)}>
                 <option value="" selected disabled>--Select Year--</option>
                 <option value="1">1 Year</option>
@@ -176,7 +184,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
             {/* <label> */}
               {/* Select Branch: */}
 
-              <img src={user_icon} alt='user_icon'/>
+              <img src={branch_icon} alt='user_icon'/>
               <select value={branch} onChange={(e) => setBranch(e.target.value)}>
                 <option value="" selected disabled>--Select Branch--</option>
                 <option value="Computer Science Engineering">Computer Science Engineering</option>
@@ -192,9 +200,9 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
 
               {/* Select Section: */}
 
-              <img src={user_icon} alt='user_icon'/>
+              <img src={sec} alt='sec_icon'/>
               <select value={section} onChange={(e) => setSection(e.target.value)}>
-                <option value="" selected disabled>Select Section</option>
+                <option value="" selected disabled>--Select Section--</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -214,7 +222,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
 
               {/* Select Subject: */}
 
-              <img src={user_icon} alt='user_icon'/>
+              <img src={sub_icon} alt='user_icon'/>
               <select value={subject} onChange={(e) => setSubject(e.target.value)}>
                 <option value="" selected disabled>--Select Subject--</option>
                 <option value="subject1">Dbms</option>
@@ -230,7 +238,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
 
               {/* Select Branch: */}
 
-                  <img src={user_icon} alt='user_icon'/>
+                  <img src={branch_icon} alt='user_icon'/>
               <select value={branch} onChange={(e) => setBranch(e.target.value)}>
                 <option value="" selected disabled>--Select Branch--</option>
                 <option value="branch1">Computer Science Engineering</option>
@@ -244,7 +252,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
 
     <div className='input'>
 
-    <img src={user_icon} alt='user_icon'/>
+    <img src={year_icon} alt='user_icon'/>
               <select value={year} onChange={(e) => setYear(e.target.value)}>
                 <option value="" selected disabled>--Select Year--</option>
                 <option value="year1">1 Year</option>
@@ -259,10 +267,10 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
         )}
           {/* <label> */}
 
+         <p>Choose Profile Photo </p> 
    <div className='input'>
 
-   <img src={user_icon} alt='user_icon'/>
-          Choose Profile Photo:
+   <img src={profile_icon} alt='user_icon'/>
           <input
             type="file"
             accept="image/*"
