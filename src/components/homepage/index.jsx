@@ -20,7 +20,7 @@ const Homepage = ({ selectedRole, setSelectedRole }) => {
 
       <h2>Welcome to AttendEase</h2>
       <div className="underline"></div>
-      
+      <p>Select Your Role</p>
       </div>
       <div className="main">
         <button onClick={() => handleRoleClick("student") }>

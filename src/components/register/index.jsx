@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Wrapper from './style';
+import user_icon from '../assets/user_icon.png'
+import contact_icon from '../assets/contact_icon_n.png'
+import pass from '../assets/padlock_icon.png'
+import confirm_pass from '../assets/confirm_pass.png'
+
 const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
  
   const [username, setUsername] = useState('');
@@ -78,38 +83,55 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
 
   return (
     <Wrapper>
+<div className='container'>
 
       <h2>Register</h2>
 
       <form onSubmit={handleSubmit}>
 
+    <div className='input'>
+
+    <img src={user_icon} alt='user_icon'/>
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Your Name"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-        />
+          />
+          </div>
 
+      <div className='input'>
+
+      <img src={contact_icon} alt='contact_icon'/>
         <input
           type="text"
           placeholder="Contact"
           value={contact}
           onChange={(e) => setContact(e.target.value)}
-        />
+          />
+          </div>
 
+<div className='input'>
+
+<img src={pass} alt='password_icon'/>
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        />
+          />
+          </div>
 
+<div className='input'>
+
+<img src={confirm_pass} alt='confirmpass_icon'/>
         <input
           type="password"
           placeholder="Confirm Password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+          />
+          </div>
 
         {/* <select value={role} onChange={(e) => setRole(e.target.value)}>
           <option value="student">Student</option>
@@ -118,15 +140,25 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
 
         {selectedRole === 'student' && (
           <div>
+
+<div className='input'>
+
+<img src={user_icon} alt='user_icon'/>
             <input
               type="text"
               placeholder="Rollnumber"
               value={rollno}
               onChange={(e) => setRollno(e.target.value)}
-            />
-            
-            <label>
+              />
+              </div>
+
+        <div className='input'>
+
+          
+            {/* <label> */}
               {/* Select Year: */}
+
+              <img src={user_icon} alt='user_icon'/>
               <select value={year} onChange={(e) => setYear(e.target.value)}>
                 <option value="" selected disabled>--Select Year--</option>
                 <option value="1">1 Year</option>
@@ -135,19 +167,32 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
                 <option value="4">4 Year</option>
                 {/* Add more years here */}
               </select>
-            </label>
-            
-            <label>
+            {/* </label> */}
+        </div>
+
+        <div className='input'>
+
+          
+            {/* <label> */}
               {/* Select Branch: */}
+
+              <img src={user_icon} alt='user_icon'/>
               <select value={branch} onChange={(e) => setBranch(e.target.value)}>
                 <option value="" selected disabled>--Select Branch--</option>
                 <option value="Computer Science Engineering">Computer Science Engineering</option>
                 <option value="Information Technology">Information Technology</option>
                 {/* Add more branches here */}
               </select>
-            </label>
-            <label>
+            {/* </label> */}
+        </div>
+            {/* <label> */}
+
+            <div className='input'>
+
+
               {/* Select Section: */}
+
+              <img src={user_icon} alt='user_icon'/>
               <select value={section} onChange={(e) => setSection(e.target.value)}>
                 <option value="" selected disabled>Select Section</option>
                 <option value="A">A</option>
@@ -156,54 +201,80 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
                 <option value="D">D</option>
                 {/* Add more years here */}
               </select>
-            </label>
+            {/* </label> */}
+            </div>
           </div>
         )}
         {selectedRole === 'faculty' && (
           <div>
-            <label>
-              Select Subject:
+            {/* <label> */}
+
+   <div className='input'>
+
+
+              {/* Select Subject: */}
+
+              <img src={user_icon} alt='user_icon'/>
               <select value={subject} onChange={(e) => setSubject(e.target.value)}>
-                <option value="">Select Subject</option>
+                <option value="" selected disabled>--Select Subject--</option>
                 <option value="subject1">Dbms</option>
                 <option value="subject2">Oops</option>
                 {/* Add more subjects here */}
               </select>
-            </label>
-            <label>
-              Select Branch:
+            {/* </label> */}
+   </div>
+            {/* <label> */}
+
+   <div className='input'>
+
+
+              {/* Select Branch: */}
+
+                  <img src={user_icon} alt='user_icon'/>
               <select value={branch} onChange={(e) => setBranch(e.target.value)}>
-                <option value="">Select Branch</option>
+                <option value="" selected disabled>--Select Branch--</option>
                 <option value="branch1">Computer Science Engineering</option>
                 <option value="branch2">Information Technology</option>
                 {/* Add more branches here */}
               </select>
-            </label>
-            <label>
-              Select Year:
+            {/* </label> */}
+   </div>
+            {/* <label> */}
+              {/* Select Year: */}
+
+    <div className='input'>
+
+    <img src={user_icon} alt='user_icon'/>
               <select value={year} onChange={(e) => setYear(e.target.value)}>
-                <option value="">Select Year</option>
+                <option value="" selected disabled>--Select Year--</option>
                 <option value="year1">1 Year</option>
                 <option value="year2">2 Year</option>
                 <option value="year2">3 Year</option>
                 <option value="year2">4 Year</option>
                 {/* Add more years here */}
               </select>
-            </label>
+            {/* </label> */}
+    </div>
             </div>
         )}
-          <label>
+          {/* <label> */}
+
+   <div className='input'>
+
+   <img src={user_icon} alt='user_icon'/>
           Choose Profile Photo:
           <input
             type="file"
             accept="image/*"
             onChange={(e) => setPhotoUrl(URL.createObjectURL(e.target.files[0]))}
-          />
-        </label>
+            />
+        {/* </label> */}
+            </div>
         <button type="submit">Register</button>
       </form>
      
     
+            </div>      
     </Wrapper>
     
   );
