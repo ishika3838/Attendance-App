@@ -129,7 +129,8 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
           onChange={(e) => setPassword(e.target.value)}
      
      />
-        
+        </div>
+        <div className='input'>
 
 <img src={confirm_pass} alt='confirmpass_icon'/>
         <input
