@@ -42,7 +42,9 @@ background-size: cover;
 @media screen and (max-width: 500px) {
   .maincontainer {
     /* background-color: rgb(251, 251, 251); */
-    background-image: url(../src/components/assets/background_phone.jpeg);
+    background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237)); 
+
+    /* background-image: url(../src/components/assets/background_phone.jpeg); */
     background-repeat: no-repeat;
     background-size: cover;
   }

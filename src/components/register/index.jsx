@@ -6,6 +6,14 @@ import user_icon from '../assets/user_icon.png'
 import contact_icon from '../assets/contact_icon_n.png'
 import pass from '../assets/padlock_icon.png'
 import confirm_pass from '../assets/confirm_pass.png'
+import rollnum from '../assets/id.png'
+import year_icon from '../assets/year.png'
+import profile_icon from '../assets/image-gallery.png'
+import branch_icon from '../assets/branch_icon.png'
+import sec from '../assets/section.png'
+import sub_icon from '../assets/subject.png'
+
+
 
 const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
  
@@ -251,7 +259,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
             {/* </label> */}
     </div>
             </div>
-          )} */}
+          )} 
 
          <p>Choose Profile Photo </p> 
    <div className='input'>
