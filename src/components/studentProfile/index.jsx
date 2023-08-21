@@ -1,16 +1,16 @@
 import React from 'react';
 
-const StudentProfile=({ selectedRole })=> {
+const StudentProfile=({ users })=> {
   return (
     <div>
       <h3>Student Profile</h3>
-      {/* {user.photoUrl && (
-        <img width="120" height="120" src={user.photoUrl} alt="Profile" />
+      {users.photoUrl && (
+        <img width="120" height="120" src={users.photoUrl} alt="Profile" />
       )}
-      <p>Username: {user.username}</p>
-      <p>Year: {user.year}</p>
-      <p>Branch: {user.branch}</p>
-      <p>Rollnumber: {user.rollno}</p> */}
+      <p>usersname: {users.usersname}</p>
+      <p>Year: {users.year}</p>
+      <p>Branch: {users.branch}</p>
+      <p>Rollnumber: {users.rollno}</p>
     </div>
   );
 }

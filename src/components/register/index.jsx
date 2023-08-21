@@ -21,7 +21,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
   const [photoUrl,setPhotoUrl] = useState('');
   
   const navigate = useNavigate();
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -50,6 +50,7 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
       .post('https://server-api1-li2k.onrender.com/api/user/add', {username,contact,password,selectedRole})
       .then((response) => {
        console.log(response.data)
+       console.log(selectedRole);
        alert("successfully registered")
       })
       .catch((error) => {
@@ -119,10 +120,9 @@ const Register=({ handleRegister,selectedRole,setSelectedRole })=> {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          />
-          </div>
-
-<div className='input'>
+     
+     />
+        
 
 <img src={confirm_pass} alt='confirmpass_icon'/>
         <input
