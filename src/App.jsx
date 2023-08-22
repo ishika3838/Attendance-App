@@ -17,6 +17,7 @@ const initialUsers = [
     rollno: "304",
     branch: "Computer Science Engineering",
     section:"A",
+    photoUrl:<img src="user.png" alt="user_icon" />,
     attendance: [],
   },
   {
@@ -25,8 +26,9 @@ const initialUsers = [
     role: "student",
     year: "",
     rollno: "",
-    branch: "Information Technology",
+    branch: "Computer Science Engineering",
     section:"A",
+    photoUrl:<img src="user.png" alt="user_icon" />,
     attendance: [],
   },
 ];
@@ -47,7 +49,7 @@ const App = () => {
       <div className="App">
         <Routes>
           <Route
-            path="/"
+            path="/home"
             element={
               <Homepage
                 selectedRole={selectedRole}
@@ -66,7 +68,7 @@ const App = () => {
             }
           />
           <Route
-            path="/login"
+            path="/"
             element={<Login selectedRole={selectedRole} handleLogin={handleLogin} />}
           />
           <Route

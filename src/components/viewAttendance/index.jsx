@@ -1,56 +1,143 @@
-//import React from 'react';
-import React, { useState } from 'react';
-import { Wrapper } from '../viewAttendance/style';
+// // 
+// import React from 'react';
+// function ViewAttendance({ studentUsers, attendanceData }) {
+//   // Filter student users who have attendance data
+//   const studentsWithAttendance = studentUsers.filter(student =>
+//     attendanceData.hasOwnProperty(student.username)
+//   );
+//   console.log('Attendance Data State:', attendanceData);
 
-const ViewAttendance = ({ studentUsers, attendanceData })=> {
-  const [selectedUser, setSelectedUser] = useState('');
-  const [attendanceRecords, setAttendanceRecords] = useState([]);
+//    // Log attendance data to console for debugging
 
-  const handleUserChange = (e) => {
-    setSelectedUser(e.target.value);
-    const selectedUserData = studentUsers.find(user => user.username === e.target.value);
-    setAttendanceRecords(selectedUserData ? attendanceData[selectedUserData.username] || [] : []);
-  };
+//   return (
+//     <div>
+//       <h3>View Attendance</h3>
+//       {studentsWithAttendance.length === 0 ? (
+//         <p>No attendance data available.</p>
+//       ) : (
+//         <div>
+//           <p>Attendance data available for:</p>
+//           <ul>
+//             {studentsWithAttendance.map(student => (
+//               <li key={student.username}>{student.username}</li>
+//             ))}
+//           </ul>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+// export default ViewAttendance;
 
-  return (
-    <Wrapper>
-      <h3>View Attendance</h3>
-      <div>
-        <label>Select Student:</label>
-        <select value={selectedUser} onChange={handleUserChange}>
-          <option value="">Select a student</option>
-          {studentUsers.map(user => (
-            <option key={user.username} value={user.username}>
-              {user.username}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        {attendanceRecords.length > 0 ? (
-          <table>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {attendanceRecords.map((record, index) => (
-                <tr key={index}>
-                  <td>{record.date}</td>
-                  <td>{record.status}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          <p>No attendance data available.</p>
-        )}
-      </div>
-    </Wrapper>
-  );
-}
+// // function ViewAttendance({ studentUsers, attendanceData }) {
+// //   return (
+// //     <div>
+// //       <h3>View Attendance</h3>
+// //       <ul>
+// //         {studentUsers.map(user => (
+// //           <li key={user.username}>
+// //             <p>{user.username}</p>
+// //             <ul>
+// //               {attendanceData[user.username]?.map(attendance => (
+// //                 <li key={attendance.date}>
+// //                   {attendance.date}: {attendance.status}
+// //                 </li>
+// //               ))}
+// //             </ul>
+// //           </li>
+// //         ))}
+// //       </ul>
+// //     </div>
+// //   );
+// // }
 
-export default ViewAttendance;
+
+
+// import React from 'react';
+// import StudentAttendance from '../studentattendance';
+
+// function ViewAttendance({studentUsers, attendanceData }) {
+//   // Filter student users who have attendance data
+//   const studentsWithAttendance = studentUsers.filter(student =>
+//     attendanceData.hasOwnProperty(student.username)
+//   );
+
+//   return (
+//     <div>
+//       <h3>View Attendance</h3>
+//       {studentsWithAttendance.length === 0 ? (
+//         <p>No attendance data available.</p>
+//       ) : (
+//         studentsWithAttendance.map((student) => (
+//           <StudentAttendance key={student.username} student={student} attendanceData={attendanceData} />
+//         ))
+//       )}
+//     </div>
+//   );
+//         }
+//   export default ViewAttendance;
+
+// // function getAttendanceStatus(username, attendanceData) {
+// //   const studentAttendance = attendanceData[username];
+// //   if (!studentAttendance || studentAttendance.length === 0) {
+// //     return 'Not Marked';
+// //   }
+// //   const latestAttendance = studentAttendance[studentAttendance.length - 1];
+// //   return latestAttendance.status;
+// // }
+// // export default ViewAttendance;
+// import React, { useState } from 'react';
+// import { Wrapper } from '../viewAttendance/style';
+
+// const ViewAttendance = ({ studentUsers, attendanceData })=> {
+//   const [selectedUser, setSelectedUser] = useState('');
+//   const [attendanceRecords, setAttendanceRecords] = useState([]);
+
+//   const handleUserChange = (e) => {
+//     setSelectedUser(e.target.value);
+//     const selectedUserData = studentUsers.find(user => user.username === e.target.value);
+//     setAttendanceRecords(selectedUserData ? attendanceData[selectedUserData.username] || [] : []);
+//   };
+
+//   return (
+//     <Wrapper>
+//       <h3>View Attendance</h3>
+//       <div>
+//         <label>Select Student:</label>
+//         <select value={selectedUser} onChange={handleUserChange}>
+//           <option value="">Select a student</option>
+//           {studentUsers.map(user => (
+//             <option key={user.username} value={user.username}>
+//               {user.username}
+//             </option>
+//           ))}
+//         </select>
+//       </div>
+//       <div>
+//         {attendanceRecords.length > 0 ? (
+//           <table>
+//             <thead>
+//               <tr>
+//                 <th>Date</th>
+//                 <th>Status</th>
+//               </tr>
+//             </thead>
+//             <tbody>
+//               {attendanceRecords.map((record, index) => (
+//                 <tr key={index}>
+//                   <td>{record.date}</td>
+//                   <td>{record.status}</td>
+//                 </tr>
+//               ))}
+//             </tbody>
+//           </table>
+//         ) : (
+//           <p>No attendance data available.</p>
+//         )}
+//       </div>
+//     </Wrapper>
+//   );
+// }
+// export default ViewAttendance;
+
 

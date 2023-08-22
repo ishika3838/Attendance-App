@@ -11,7 +11,7 @@ const Homepage = ({ selectedRole, setSelectedRole }) => {
     
     setSelectedRole(selectedRole);
     console.log(selectedRole);
-    navigate(`/login`);
+    navigate(`/register`);
   };
 
   return (
