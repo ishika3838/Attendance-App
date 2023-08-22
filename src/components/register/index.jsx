@@ -51,6 +51,7 @@ const Register = ({ handleRegister, selectedRole, setSelectedRole }) => {
         contact,
         password,
         selectedRole,
+        photoUrl,
       })
       .then((response) => {
         console.log(response.data);
@@ -67,6 +68,7 @@ const Register = ({ handleRegister, selectedRole, setSelectedRole }) => {
         setContact("");
         setPassword("");
         setSelectedRole("");
+        setPhotoUrl(null);
       });
 
     handleRegister(user);
@@ -80,7 +82,7 @@ const Register = ({ handleRegister, selectedRole, setSelectedRole }) => {
     setBranch("");
     setPhotoUrl("");
     alert("Registration successful! Please proceed to login.");
-    navigate("/login");
+    navigate("/");
   };
 
   return (

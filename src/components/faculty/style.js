@@ -1,39 +1,40 @@
-import { styled } from "styled-components";
-export const Wrapper = styled.div`
-  background-color: #ffffff;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 10px;
+ import { styled } from "styled-components";
+ export const Wrapper = styled.div`
+ h2{
+  margin:12px auto;
+  text-align:center;
+  
+ }
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 20px;
+  top: 20px;
+}
 
-  h2 {
-    margin-bottom: 10px;
-    font-size: 28px;
-  }
+.bm-burger-bars {
+  background: #373a47;
+}
 
-  h3 {
-    margin-top: 20px;
-    font-size: 24px;
-  }
+.bm-burger-bars-hover {
+  background: #a90000;
+}
 
-  button {
-    margin-right: 10px;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
+/* Styling for the menu items */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
 
-  .green-button {
-    background-color: #4caf50;
-    color: white;
-  }
+.bm-item-list {
+  color: #b8b7ad;
+}
 
-  .red-button {
-    background-color: #f44336;
-    color: white;
-  }
-`;
+.bm-item {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+} `;

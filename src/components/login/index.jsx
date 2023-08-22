@@ -75,7 +75,7 @@ const Login = ({ selectedRole ,handleLogin }) => {
         </form>
 
         <p>
-          Not registered yet? <Link to="/register">Register here</Link>
+          Not registered yet? <Link to="/home">Register Here</Link>
         </p>
       </div>
     </Wrapper>
