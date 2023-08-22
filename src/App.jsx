@@ -8,6 +8,8 @@ import Faculty from "./components/faculty";
 import StudentProfile from "./components/studentProfile";
 import Homepage from "./components/homepage";
 import Footer from "./components/footer";
+import NotFoundPage from "./components/notFoundPage";
+import WelcomeComponent from "./components/welcomePage";
 const initialUsers = [
   {
     username: "student1",
@@ -86,6 +88,10 @@ const App = () => {
             path="/studentdashboard/student-profile"
             element={<StudentProfile users={users} />}
           />
+          <Route path="/*"
+          element ={<NotFoundPage/>}/>
+          <Route path="/welcome"
+          element ={<WelcomeComponent/>}/>
         </Routes>
       </div>
 
