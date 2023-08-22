@@ -2,30 +2,32 @@ import { styled } from "styled-components";
 
 const Wrapper = styled.div`
 
-background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237)); 
-height:100vh;
-margin: 0 auto;
-width:100%;
+// background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237)); 
+// height:100vh;
+// margin: 0 auto;
+// width:100%;
 
-.container{
-    position:relative;
-gap:30px;
-background-color: white;
-display:flex;
-flex-direction:column;
-align-items: center;
-justify-content: center;
-width:35%;
-margin : 0 auto;
-padding:10px 10px;
-border-radius:16px;
-box-shadow: grey 2px 2px 3px;
-top:18%;
-}
+// .container{
+//     position:relative;
+// gap:30px;
+// background-color: white;
+// display:flex;
+// flex-direction:column;
+// align-items: center;
+// justify-content: center;
+// width:80%;
+// margin : 0 auto;
+// padding:10px 10px;
+// border-radius:16px;
+// box-shadow: grey 2px 2px 3px;
+// top:10%;
+// }
 
-.input{
-    display:flex;
-}
+// .input{
+//     display:flex;
+//     // gap :10px;
+//     margin : 10px auto;
+// }
 
 img{
     width:26px;
@@ -40,6 +42,7 @@ img{
     border: solid grey 1px;
     border-radius:6px;
     outline:none;
+    margin : 10px 10px;
     // background:grey;
 
 }
@@ -47,13 +50,42 @@ img{
 input{
     width:100%;
     border:none;
-    font-size:1.2rem;
+    font-size:1rem;
     padding:6px 6px;
 }
-
-form{
+select{
     width:100%;
-    margin-bottom:10px;
+    border:none;
+    background:transparent;
+    font-size:1rem;
+    color:grey;
+}
+
+p {
+    font-size: 16px;
+    margin:10px 10px;
+  }
+
+button{
+    width:40%;
+    margin:10px 0;
+    font-size:26px;
+    background:#773ced;
+    color: white;
+    border-radius:6px;
+    padding:5px 5px;
+
+     &:hover {
+        cursor: pointer;
+    }
+
+// form{
+//     width:100%;
+//     margin-bottom:10px;
+//     padding: 10px 10px;
+// }
+
+
 }
 
 `

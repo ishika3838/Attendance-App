@@ -44,8 +44,10 @@ const Login = ({ selectedRole ,handleLogin }) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper className="maincontainer">
+
       <div className="container">
+
         <h2>Login</h2>
         <div className="underline"></div>
         <form onSubmit={handleSubmit}>

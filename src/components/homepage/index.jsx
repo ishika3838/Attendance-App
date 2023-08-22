@@ -15,7 +15,7 @@ const Homepage = ({ selectedRole, setSelectedRole }) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper className="maincontainer">
       <div className="container">
 
       <div className="header">

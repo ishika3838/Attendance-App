@@ -19,6 +19,63 @@ body {
 
 }
 
+ @media (min-width:500px){
+
+.container{
+  position: fixed;
+  left: 450px;
+  margin: 0 auto;
+  width:410px;
+  top:80px;
+}
+
+.maincontainer{
+/* background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237));  */
+/* background:radial-gradient(rgb(203, 222, 250) , rgb(247, 247, 247));  */
+background-image: url(../src/components/assets/background_img.jpeg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+} 
+
+@media screen and (max-width: 500px) {
+  .maincontainer {
+    /* background-color: rgb(251, 251, 251); */
+    background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237)); 
+
+    /* background-image: url(../src/components/assets/background_phone.jpeg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.maincontainer{
+/* background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237));  */
+/* background:radial-gradient(rgb(203, 222, 250) , rgb(247, 247, 247));  */
+
+
+
+height:100vh;
+margin: 0 auto;
+width:100%;}
+
+.container{
+    position:relative;
+/* gap:30px; */
+background-color: white;
+display:flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+width:310px;
+margin : 0 auto;
+padding:10px 10px;
+border-radius:16px;
+box-shadow: grey  3px 3px 4px;
+top:10%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
