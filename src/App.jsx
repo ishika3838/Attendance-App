@@ -93,12 +93,8 @@ const App = () => {
             }
           />
            <Route path='/attendanceSheet' element={<AttendanceSheet role={role} />} />
-
-          
-          <Route path="/*"
-          element ={<NotFoundPage/>}/>
-          <Route path="/welcome"
-          element ={<WelcomeComponent/>}/>
+           <Route path='/*' element={<NotFoundPage/>}/>
+           <Route path='/welcome' element={<WelcomeComponent/>}/>
         </Routes>
       </div>
 

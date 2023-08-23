@@ -3,14 +3,19 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Wrapper from "./style";
 import { services } from '../services'
-import contact_icon from "../assets/contact_icon_n.png";
+import contact_icon from "../assets/phone-call.png";
 import password_icon from "../assets/padlock_icon.png";
 
 const Login = ({ role  }) => {
   const [password, setPassword] = useState("");
   const [contact, setContact] = useState("");
+ // const [Logged,setLoggedInuser] = useState("");
   const navigate = useNavigate();
+//  const loggin=(state=>state.Logged)=>{
+  
 
+//  }
+   
   const handleSubmit = (e) => {
     e.preventDefault();
     // handleLogin(contact,password)
@@ -52,9 +57,12 @@ const Login = ({ role  }) => {
     <Wrapper className="maincontainer">
 
       <div className="container">
+      <div className="header">
 
+     <h1>AttendEase</h1></div>
+     <div className="underline"></div>
         <h2>Login</h2>
-        <div className="underline"></div>
+        
         <form onSubmit={handleSubmit}>
           <div className="inputs">
             <div className="input">

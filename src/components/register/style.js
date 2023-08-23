@@ -6,7 +6,9 @@ const Wrapper = styled.div`
 // height:100vh;
 // margin: 0 auto;
 // width:100%;
-
+  h2{
+    color:#773ced;
+  }
 // .container{
 //     position:relative;
 // gap:30px;
@@ -30,8 +32,9 @@ const Wrapper = styled.div`
 // }
 
 img{
-    width:26px;
+    width:20px;
     margin:5px 5px;
+    padding:5px 5px;
 }
 
 .input{
@@ -39,9 +42,10 @@ img{
     gap :10px;
     // width:80%;
     font-size:1.5rem;
-    border: solid grey 1px;
+    border: 1px solid grey;
     border-radius:6px;
     outline:none;
+    overflow:hidden;
     margin : 10px 10px;
     // background:grey;
 
@@ -50,16 +54,18 @@ img{
 input{
     width:100%;
     border:none;
+    outline:none;
     font-size:1rem;
+    // overflow:hidden;
     padding:6px 6px;
 }
-select{
-    width:100%;
-    border:none;
-    background:transparent;
-    font-size:1rem;
-    color:grey;
-}
+// select{
+//     width:100%;
+//     border:none;
+//     background:transparent;
+//     font-size:1rem;
+//     color:grey;
+// }
 
 p {
     font-size: 16px;
@@ -68,13 +74,13 @@ p {
 
 button{
     width:40%;
-    margin:10px 0;
-    font-size:26px;
+    margin:10px 90px;
+    font-size:1rem;
     background:#773ced;
     color: white;
     border-radius:6px;
     padding:5px 5px;
-
+    
      &:hover {
         cursor: pointer;
     }

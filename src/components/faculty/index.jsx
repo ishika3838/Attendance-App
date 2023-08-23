@@ -3,12 +3,21 @@
  import { Wrapper } from './style';
  import { useState ,useEffect} from 'react';
  import { services } from '../services';
-import { useNavigate } from 'react-router-dom';
+ import { useNavigate } from 'react-router-dom';
+ import search_icon from '../assets/search.png'
 
 function Faculty({setSelectedRole}) {
   const [sections, setSections] = useState([])
+  
+  
   const [filteredSections, setFilteredSections] = useState(sections)
   const navigate = useNavigate();
+  // const loggedInuser = useSelector(state => state.loggedInuser)
+  // useEffect(()=>{
+  //   if(!loggedInuser){
+  //   navigate("/");
+  //   }
+  //   })
   useEffect(() => {
     services.getSections()
     .then(res => {
@@ -16,7 +25,7 @@ function Faculty({setSelectedRole}) {
       setFilteredSections(res.data)
     })
   },[])
-
+      
   const filter = (e) => {
     setFilteredSections([...sections].filter(section => section.name.toLowerCase().startsWith(e.target.value.toLowerCase())))
   }
@@ -41,12 +50,13 @@ function Faculty({setSelectedRole}) {
       </Menu>
       <section>
       <div className="inner">
-
+        <div className='imginner'>
+       <img src={search_icon} alt='search_icon'/>   
       <input
         type="search"
         placeholder='Filter the sections here ...'
         onChange={filter}
-      />
+      /></div>
 
       <div className="sections">
       {
