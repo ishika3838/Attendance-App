@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Wrapper from "./style";
 import user_icon from "../assets/user_icon.png";
@@ -273,8 +273,13 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
             />
             {/* </label> */}
           </div>
+
+
           <button type="submit">Register</button>
+
+
         </form>
+        <p>Already registered <Link to="/">Click Here</Link> </p>
       </div>
     </Wrapper>
   );
