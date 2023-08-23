@@ -1,4 +1,4 @@
- import { styled } from "styled-components";
+import { styled } from "styled-components";
  export const Wrapper = styled.div`
  h2{
   margin:12px auto;
@@ -37,25 +37,4 @@
   margin-bottom: 10px;
   color: white;
   text-decoration: none;
-} 
-input[type=search]{
-  width : 100%;
-  border : none;
-  padding : 10px;
-}
-
-.sections{
-  display : flex;
-  flex-wrap : wrap;
-}
-
-.section{
-  min-width : 120px;
-  min-height : 120px;
-  text-align : center;
-  line-height : 100px;
-  flex : 1;
-  border : solid thin #ccc;
-  font-size : 1.2rem;
-}
-`;
+} `;

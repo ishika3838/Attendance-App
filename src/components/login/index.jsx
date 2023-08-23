@@ -1,31 +1,35 @@
-import axios from "axios";
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Wrapper from "./style";
+import { services } from '../services'
 import contact_icon from "../assets/contact_icon_n.png";
 import password_icon from "../assets/padlock_icon.png";
-const Login = ({ selectedRole ,handleLogin }) => {
+
+const Login = ({ role  }) => {
   const [password, setPassword] = useState("");
   const [contact, setContact] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin(contact,password)
+    // handleLogin(contact,password)
     console.log("Logging in with:", contact, password);
     e.target.value = "wait";
     e.target.disabled = "true";
-    axios
-      .post("https://server-api1-li2k.onrender.com/api/user/login", {
-        contact: contact,
-        password: password,
-      })
-      .then((response) => {
+    
+
+      // Make API call to authenticate the user
+      
+    services.user.login({
+      contact, password
+    }).then((response) => {
         console.log(response.data);
-        console.log(selectedRole);
-        console.log(response.data.selectedRole);
+        console.log(role);
+        
+        console.log(response.data.role);
         alert("Logged In Succesfully ");
-        if (response.data.selectedRole === "student") {
+        if (response.data.role === "student") {
           navigate("/studentdashboard");
         } else {
           navigate("/facultydashboard");
@@ -41,6 +45,7 @@ const Login = ({ selectedRole ,handleLogin }) => {
         setPassword("");
         setContact("");
       });
+ 
   };
 
   return (
@@ -86,7 +91,7 @@ const Login = ({ selectedRole ,handleLogin }) => {
 
 export default Login;
 // if (response.data.bsuccess) {
-//   setSelectedRole(response.data.role);
+//   setrole(response.data.role);
 
 //   if (response.data.role === "student") {
 //     navigate(`/dashboard/student-profile/${currentUser.username}`);
@@ -102,14 +107,14 @@ export default Login;
 //   e.target.disabled = 'true';
 
 //   try {
-//     await handleLogin(contact, password, selectedRole, setSelectedRole);
+//     await handleLogin(contact, password, role, setrole);
 
 //     // Since handleLogin is async and will update the state (current user and selected role),
 
 //     // // you can access the updated values directly here
-//     if (selectedRole === 'student') {
+//     if (role === 'student') {
 //       navigate(`/dashboard/student-profile`);
-//     } else if (selectedRole === 'faculty') {
+//     } else if (role === 'faculty') {
 //       navigate('/dashboard/faculty');
 //     } else {
 //       // Handle other roles or conditions here

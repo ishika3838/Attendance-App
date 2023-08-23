@@ -1,16 +1,29 @@
  import React from 'react';
  import { slide as Menu } from 'react-burger-menu';
  import { Wrapper } from './style';
-// import StudentSlider from '../studentslider';
-// import ViewAttendance from '../viewAttendance'
-// import StudentAttendance from '../studentattendance';
+ import { useState ,useEffect} from 'react';
+ import { services } from '../services';
+import { useNavigate } from 'react-router-dom';
 
-function Faculty({users,setSelectedRole}) {
-  // const [attendanceData, setAttendanceData] = useState({});
-  //   const [selectedBranch, setselectedBranch] = useState('');
-  //   const [selectedSubject , setselectedSubject] = useState('')
-  //   const [selectedSection, setselectedSection] = useState('');
-  //  const [selectedStudent, setSelectedStudent] = useState(null);
+function Faculty({setSelectedRole}) {
+  const [sections, setSections] = useState([])
+  const [filteredSections, setFilteredSections] = useState(sections)
+  const navigate = useNavigate();
+  useEffect(() => {
+    services.getSections()
+    .then(res => {
+      setSections(res.data)
+      setFilteredSections(res.data)
+    })
+  },[])
+
+  const filter = (e) => {
+    setFilteredSections([...sections].filter(section => section.name.toLowerCase().startsWith(e.target.value.toLowerCase())))
+  }
+
+  const gotoSheet = (section) => {
+    navigate(`/attendanceSheet?sectionId=${section.id}`)
+  }
   const handleLogout = () => {
        setSelectedRole('');
          window.location = '/';
@@ -26,12 +39,32 @@ function Faculty({users,setSelectedRole}) {
         <a href="#feedback">Feedback</a>
         <a href="#logout" onClick={handleLogout}>Logout</a>
       </Menu>
+      <section>
+      <div className="inner">
+
+      <input
+        type="search"
+        placeholder='Filter the sections here ...'
+        onChange={filter}
+      />
+
+      <div className="sections">
+      {
+        filteredSections.map(section => <input type="button" key={section.id} className='section' value={section.name} onClick={e => gotoSheet(section)} />)
+      }
+      </div>
+      </div>
+     </section>
+    
       </Wrapper>)
 
 }
 export default  Faculty;
 
-   
+  // import StudentSlider from '../studentslider';
+// import ViewAttendance from '../viewAttendance'
+// import StudentAttendance from '../studentattendance';
+ 
 // function Faculty({ users, setSelectedRole }) {
 //   const [attendanceData, setAttendanceData] = useState({});
 //   const [selectedBranch, setselectedBranch] = useState('');

@@ -5,9 +5,10 @@ import Login from "./components/login";
 import Register from "./components/register";
 import StudentDashboard from "./components/studentDashboard";
 import Faculty from "./components/faculty";
-import StudentProfile from "./components/studentProfile";
+//import StudentProfile from "./components/studentProfile";
 import Homepage from "./components/homepage";
 import Footer from "./components/footer";
+import AttendanceSheet from "./components/attendancesheet";
 const initialUsers = [
   {
     username: "student1",
@@ -34,16 +35,18 @@ const initialUsers = [
 ];
 const App = () => {
   const [users, setUsers] = useState(initialUsers);
-   const [currentuser, setCurrentUser] = useState(null);
-  const [selectedRole, setSelectedRole] = useState("student");
+  //const [loggedInUserId, setLoggedInUserId] = useState(null);
+  const [role, setSelectedRole] = useState("student");
 
   const handleRegister = (user) => {
     setUsers([...users, user]);
   };
-    const handleLogin =(contact,password)=>{
-   const user = users.find((u) => u.contact === contact && u.password === password);
-       setCurrentUser(user);
-    }
+  //  const handleLogin =(userId)=>{
+  //  setLoggedInUserId(userId);
+  // }
+  //  const user = users.find((u) => u.contact === contact && u.password === password);
+  //      setCurrentUser(user);
+  //   }
   return (
     <Router>
       <div className="App">
@@ -52,7 +55,7 @@ const App = () => {
             path="/home"
             element={
               <Homepage
-                selectedRole={selectedRole}
+                role={role}
                 setSelectedRole={setSelectedRole}
               />
             }
@@ -62,30 +65,32 @@ const App = () => {
             element={
               <Register
                 handleRegister={handleRegister}
-                selectedRole={selectedRole}
+                role={role}
                 setSelectedRole={setSelectedRole}
               />
             }
           />
           <Route
             path="/"
-            element={<Login selectedRole={selectedRole} handleLogin={handleLogin} />}
+            element={<Login role={role}  />}
           />
           <Route
             path="/studentdashboard"
             element={<StudentDashboard setSelectedRole={setSelectedRole} />}
           />
+          {/* <Route path="/studentDashboard" element= {loggedInUserId ? (
+                <StudentDashboard setSelectedRole={setSelectedRole} userId={loggedInUserId} />
+            ) : (
+                <Login role={role} onLogin={handleLogin} />
+            )}/> */}
+       
           <Route
             path="/facultydashboard"
             element={
-              <Faculty users={users} setSelectedRole={setSelectedRole} />
+              <Faculty setSelectedRole={setSelectedRole} />
             }
           />
-
-          <Route
-            path="/studentdashboard/student-profile"
-            element={<StudentProfile users={users} />}
-          />
+           <Route path='/attendanceSheet' element={<AttendanceSheet role={role} />} />
         </Routes>
       </div>
 
@@ -153,14 +158,14 @@ export default App;
 //         </nav>
 
 //         <Routes>
-//         <Route path="/" element={<Homepage selectedRole={selectedRole}
+//         <Route path="/" element={<Homepage role={role}
 //               setSelectedRole={setSelectedRole} />} />
 
 //           <Route
 //             path="/register"
-//             element={<Register handleRegister={handleRegister} selectedRole={selectedRole} setSelectedRole={setSelectedRole}  />}
+//             element={<Register handleRegister={handleRegister} role={role} setSelectedRole={setSelectedRole}  />}
 //           />
-//           <Route path="/login" element={<Login handleLogin={handleLogin}  selectedRole={selectedRole} setSelectedRole={setSelectedRole} />} />
+//           <Route path="/login" element={<Login handleLogin={handleLogin}  role={role} setSelectedRole={setSelectedRole} />} />
 
 //           <Route
 //             path="/dashboard/*"
@@ -210,7 +215,7 @@ export default App;
 
 //("link",{ name,contact,password,role}).then(res=>{res.data....,
 //res.data.besuccess=''true' conosle }).catch(err=>{}).finally(()=>{sbko set empty ,button work disabled})--request
-// const handleLogin = async (contact, password,selectedRole,setSelectedRole) => {
+// const handleLogin = async (contact, password,role,setSelectedRole) => {
 //   try {
 //     const response = await axios.post(
 //       "https://server-api1-li2k.onrender.com/api/user/login",
@@ -247,12 +252,12 @@ export default App;
 //           <li>
 //             <Link to="/">Home</Link>
 //           </li>
-//           {selectedRole === "student" && (
+//           {role === "student" && (
 //             <li>
 //               <Link to="/dashboard/student-profile">View Profile</Link>
 //             </li>
 //           )}
-//           {selectedRole === "faculty" && (
+//           {role === "faculty" && (
 //             <li>
 //               <Link to="/dashboard/faculty">Faculty Dashboard</Link>
 //             </li>
@@ -269,12 +274,12 @@ export default App;
 //     {/* <Route
 //          path="/dashboard"
 //          element={
-//           selectedRole === 'student' ? (
+//           role === 'student' ? (
 //               <StudentDashboard />
-//             ) : selectedRole === 'faculty' ? (
+//             ) : role === 'faculty' ? (
 //             <Faculty users={users}  />
 //     ) : (
-//       <Navigate to="/login" /> // Redirect if selectedRole is not recognized
+//       <Navigate to="/login" /> // Redirect if role is not recognized
 //     )
 //   }
 // />
@@ -282,7 +287,7 @@ export default App;
 // {/* <Route
 //   path="/dashboard/student-profile"
 //   element={
-//     selectedRole === 'student' ? (
+//     role === 'student' ? (
 //       <StudentProfile users={users}/>
 //     ) : (
 //       <p>Acess Denied</p> // Redirect to home if access is denied
@@ -300,7 +305,7 @@ export default App;
 // {/* <Route
 //   path="/dashboard/faculty/*"
 //   element={
-//       selectedRole === 'faculty' ? (
+//       role === 'faculty' ? (
 //         <Faculty users={users}  />
 //         ) : (<p>please login to access it</p>)
 //   }
