@@ -3,6 +3,7 @@ body {
   font-family:  ui-monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(238, 247, 252);
   padding:0;
   /* background:radial-gradient(rgb(68, 3, 136) , rgb(98, 121, 237)); */
   /* background: linear-gradient(#2A00B7 , #42006c); */
@@ -26,7 +27,7 @@ body {
   left: 30%;
   margin: 0 auto;
   width:410px;
-  top:80px;
+  top:10%;
   opacity: 100%;
   border:solid 0.5px black;
 

@@ -49,6 +49,6 @@ export const services = {
                     name : 'EE-IV-A'
                 }]
             })
-        },1000)
+        },3000)
     })
 }

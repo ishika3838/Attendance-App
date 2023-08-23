@@ -8,12 +8,9 @@ import Faculty from "./components/faculty";
 //import StudentProfile from "./components/studentProfile";
 import Homepage from "./components/homepage";
 import Footer from "./components/footer";
-<<<<<<< HEAD
 import AttendanceSheet from "./components/attendancesheet";
-=======
 import NotFoundPage from "./components/notFoundPage";
 import WelcomeComponent from "./components/welcomePage";
->>>>>>> 1856e279953bd1ac384d077a023962e9fc68e776
 const initialUsers = [
   {
     username: "student1",
@@ -95,19 +92,9 @@ const App = () => {
               <Faculty setSelectedRole={setSelectedRole} />
             }
           />
-<<<<<<< HEAD
            <Route path='/attendanceSheet' element={<AttendanceSheet role={role} />} />
-=======
-
-          <Route
-            path="/studentdashboard/student-profile"
-            element={<StudentProfile users={users} />}
-          />
-          <Route path="/*"
-          element ={<NotFoundPage/>}/>
-          <Route path="/welcome"
-          element ={<WelcomeComponent/>}/>
->>>>>>> 1856e279953bd1ac384d077a023962e9fc68e776
+           <Route path='/*' element={<NotFoundPage/>}/>
+           <Route path='/welcome' element={<WelcomeComponent/>}/>
         </Routes>
       </div>
 

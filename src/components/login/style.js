@@ -28,9 +28,11 @@ p a{
 
 }
 
+
 h2{
     margin-bottom:4px;
     color : #773ced;
+    margin-top:15px;
 
 }
 
@@ -40,19 +42,19 @@ h2{
     
 }
 
-h1{
-    font-size:1.5rem;
+.header h1{
+    font-size:2rem;
     background:transparent;
     font-weight: 500;
-    margin : 6px 0;
-    color:black;
+     margin : 1px 0;
+     color : #773ced;
     // border-bottom: solid 2px black;
     // border-radius:6px;
 
   }
 
 .underline{
-    width:12%;
+    width:35%;
     height:4px;
     background: #773ced;
     border-radius:6px;
@@ -87,6 +89,7 @@ img{
     border: solid grey 1px;
     border-radius:6px;
     outline:none;
+    overflow:hidden;
     // background:grey;
 }
 
@@ -95,6 +98,7 @@ input{
     border:none;
     font-size:1.2rem;
     padding:6px 6px;
+    
 }
 
 button{
@@ -109,6 +113,7 @@ button{
 
      &:hover {
         cursor: pointer;
+       
     }
 
 }
@@ -131,7 +136,7 @@ button{
 // .underline{
 //     width:8%;
 //     height:4px;
-//     background: #773ced;
+//     background:#773ced ;
 //     border-radius:6px;
 //   }
 

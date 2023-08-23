@@ -3,12 +3,13 @@
  h2{
   margin:12px auto;
   text-align:center;
+  margin-top:15px;
   
  }
 .bm-burger-button {
   position: fixed;
   width: 36px;
-  height: 30px;
+  height: 25px;
   left: 20px;
   top: 20px;
 }
@@ -18,18 +19,20 @@
 }
 
 .bm-burger-bars-hover {
-  background: #a90000;
+  background: #373a47;
 }
 
-/* Styling for the menu items */
 .bm-menu {
-  background: #373a47;
+  background:grey;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  
 }
 
 .bm-item-list {
-  color: #b8b7ad;
+  color: #773ced;
+  background: grey;
+  height:100px;
 }
 
 .bm-item {
@@ -37,7 +40,20 @@
   margin-bottom: 10px;
   color: white;
   text-decoration: none;
+  
 } 
+.inner{
+  margin:12px 3px;
+}
+.imginner{
+  display:flex;
+}
+.imginner img{
+  background:white;
+  width:16px;
+  padding:12px 10px;
+ 
+}
 input[type=search]{
   width : 100%;
   border : none;
@@ -47,6 +63,22 @@ input[type=search]{
 .sections{
   display : flex;
   flex-wrap : wrap;
+  gap:2px;
+  margin:12px auto;
+  max-width:610px;
+  
+  
+}
+input[type=button]{
+  background:#bce2e2;
+
+  border-radius:5px;
+ 
+}
+input[type=button]:hover{
+  cursor:pointer;
+  background:teal;
+
 }
 
 .section{

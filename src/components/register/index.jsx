@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Wrapper from "./style";
 import user_icon from "../assets/user_icon.png";
-import contact_icon from "../assets/contact_icon_n.png";
+import contact_icon from "../assets/phone-call.png";
 import pass from "../assets/padlock_icon.png";
-import confirm_pass from "../assets/confirm_pass.png";
+// import confirm_pass from "../assets/confirm_pass.png";
 import rollnum from "../assets/id.png";
-import year_icon from "../assets/year.png";
+//import year_icon from "../assets/year.png";
 import profile_icon from "../assets/image-gallery.png";
-import branch_icon from "../assets/branch_icon.png";
-import sec from "../assets/section.png";
+//import branch_icon from "../assets/branch_icon.png";
+//import sec from "../assets/section.png";
 //import sub_icon from "../assets/subject.png";
 
 const Register = ({ handleRegister, role, setSelectedRole }) => {
@@ -19,10 +19,10 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [rollno, setRollno] = useState("");
-  const [year, setYear] = useState("");
-  const [subject, setSubject] = useState("");
-  const [branch, setBranch] = useState("");
-  const [section, setSection] = useState("");
+ // const [year, setYear] = useState("");
+ // const [subject, setSubject] = useState("");
+ // const [branch, setBranch] = useState("");
+  //const [section, setSection] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
 
   const navigate = useNavigate();
@@ -41,10 +41,10 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
       contact,
       role: role,
       rollno: role === "student" ? rollno : "",
-      year: role === "student" ? year : "",
-      branch: role === "student" ? branch : "",
-      section: setSection === "student" ? section : "",
-      subject: role === "faculty" ? subject : "",
+      //year: role === "student" ? year : "",
+    //  branch: role === "student" ? branch : "",
+     // section: setSection === "student" ? section : "",
+      //subject: role === "faculty" ? subject : "",
       photoUrl: role === "student" ? photoUrl : "",
       attendance: [],
     };
@@ -83,9 +83,9 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
     setPassword("");
     setConfirmPassword("");
     setRollno("");
-    setYear("");
-    setSubject("");
-    setBranch("");
+    //setYear("");
+    //setSubject("");
+    //setBranch("");
     setPhotoUrl("");
     alert("Registration successful! Please proceed to login.");
     navigate("/");
@@ -94,8 +94,9 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
   return (
     <Wrapper className="maincontainer">
       <div className="container">
-        <h2>Register</h2>
-
+        {role=== "student" &&(<h2>Student Registration</h2>) }
+        
+        {role=== "faculty" &&(<h2>Faculty  Registration</h2>) }
         <form onSubmit={handleSubmit}>
           <div className="input">
             <img src={user_icon} alt="user_icon" />
@@ -127,7 +128,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
             />
           </div>
           <div className="input">
-            <img src={confirm_pass} alt="confirmpass_icon" />
+            <img src={pass} alt="password_icon" />
             <input
               type="password"
               placeholder="Confirm Password"
@@ -153,9 +154,9 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
                 />
               </div>
 
-              <div className="input">
-                {/* <label> */}
-                {/* Select Year: */}
+              {/* <div className="input">
+               
+               
 
                 <img src={year_icon} alt="user_icon" />
                 <select value={year} onChange={(e) => setYear(e.target.value)}>
@@ -166,16 +167,15 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
                   <option value="2">2 Year</option>
                   <option value="3">3 Year</option>
                   <option value="4">4 Year</option>
-                  {/* Add more years here */}
+                 
                 </select>
-                {/* </label> */}
-              </div>
+             
+              </div> */}
 
-              <div className="input">
-                {/* <label> */}
-                {/* Select Branch: */}
+              {/* <div className="input">
+                */}
 
-                <img src={branch_icon} alt="user_icon" />
+                {/* <img src={branch_icon} alt="user_icon" />
                 <select
                   value={branch}
                   onChange={(e) => setBranch(e.target.value)}
@@ -189,14 +189,14 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
                   <option value="Information Technology">
                     Information Technology
                   </option>
-                  {/* Add more branches here */}
-                </select>
-                {/* </label> */}
-              </div>
-              {/* <label> */}
+                 
+                </select> */}
+               
+              {/* </div> */}
+        
 
-              <div className="input">
-                {/* Select Section: */}
+              {/* <div className="input">
+               
 
                 <img src={sec} alt="sec_icon" />
                 <select
@@ -210,10 +210,10 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
                   <option value="B">B</option>
                   <option value="C">C</option>
                   <option value="D">D</option>
-                  {/* Add more years here */}
-                </select>
-                {/* </label> */}
-              </div>
+                
+                </select> */}
+               
+              {/* </div> */}
             </div>
           )}
           {/* {role === "faculty" && (
