@@ -3,7 +3,9 @@ import axios from "axios";
 export const services = {
     user : {
         login : payload => axios.post(`https://server-api1-li2k.onrender.com/api/user/login`, payload),
-        read : _ => axios.get(`https://server-api1-li2k.onrender.com/api/user/read`)
+        read : _ => axios.get(`https://server-api1-li2k.onrender.com/api/user/read`),
+              
+        
     },
     getSections : () => new Promise((resolve, reject) => {
         setTimeout(() => {

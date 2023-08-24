@@ -3,12 +3,13 @@ import { styled } from "styled-components";
  h2{
   margin:12px auto;
   text-align:center;
+  margin-top:15px;
   
  }
 .bm-burger-button {
   position: fixed;
   width: 36px;
-  height: 30px;
+  height: 25px;
   left: 20px;
   top: 20px;
 }
@@ -18,18 +19,20 @@ import { styled } from "styled-components";
 }
 
 .bm-burger-bars-hover {
-  background: #a90000;
+  background: #373a47;
 }
 
-/* Styling for the menu items */
 .bm-menu {
-  background: #373a47;
+  background:grey;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  
 }
 
 .bm-item-list {
-  color: #b8b7ad;
+  color: #773ced;
+  background: grey;
+  height:100px;
 }
 
 .bm-item {
@@ -37,4 +40,5 @@ import { styled } from "styled-components";
   margin-bottom: 10px;
   color: white;
   text-decoration: none;
-} `;
+  
+}  `;

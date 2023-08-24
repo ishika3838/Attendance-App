@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import { services } from '../services'
+import { services } from '../../services'
 
 const AttendanceSheet = () => {
  
     let sectionId = window.location.search.split('=')[1]
     let date = new Date()
-    
+    let Attendance = {
+      sectionId:"",
+      subjectId:"",
+      Attendance:{
+        sectiontId:{
+              subjectId:{
+                date:["true", "false"]
+              }
+        }
+      }
+            
+    }
      
-      // Call your service to submit attendanceData to the backend
+      
       
     const [students, setStudents] = useState([])
-   // const[section,setselectedSection] = useState([])
+     
     useEffect(() => {
         services.user.read()
         .then(res => {

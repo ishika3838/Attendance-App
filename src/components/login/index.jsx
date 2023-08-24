@@ -2,20 +2,15 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Wrapper from "./style";
-import { services } from '../services'
+import { services } from '../../services'
 import contact_icon from "../assets/phone-call.png";
 import password_icon from "../assets/padlock_icon.png";
 
 const Login = ({ role  }) => {
   const [password, setPassword] = useState("");
   const [contact, setContact] = useState("");
- // const [Logged,setLoggedInuser] = useState("");
   const navigate = useNavigate();
-//  const loggin=(state=>state.Logged)=>{
-  
 
-//  }
-   
   const handleSubmit = (e) => {
     e.preventDefault();
     // handleLogin(contact,password)

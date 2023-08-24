@@ -2,7 +2,7 @@
  import { slide as Menu } from 'react-burger-menu';
  import { Wrapper } from './style';
  import { useState ,useEffect} from 'react';
- import { services } from '../services';
+ import { services } from '../../services';
  import { useNavigate } from 'react-router-dom';
  import search_icon from '../assets/search.png'
 
@@ -12,18 +12,15 @@ function Faculty({setSelectedRole}) {
   
   const [filteredSections, setFilteredSections] = useState(sections)
   const navigate = useNavigate();
-  // const loggedInuser = useSelector(state => state.loggedInuser)
-  // useEffect(()=>{
-  //   if(!loggedInuser){
-  //   navigate("/");
-  //   }
-  //   })
+ 
   useEffect(() => {
     services.getSections()
     .then(res => {
       setSections(res.data)
       setFilteredSections(res.data)
     })
+    
+   
   },[])
       
   const filter = (e) => {
@@ -63,6 +60,7 @@ function Faculty({setSelectedRole}) {
         filteredSections.map(section => <input type="button" key={section.id} className='section' value={section.name} onClick={e => gotoSheet(section)} />)
       }
       </div>
+      
       </div>
      </section>
     
