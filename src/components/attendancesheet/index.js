@@ -165,7 +165,7 @@ const AttendanceSheet = () => {
           </div>
         </div>
       ))}
-      <button className="mark-button" onClick={markAttendance}>Submit Attendance Attendance</button>
+      <button className="mark-button" onClick={markAttendance}>Submit Attendance </button>
     </div>
   );
 };

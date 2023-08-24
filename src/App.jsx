@@ -11,6 +11,7 @@ import Footer from "./components/footer";
 import AttendanceSheet from "./components/attendancesheet";
 import NotFoundPage from "./components/notFoundPage";
 import WelcomeComponent from "./components/welcomePage";
+import ForgotPassword from "./components/forgotPassword";
 const initialUsers = [
   {
     username: "student1",
@@ -76,6 +77,7 @@ const App = () => {
             path="/"
             element={<Login role={role}  />}
           />
+          <Route path="/forgotPassword" element={<ForgotPassword/>} />
           <Route
             path="/studentdashboard"
             element={<StudentDashboard setSelectedRole={setSelectedRole} user={users}/>}

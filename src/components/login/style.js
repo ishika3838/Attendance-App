@@ -100,6 +100,11 @@ input{
     padding:6px 6px;
     
 }
+.forgot{
+    text-decoration:none;
+    color:red;
+    margin-left:12px auto;
+}
 
 button{
     width:40%;

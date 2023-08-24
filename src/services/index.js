@@ -6,6 +6,7 @@ export const services = {
         read : _ => axios.get(`https://quizattendace.onrender.com/api/user/read`),
         update:payload=>axios.put('https://quizattendace.onrender.com/api/user/update',payload),    
         markattendance:payload=>axios.post('https://quizattendace.onrender.com/api/user/mark',payload),
+        resetpassword:payload=>axios.post('https://quizattendace.onrender.com/api/user/resetPassword',payload),
     },
     getSections : () => new Promise((resolve, reject) => {
         setTimeout(() => {
