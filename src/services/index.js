@@ -2,10 +2,10 @@ import axios from "axios";
 
 export const services = {
     user : {
-        login : payload => axios.post(`https://server-api1-li2k.onrender.com/api/user/login`, payload),
-        read : _ => axios.get(`https://server-api1-li2k.onrender.com/api/user/read`),
-              
-        
+        login : payload => axios.post(`https://quizattendace.onrender.com/api/user/login`, payload),
+        read : _ => axios.get(`https://quizattendace.onrender.com/api/user/read`),
+        update:payload=>axios.put('https://quizattendace.onrender.com/api/user/update',payload),    
+        markattendance:payload=>axios.post('https://quizattendace.onrender.com/api/user/mark',payload),
     },
     getSections : () => new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -51,6 +51,6 @@ export const services = {
                     name : 'EE-IV-A'
                 }]
             })
-        },3000)
+        },1000)
     })
 }

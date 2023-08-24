@@ -27,9 +27,9 @@ const Login = ({ role  }) => {
         console.log(response.data);
         console.log(role);
         
-        console.log(response.data.role);
+        console.log(response.data.user.role);
         alert("Logged In Succesfully ");
-        if (response.data.role === "student") {
+        if (response.data.user.role === "student") {
           navigate("/studentdashboard");
         } else {
           navigate("/facultydashboard");

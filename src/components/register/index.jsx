@@ -6,7 +6,7 @@ import user_icon from "../assets/user_icon.png";
 import contact_icon from "../assets/phone-call.png";
 import pass from "../assets/padlock_icon.png";
 // import confirm_pass from "../assets/confirm_pass.png";
-import rollnum from "../assets/id.png";
+//import rollnum from "../assets/id.png";
 //import year_icon from "../assets/year.png";
 import profile_icon from "../assets/image-gallery.png";
 //import branch_icon from "../assets/branch_icon.png";
@@ -18,11 +18,8 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
   const [contact, setContact] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [rollno, setRollno] = useState("");
- // const [year, setYear] = useState("");
- // const [subject, setSubject] = useState("");
- // const [branch, setBranch] = useState("");
-  //const [section, setSection] = useState("");
+ 
+ 
   const [photoUrl, setPhotoUrl] = useState("");
 
   const navigate = useNavigate();
@@ -40,23 +37,20 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
       password,
       contact,
       role: role,
-      rollno: role === "student" ? rollno : "",
-      //year: role === "student" ? year : "",
-    //  branch: role === "student" ? branch : "",
-     // section: setSection === "student" ? section : "",
-      //subject: role === "faculty" ? subject : "",
-      photoUrl: role === "student" ? photoUrl : "",
+      
+      
       attendance: [],
     };
 
     e.target.value = "registering";
     e.target.disabled = "true";
     axios
-      .post("https://server-api1-li2k.onrender.com/api/user/add", {
+      .post("https://quizattendace.onrender.com/api/user/add", {
         name,
         contact,
         password,
         role,
+        
         photoUrl,
       })
       .then((response) => {
@@ -74,7 +68,8 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
         setContact("");
         setPassword("");
         setSelectedRole("");
-        setPhotoUrl(null);
+      
+      
       });
 
     handleRegister(user);
@@ -82,11 +77,11 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
     setname("");
     setPassword("");
     setConfirmPassword("");
-    setRollno("");
+    //setRollno("");
     //setYear("");
     //setSubject("");
     //setBranch("");
-    setPhotoUrl("");
+    
     alert("Registration successful! Please proceed to login.");
     navigate("/");
   };
@@ -144,7 +139,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
 
           {role === "student" && (
             <div>
-              <div className="input">
+              {/* <div className="input">
                 <img src={rollnum} alt="user_icon" />
                 <input
                   type="text"
@@ -152,7 +147,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
                   value={rollno}
                   onChange={(e) => setRollno(e.target.value)}
                 />
-              </div>
+              </div> */}
 
               {/* <div className="input">
                

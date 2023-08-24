@@ -9,7 +9,8 @@
 function Faculty({setSelectedRole}) {
   const [sections, setSections] = useState([])
   
-  
+  const [selectedSubject, setSelectedSubject] = useState('');
+  const [selectedSection, setSelectedSection] = useState('');
   const [filteredSections, setFilteredSections] = useState(sections)
   const navigate = useNavigate();
  
@@ -27,8 +28,12 @@ function Faculty({setSelectedRole}) {
     setFilteredSections([...sections].filter(section => section.name.toLowerCase().startsWith(e.target.value.toLowerCase())))
   }
 
-  const gotoSheet = (section) => {
-    navigate(`/attendanceSheet?sectionId=${section.id}`)
+  const gotoSheet = () => {
+    if(selectedSection && selectedSubject){
+    navigate(`/attendanceSheet?sectionId=${selectedSection}&subjectId=${selectedSubject}`)}
+    else {
+      alert('Please select both subject and section before proceeding.');
+    }
   }
   const handleLogout = () => {
        setSelectedRole('');
@@ -55,14 +60,30 @@ function Faculty({setSelectedRole}) {
         onChange={filter}
       /></div>
 
-      <div className="sections">
+      {/* <div className="sections">
       {
-        filteredSections.map(section => <input type="button" key={section.id} className='section' value={section.name} onClick={e => gotoSheet(section)} />)
+        filteredSections.map(section => <input type="button" key={section.id} className='section' value={section.name} onClick={e => gotoSheet(section)}
+         />)
+        
       }
       </div>
-      
-      </div>
-     </section>
+       */}
+       <div className="sections">
+            <select value={selectedSubject} onChange={e => setSelectedSubject(e.target.value)}>
+              <option value="">Select Subject</option>
+              <option value="Dbms">Dbms</option>
+              <option value="OOPS">OOPS</option>
+              {/* Add more subjects as needed */}
+            </select>
+            {filteredSections.map(section => (
+              <div key={section.id} className="section">
+                <input type="button" value={section.name} onClick={() => setSelectedSection(section.id)} />
+              </div>
+            ))}
+            <button onClick={gotoSheet}>Go to Attendance Sheet</button>
+          </div>
+        </div>
+      </section>
     
       </Wrapper>)
 

@@ -41,4 +41,14 @@ import { styled } from "styled-components";
   color: white;
   text-decoration: none;
   
-}  `;
+}
+ .profile{
+  display:flex;
+  width:412px;
+  flex-direction:column;
+  margin:60px auto;
+
+ } 
+ p{
+  font-family:
+ }`;

@@ -78,7 +78,7 @@ const App = () => {
           />
           <Route
             path="/studentdashboard"
-            element={<StudentDashboard setSelectedRole={setSelectedRole} />}
+            element={<StudentDashboard setSelectedRole={setSelectedRole} user={users}/>}
           />
           {/* <Route path="/studentDashboard" element= {loggedInUserId ? (
                 <StudentDashboard setSelectedRole={setSelectedRole} userId={loggedInUserId} />

@@ -105,7 +105,7 @@ button{
     width:40%;
     // margin-bottom:30px;
     margin : 10px 0;
-    font-size:26px;
+    font-size:1rem;
     background:#773ced;
     color: white;
     border-radius:6px;
