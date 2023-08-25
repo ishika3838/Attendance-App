@@ -13,7 +13,8 @@ function Faculty({ setSelectedRole }) {
   const [filteredSections, setFilteredSections] = useState(sections);
   const navigate = useNavigate();
   useEffect(() => {
-    if (!localStorage.getItem("USER")) window.location = "/";
+    if (!localStorage.getItem("USER"))
+     window.location = "/";
   }, []);
   useEffect(() => {
     services.getSections().then((res) => {

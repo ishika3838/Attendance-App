@@ -6,7 +6,8 @@ const AttendanceSheet = () => {
   let subjectId = new URLSearchParams(window.location.search).get("subjectId");
 
   useEffect(() => {
-    if (!localStorage.getItem("USER")) window.location = "/";
+    if (!localStorage.getItem("USER"))
+     window.location = "/";
   }, []);
 
   const [students, setStudents] = useState([]);
