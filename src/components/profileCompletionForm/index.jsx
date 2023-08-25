@@ -7,7 +7,7 @@ import contact_icon from "../assets/phone-call.png";
 import sect from "../assets/section.png"
 
 const ProfileCompletionForm = ({ onUpdate }) => {
-  const [userId, setuserId] = useState("");
+ 
   const [contact, setContact] = useState("");
   const [section, setSection] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
@@ -15,7 +15,7 @@ const ProfileCompletionForm = ({ onUpdate }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     services.user
-      .update({ contact, userId, rollno, section, photoUrl })
+      .update({ contact, rollno, section, photoUrl })
       .then((res) => {
         console.log(res.data);
         onUpdate(res.data);
