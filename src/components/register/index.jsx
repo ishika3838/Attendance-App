@@ -112,6 +112,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
             />
           </div>
 
+          
           <button type="submit">Register</button>
         </form>
         <p>

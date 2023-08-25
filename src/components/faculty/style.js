@@ -1,11 +1,13 @@
  import { styled } from "styled-components";
  export const Wrapper = styled.div`
+ 
  h2{
   margin:12px auto;
   text-align:center;
   margin-top:15px;
   
  }
+
 .bm-burger-button {
   position: fixed;
   width: 36px;
@@ -26,7 +28,6 @@
   background:grey;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-  
 }
 
 .bm-item-list {
@@ -39,23 +40,25 @@
   display: inline-block;
   margin-bottom: 10px;
   color: white;
-  text-decoration: none;
-  
+  text-decoration: none; 
 } 
+
 .inner{
   margin:12px 3px;
   display: flex;
     flex-direction: column;
 }
+
 .imginner{
   display:flex;
 }
+
 .imginner img{
   background:white;
   width:16px;
   padding:12px 10px;
- 
 }
+
 input[type=search]{
   width : 100%;
   border : none;
@@ -67,16 +70,14 @@ input[type=search]{
   flex-wrap : wrap;
   gap:2px;
   margin:12px auto;
-  max-width:610px;
-  
-  
-  
+  max-width:610px; 
 }
+
 .selectbutton{
   width:100%;
   margin:10px auto;
-  
 }
+
  select{
   background:transparent;
   width:100%;
@@ -84,18 +85,17 @@ input[type=search]{
   text-align:center;
   border-radius:5px;
  }
+
 input[type=button]{
   background:#bce2e2;
   width:100%;
   height:100%;
   border-radius:5px;
- 
- 
 }
+
 input[type=button]:hover{
   cursor:pointer;
   background:teal;
-
 }
 
 .section{
@@ -104,23 +104,17 @@ input[type=button]:hover{
   text-align : center;
   line-height : 100px;
   flex : 1;
- // border : solid thin #ccc;
   font-size : 1.2rem;
- 
-
 }
+
 .gobutton{
   margin:10px auto;
   width:100%;
-
- // height:240px;
-  
 }
 
 .gobutton button{
   
     width:100%;
-    // margin:0px 238px;
     font-size:1rem;
     background:#773ced;
     color: white;
@@ -129,27 +123,11 @@ input[type=button]:hover{
 
      &:hover {
         cursor: pointer;
-       
-    }}
+    }
+  }
 
 .sectiondiv{
   display: contents;
 }
 
-// @media screen and (min-width: 500px){
-//   select{
-//     width: 600px;
-//     margin: 15px auto;
-   
-
-
-//   }
-//   .selectbutton{
-//     margin:0px auto;
-
-//   }
-//   .gobutton{
-     
-//   }
-// }
 `;

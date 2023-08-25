@@ -5,19 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(238, 247, 252);
   padding:0;
-  /* background:radial-gradient(rgb(68, 3, 136) , rgb(98, 121, 237)); */
-  /* background: linear-gradient(#2A00B7 , #42006c); */
-  /* background: rgb(221, 219, 219); */
-  /* background: rgb(4, 4, 4); */
-  /* background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237));  */
-
-  /* background: #fff; */
- 
-
-  /* background-repeat: no-repeat; */
   font-size: 16px;
-  /* height: 100vh; */
-
 }
 
  @media (min-width:500px){
@@ -30,12 +18,10 @@ body {
   top:10%;
   opacity: 100%;
   border:solid 0.5px black;
-
 }
 
 .maincontainer{
-/* background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237));  */
-/* background:radial-gradient(rgb(203, 222, 250) , rgb(247, 247, 247));  */
+
 background-image: url(../src/components/assets/background_img.jpeg);
 background-repeat: no-repeat;
 background-size: cover;
@@ -46,28 +32,19 @@ background-size: cover;
 @media screen and (max-width: 500px) {
   .maincontainer {
      background-color: rgb(238, 247, 252); 
-    /* background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237));  */
-
-    /* background-image: url(../src/components/assets/background_phone.jpeg); */
     background-repeat: no-repeat;
     background-size: cover;
-
   }
 }
 
 .maincontainer{
-/* background:radial-gradient(rgb(195, 152, 241) , rgb(98, 121, 237));  */
-/* background:radial-gradient(rgb(203, 222, 250) , rgb(247, 247, 247));  */
-
-
-
 height:100vh;
 margin: 0 auto;
-width:100%;}
+width:100%;
+}
 
 .container{
     position:relative;
-/* gap:30px; */
 background-color: white;
 display:flex;
 flex-direction:column;
@@ -84,51 +61,13 @@ top:8%;
 .input{
   display:flex;
   gap :10px;
-  /* width:80%; */
   font-size:1.5rem;
   border: 1px solid grey;
   border-radius:6px;
   outline:none;
   overflow:hidden;
   margin : 10px 10px;
-  /* background:grey; */
-
 }
-
-/* input ,select{
-  width:100%;
-  border:none;
-  outline:none;
-  font-size:1rem;
-  
-  padding:6px 6px;
-  background: transparent;
-} */
-/* 
-button{
-  width:120px; */
-   /* margin-bottom:30px; */
-  /* margin : 10px 0;
-  font-size:0.8rem;
-  background:#773ced;
-  color: white;
-  border-radius:6px;
-  padding:5px 5px;
-
-   &:hover {
-      cursor: pointer;
-     
-  }
-
-} */
-
-/* .button{
-  display: flex;
-  margin : 0px auto;
-
-} */
-
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

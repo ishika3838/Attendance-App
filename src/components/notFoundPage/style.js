@@ -1,6 +1,9 @@
 import { styled } from "styled-components";
 
 const Wrapper = styled.div`
+
+margin:0px auto;
+width:100%;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -22,9 +25,6 @@ p{
 a{
     text-decoration: none;
 }
-
-
-
 
 `
 export default Wrapper
