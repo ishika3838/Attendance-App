@@ -8,7 +8,7 @@ import pass from "../assets/padlock_icon.png";
 // import confirm_pass from "../assets/confirm_pass.png";
 //import rollnum from "../assets/id.png";
 //import year_icon from "../assets/year.png";
-import profile_icon from "../assets/image-gallery.png";
+//import profile_icon from "../assets/image-gallery.png";
 //import branch_icon from "../assets/branch_icon.png";
 //import sec from "../assets/section.png";
 //import sub_icon from "../assets/subject.png";
@@ -20,7 +20,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
  
  
-  const [photoUrl, setPhotoUrl] = useState("");
+
 
   const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
         password,
         role,
         
-        photoUrl,
+        
       })
       .then((response) => {
         console.log(response.data);
@@ -77,10 +77,6 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
     setname("");
     setPassword("");
     setConfirmPassword("");
-    //setRollno("");
-    //setYear("");
-    //setSubject("");
-    //setBranch("");
     
     alert("Registration successful! Please proceed to login.");
     navigate("/");
@@ -97,6 +93,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
             <img src={user_icon} alt="user_icon" />
             <input
               type="text"
+              required
               placeholder="Your Name"
               value={name}
               onChange={(e) => setname(e.target.value)}
@@ -107,6 +104,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
             <img src={contact_icon} alt="contact_icon" />
             <input
               type="text"
+              required
               placeholder="Contact"
               value={contact}
               onChange={(e) => setContact(e.target.value)}
@@ -117,6 +115,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
             <img src={pass} alt="password_icon" />
             <input
               type="password"
+              required
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -126,150 +125,14 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
             <img src={pass} alt="password_icon" />
             <input
               type="password"
+              required
               placeholder="Confirm Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
 
-          {/* <select value={role} onChange={(e) => setRole(e.target.value)}>
-          <option value="student">Student</option>
-          <option value="faculty">Faculty</option>
-        </select> */}
-
-          {role === "student" && (
-            <div>
-              {/* <div className="input">
-                <img src={rollnum} alt="user_icon" />
-                <input
-                  type="text"
-                  placeholder="Roll Number"
-                  value={rollno}
-                  onChange={(e) => setRollno(e.target.value)}
-                />
-              </div> */}
-
-              {/* <div className="input">
-               
-               
-
-                <img src={year_icon} alt="user_icon" />
-                <select value={year} onChange={(e) => setYear(e.target.value)}>
-                  <option value="" selected disabled>
-                    --Select Year--
-                  </option>
-                  <option value="1">1 Year</option>
-                  <option value="2">2 Year</option>
-                  <option value="3">3 Year</option>
-                  <option value="4">4 Year</option>
-                 
-                </select>
-             
-              </div> */}
-
-              {/* <div className="input">
-                */}
-
-                {/* <img src={branch_icon} alt="user_icon" />
-                <select
-                  value={branch}
-                  onChange={(e) => setBranch(e.target.value)}
-                >
-                  <option value="" selected disabled>
-                    --Select Branch--
-                  </option>
-                  <option value="Computer Science Engineering">
-                    Computer Science Engineering
-                  </option>
-                  <option value="Information Technology">
-                    Information Technology
-                  </option>
-                 
-                </select> */}
-               
-              {/* </div> */}
-        
-
-              {/* <div className="input">
-               
-
-                <img src={sec} alt="sec_icon" />
-                <select
-                  value={section}
-                  onChange={(e) => setSection(e.target.value)}
-                >
-                  <option value="" selected disabled>
-                    --Select Section--
-                  </option>
-                  <option value="A">A</option>
-                  <option value="B">B</option>
-                  <option value="C">C</option>
-                  <option value="D">D</option>
-                
-                </select> */}
-               
-              {/* </div> */}
-            </div>
-          )}
-          {/* {role === "faculty" && (
-            <div>
-              <div className="input">
-                <img src={sub_icon} alt="user_icon" />
-                <select
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
-                >
-                  <option value="" selected disabled>
-                    --Select Subject--
-                  </option>
-                  <option value="subject1">Dbms</option>
-                  <option value="subject2">Oops</option>
-                </select>
-              </div>
-
-              <div className="input">
-                <img src={branch_icon} alt="user_icon" />
-                <select
-                  value={branch}
-                  onChange={(e) => setBranch(e.target.value)}
-                >
-                  <option value="" selected disabled>
-                    --Select Branch--
-                  </option>
-                  <option value="branch1">Computer Science Engineering</option>
-                  <option value="branch2">Information Technology</option>
-                </select>
-              </div>
-
-              <div className="input">
-                <img src={year_icon} alt="user_icon" />
-                <select value={year} onChange={(e) => setYear(e.target.value)}>
-                  <option value="" selected disabled>
-                    --Select Year--
-                  </option>
-                  <option value="year1">1 Year</option>
-                  <option value="year2">2 Year</option>
-                  <option value="year2">3 Year</option>
-                  <option value="year2">4 Year</option>
-                </select>
-              </div>
-            </div>
-          )} */}
-
-          <p>Choose Profile Photo </p>
-          <div className="input">
-            <img src={profile_icon} alt="user_icon" />
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) =>
-                setPhotoUrl(URL.createObjectURL(e.target.files[0]))
-              }
-            />
-            {/* </label> */}
-          </div>
-
-
+          
           <button type="submit">Register</button>
 
 

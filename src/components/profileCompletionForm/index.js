@@ -25,7 +25,7 @@ const ProfileCompletionForm = ({  onUpdate }) => {
       <h3>Complete Your Profile</h3>
       <label>
         UserID:
-        <input type="text" name='contact' value={userId}
+        <input type="text"  required name='contact' value={userId}
           onChange={(e)=>setuserId(e.target.value)} />
       </label>
       <label>
@@ -38,6 +38,7 @@ const ProfileCompletionForm = ({  onUpdate }) => {
                 {/* <img src={rollnum} alt="user_icon" /> */}
                 <input
                   type="text"
+                  required
                   placeholder="Roll Number"
                   value={rollno}
                   onChange={(e) => setRollno(e.target.value)}
@@ -103,6 +104,7 @@ const ProfileCompletionForm = ({  onUpdate }) => {
             {/* <img src={profile_icon} alt="user_icon" /> */}
             <input
               type="file"
+              required
               accept="image/*"
              
               onChange={(e) =>
@@ -121,49 +123,3 @@ const ProfileCompletionForm = ({  onUpdate }) => {
 
 export default ProfileCompletionForm;
 
-// import React, { useState } from 'react';
-
-// const ProfileCompletionForm = ({ studentData, onSubmit }) => {
-//   const [contact, setContact] = useState(studentData.contact || '');
-//   const [year, setYear] = useState(studentData.year || '');
-//   const [section, setSection] = useState(studentData.section || '');
-
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const updatedData = {
-//       ...studentData,
-//       contact,
-//       year,
-//       section,
-      
-//     };
-//     onSubmit(updatedData);
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <div>
-//         <label>Contact:</label>
-//         <input
-//           type="text"
-//           value={contact}
-//           onChange={(e) => setContact(e.target.value)}
-//         />
-//       </div>
-//       <div>
-//         <label>Year:</label>
-//         <input
-//           type="text"
-//           value={year}
-//           onChange={(e) => setYear(e.target.value)}
-//         />
-//       </div>
-      
-        
-//       <button type="submit">Submit</button>
-//     </form>
-//   );
-// };
-
-// export default ProfileCompletionForm;

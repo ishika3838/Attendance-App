@@ -67,6 +67,7 @@ const Login = ({ role  }) => {
               <input
                 type="text"
                 placeholder="contact"
+                required
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
               />
@@ -76,6 +77,7 @@ const Login = ({ role  }) => {
               <img src={password_icon} alt="contact_icon" />
               <input
                 type="password"
+                required
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -95,40 +97,3 @@ const Login = ({ role  }) => {
 };
 
 export default Login;
-// if (response.data.bsuccess) {
-//   setrole(response.data.role);
-
-//   if (response.data.role === "student") {
-//     navigate(`/dashboard/student-profile/${currentUser.username}`);
-//   } else {
-//     navigate("/dashboard/faculty");
-//   }
-// } else {
-//   alert("Login failed. Please check your credentials.");
-// }
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-//   e.target.value = 'singingin';
-//   e.target.disabled = 'true';
-
-//   try {
-//     await handleLogin(contact, password, role, setrole);
-
-//     // Since handleLogin is async and will update the state (current user and selected role),
-
-//     // // you can access the updated values directly here
-//     if (role === 'student') {
-//       navigate(`/dashboard/student-profile`);
-//     } else if (role === 'faculty') {
-//       navigate('/dashboard/faculty');
-//     } else {
-//       // Handle other roles or conditions here
-//      }
-//   } catch (error) {
-//     console.error('Error during login:', error);
-//     alert('Login failed. Please try again.');
-//   } finally {
-//     e.target.value = 'signup';
-//     e.target.disabled = 'false';
-//   }
-// };
