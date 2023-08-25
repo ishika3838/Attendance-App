@@ -1,41 +1,40 @@
-
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Wrapper from "./style";
-import { services } from '../../services'
+import { services } from "../../services";
 import contact_icon from "../assets/phone-call.png";
 import password_icon from "../assets/padlock_icon.png";
 
-const Login = ({ role  }) => {
+const Login = ({ role }) => {
   const [password, setPassword] = useState("");
   const [contact, setContact] = useState("");
   const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handleLogin(contact,password)
+
     console.log("Logging in with:", contact, password);
     e.target.value = "wait";
     e.target.disabled = "true";
-    
 
-      // Make API call to authenticate the user
-      
-    services.user.login({
-      contact, password
-    }).then((response) => {
+    services.user
+      .login({
+        contact,
+        password,
+      })
+      .then((response) => {
         console.log(response.data);
         console.log(role);
-        
+
         console.log(response.data.user.role);
         alert("Logged In Succesfully ");
         if (response.data.user.role === "student") {
-          window.localStorage.setItem('USER', JSON.stringify(response.data.user))
+          window.localStorage.setItem( "USER", JSON.stringify(response.data.user));
+         
           navigate("/studentdashboard");
         } else {
           navigate("/facultydashboard");
         }
-        window.localStorage.setItem('USER', JSON.stringify(response.data.user))
+        window.localStorage.setItem("USER", JSON.stringify(response.data.user));
       })
       .catch((error) => {
         console.error("Error in login user:", error);
@@ -47,19 +46,17 @@ const Login = ({ role  }) => {
         setPassword("");
         setContact("");
       });
- 
   };
 
   return (
     <Wrapper className="maincontainer">
-
       <div className="container">
-      <div className="header">
-
-     <h1>AttendEase</h1></div>
-     <div className="underline"></div>
+        <div className="header">
+          <h1>AttendEase</h1>
+        </div>
+        <div className="underline"></div>
         <h2>Login</h2>
-        
+
         <form onSubmit={handleSubmit}>
           <div className="inputs">
             <div className="input">
@@ -84,14 +81,19 @@ const Login = ({ role  }) => {
               />
             </div>
             <button type="submit">Login</button>
-            
-            <Link className="forgot" to="/forgotPassword"> Forgot Password</Link>
-            
+
+            <Link className="forgot" to="/forgotPassword">
+              {" "}
+              Forgot Password
+            </Link>
           </div>
         </form>
-       
+
         <p>
-          Not registered yet? <Link className="register" to="/home">Register Here</Link>
+          Not registered yet?{" "}
+          <Link className="register" to="/home">
+            Register Here
+          </Link>
         </p>
       </div>
     </Wrapper>

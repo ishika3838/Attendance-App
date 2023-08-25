@@ -54,8 +54,8 @@ import { styled } from "styled-components";
  }
 
  .innerContainer{
-  position:relative;
-  gap:15px; 
+  :relative;
+gap:15px; 
 background-color: white;
 display:flex;
 flex-direction:column;

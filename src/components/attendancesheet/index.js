@@ -1,54 +1,51 @@
-
-import React, { useEffect, useState } from 'react';
-import { services } from '../../services';
-import { Wrapper } from './style';
+import React, { useEffect, useState } from "react";
+import { services } from "../../services";
+import { Wrapper } from "./style";
 const AttendanceSheet = () => {
-  let sectionId = new URLSearchParams(window.location.search).get('sectionId');
-  let subjectId = new URLSearchParams(window.location.search).get('subjectId');
-  let date = new Date();
-  let Attendance = {
-        sectionId: "",   // Will be replaced with the selected section ID
-        subjectId: "",   // Will be replaced with the selected subject ID
-        attendance: {
-          sectionId:{
-            subjectId:{
-              date:["true" ,"false" ,"true" ,"false"]
-            }
-          }
-        }
-      }
-  const[students, setStudents] = useState([])
-  const[attendance, setAttendance] = useState([])
- 
+  let sectionId = new URLSearchParams(window.location.search).get("sectionId");
+  let subjectId = new URLSearchParams(window.location.search).get("subjectId");
+
   useEffect(() => {
-    services.user.read()
-      .then(res => {
-        const studentList = res.data.filter(user => user.role && user.role.toLowerCase() === 'student' && user.section === sectionId);
+    if (!localStorage.getItem("USER")) window.location = "/";
+  }, []);
+
+  const [students, setStudents] = useState([]);
+  const [attendance, setAttendance] = useState([]);
+
+  useEffect(() => {
+    services.user
+      .read()
+      .then((res) => {
+        const studentList = res.data.filter(
+          (user) =>
+            user.role &&
+            user.role.toLowerCase() === "student" &&
+            user.section === sectionId
+        );
         setStudents(studentList);
         setAttendance(new Array(studentList.length).fill(false));
-         
       })
-      .catch(error => {
-        console.log('Error fetching student data:', error);
+      .catch((error) => {
+        console.log("Error fetching student data:", error);
       });
   }, [sectionId]);
 
   const markAttendance = () => {
-    services.user.markattendance({
-      sectionId, subjectId , attendance,
-    })
-      .then(res => {
-        console.log('Attendance marked successfully:', res.data);
-        
+    services.user
+      .markattendance({
+        sectionId,
+        subjectId,
+        attendance,
       })
-      .catch(error => {
-        console.log('Error marking attendance:', error);
+      .then((res) => {
+        console.log("Attendance marked successfully:", res.data);
+        alert("attendance market successfully");
+      })
+      .catch((error) => {
+        console.log("Error marking attendance:", error);
       });
   };
- 
 
-  
-  
   const toggleAttendance = (studentIndex, status) => {
     const updatedAttendance = [...attendance];
     updatedAttendance[studentIndex] = status;
@@ -56,44 +53,38 @@ const AttendanceSheet = () => {
   };
 
   return (
-  
     <Wrapper>
       <h1>Mark Attendance</h1>
       <div className="underline"></div>
-     <div className='inner'>
-
-      {students.map((student, index) => (
-        <div className="student-row" key={student.id}>
-          <div className="student-info">
-            <img src={student.photoUrl} alt={student.name} />
-            <p>{student.name}</p>
+      <div className="inner">
+        {students.map((student, index) => (
+          <div className="student-row" key={student.id}>
+            <div className="student-info">
+              <img src={student.photoUrl} alt={student.name} />
+              <p>{student.name}</p>
+            </div>
+            <div className="attendance-buttons">
+              <button
+                className={attendance[index] === true ? "present" : ""}
+                onClick={() => toggleAttendance(index, true)}
+              >
+                Present
+              </button>
+              <button
+                className={attendance[index] === false ? "absent" : ""}
+                onClick={() => toggleAttendance(index, false)}
+              >
+                Absent
+              </button>
+            </div>
           </div>
-          <div className="attendance-buttons">
-            <button
-              className={attendance[index] === true ? "present" : ""}
-              onClick={() => toggleAttendance(index, true)}
-            >
-              Present
-            </button>
-            <button
-              className={attendance[index] === false ? "absent" : ""}
-              onClick={() => toggleAttendance(index, false)}
-            >
-              Absent
-            </button>
-          </div>
-        </div>
-      ))}
+        ))}
       </div>
-      <button className="mark-button" onClick={markAttendance}>Submit Attendance </button>
-      {/* <button className="view-button" onClick={view}>View attendance-list</button> */}
-    
-
-    
+      <button className="mark-button" onClick={markAttendance}>
+        Submit Attendance{" "}
+      </button>
     </Wrapper>
   );
 };
 
-
 export default AttendanceSheet;
-

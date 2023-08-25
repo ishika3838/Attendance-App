@@ -24,27 +24,27 @@ const Wrapper = styled.div`
         padding:5px 5px;
     }
 
-        // .input{
-        //     display:flex;
-        //     gap :10px;
-        //     // width:80%;
-        //     font-size:1rem;
-        //     border: 1px solid grey;
-        //     border-radius:5px;
-        //     outline:none;
-        //     // overflow:hidden;
-        //     // margin : 10px 10px;
-        //     // background:grey;
+        .input{
+            display:flex;
+            gap :10px;
+            // width:80%;
+            font-size:1rem;
+            border: 1px solid grey;
+            border-radius:5px;
+            outline:none;
+            // overflow:hidden;
+            // margin : 10px 10px;
+            // background:grey;
         
-        // }
+        }
     
 
-    // input{
-    //     width:100%;
-    //     overflow:hidden;
+    input{
+        width:100%;
+        overflow:hidden;
 
 
-    // }
+    }
 
 `
 export default Wrapper

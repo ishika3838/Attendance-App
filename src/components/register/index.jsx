@@ -5,28 +5,16 @@ import Wrapper from "./style";
 import user_icon from "../assets/user_icon.png";
 import contact_icon from "../assets/phone-call.png";
 import pass from "../assets/padlock_icon.png";
-// import confirm_pass from "../assets/confirm_pass.png";
-//import rollnum from "../assets/id.png";
-//import year_icon from "../assets/year.png";
-//import profile_icon from "../assets/image-gallery.png";
-//import branch_icon from "../assets/branch_icon.png";
-//import sec from "../assets/section.png";
-//import sub_icon from "../assets/subject.png";
 
 const Register = ({ handleRegister, role, setSelectedRole }) => {
   const [name, setname] = useState("");
   const [contact, setContact] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
- 
- 
-
-
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (password !== confirmPassword) {
       alert("Passwords do not match. Please try again.");
       return;
@@ -37,8 +25,6 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
       password,
       contact,
       role: role,
-      
-      
       attendance: [],
     };
 
@@ -50,8 +36,6 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
         contact,
         password,
         role,
-        
-        
       })
       .then((response) => {
         console.log(response.data);
@@ -68,16 +52,12 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
         setContact("");
         setPassword("");
         setSelectedRole("");
-      
-      
       });
 
     handleRegister(user);
-
     setname("");
     setPassword("");
     setConfirmPassword("");
-    
     alert("Registration successful! Please proceed to login.");
     navigate("/");
   };
@@ -85,9 +65,9 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
   return (
     <Wrapper className="maincontainer">
       <div className="container">
-        {role=== "student" &&(<h2>Student Registration</h2>) }
-        
-        {role=== "faculty" &&(<h2>Faculty  Registration</h2>) }
+        {role === "student" && <h2>Student Registration</h2>}
+
+        {role === "faculty" && <h2>Faculty Registration</h2>}
         <form onSubmit={handleSubmit}>
           <div className="input">
             <img src={user_icon} alt="user_icon" />
@@ -132,12 +112,11 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
             />
           </div>
 
-        
           <button type="submit">Register</button>
-         
-
         </form>
-        <p>Already registered <Link to="/">Click Here</Link> </p>
+        <p>
+          Already registered <Link to="/">Click Here</Link>{" "}
+        </p>
       </div>
     </Wrapper>
   );
