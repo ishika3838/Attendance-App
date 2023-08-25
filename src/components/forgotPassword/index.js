@@ -16,7 +16,7 @@ const ForgotPassword = () => {
     // Call the API to initiate the password reset
     services.user.read(payload)
       .then(response => {
-        setMessage('Password reset link has been sent to your ContactNumber.');
+        setMessage('You can reset your password now.');
       })
       .catch(error => {
         setMessage('Error resetting password. Please check your contact and try again.');

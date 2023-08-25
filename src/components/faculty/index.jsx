@@ -72,7 +72,9 @@ function Faculty({setSelectedRole}) {
             <select value={selectedSubject} onChange={e => setSelectedSubject(e.target.value)}>
               <option value="">Select Subject</option>
               <option value="Dbms">Dbms</option>
-              <option value="OOPS">OOPS</option>
+              <option value="OOPS">Oops</option>
+              <option value="DSA">DSA</option>
+              <option value="Software Engineering">Software Engineering</option>
               {/* Add more subjects as needed */}
             </select>
             {filteredSections.map(section => (

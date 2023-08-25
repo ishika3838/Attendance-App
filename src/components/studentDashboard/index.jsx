@@ -71,14 +71,7 @@ import StudentProfile from '../studentProfile';
   const [profileComplete, setProfileComplete] = useState( localStorage.getItem('profileCompleted') === 'true');
   const [studentData, setStudentData] = useState({});
   const [showProfileForm, setShowProfileForm] = useState(false);
- // const [profileCompleted, setProfileCompleted] = useState(false);
-
  
-
-  // const verifyProfileCompletion = (student) => {
-    
-  //   return student.contact && student.section && student.year;
-  // };
 
   const handleProfileFormSubmit = (updatedData) => {
     
@@ -101,7 +94,7 @@ import StudentProfile from '../studentProfile';
   const handleLogout =()=>{
     setSelectedRole('');
     localStorage.removeItem('profileCompleted');
-    
+    localStorage.clear();
     window.location='/';
   }
   return (

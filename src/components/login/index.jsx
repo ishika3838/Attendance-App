@@ -30,10 +30,12 @@ const Login = ({ role  }) => {
         console.log(response.data.user.role);
         alert("Logged In Succesfully ");
         if (response.data.user.role === "student") {
+          window.localStorage.setItem('USER', JSON.stringify(response.data.user))
           navigate("/studentdashboard");
         } else {
           navigate("/facultydashboard");
         }
+        window.localStorage.setItem('USER', JSON.stringify(response.data.user))
       })
       .catch((error) => {
         console.error("Error in login user:", error);

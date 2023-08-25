@@ -4,14 +4,17 @@ export const services = {
     user : {
         login : payload => axios.post(`https://quizattendace.onrender.com/api/user/login`, payload),
         read : _ => axios.get(`https://quizattendace.onrender.com/api/user/read`),
+        getProfile : contact => axios.get(`https://quizattendace.onrender.com/api/user/profile/${contact}`,contact),
         update:payload=>axios.put('https://quizattendace.onrender.com/api/user/update',payload),    
-        markattendance:payload=>axios.post('https://quizattendace.onrender.com/api/user/mark',payload),
+        markattendance:payload=>axios.post(`https://quizattendace.onrender.com/api/attendance/mark`,payload),
+        getAttendance: _ =>axios.get(`https://quizattendace.onrender.com/api/attendance/read`),
         resetpassword:payload=>axios.post('https://quizattendace.onrender.com/api/user/resetPassword',payload),
     },
     getSections : () => new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve({
                 data : [{
+
                     id : 'CS-I-A',
                     name : 'CS-I-A'
                 },{

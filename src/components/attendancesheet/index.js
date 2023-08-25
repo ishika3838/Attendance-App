@@ -87,6 +87,9 @@
 import React, { useEffect, useState } from 'react';
 import { services } from '../../services';
 
+import { useNavigate } from 'react-router-dom';
+
+
 const AttendanceSheet = () => {
   let sectionId = new URLSearchParams(window.location.search).get('sectionId');
   let subjectId = new URLSearchParams(window.location.search).get('subjectId');
@@ -104,36 +107,38 @@ const AttendanceSheet = () => {
       }
   const[students, setStudents] = useState([])
   const[attendance, setAttendance] = useState([])
-
+  const navigate = useNavigate();
   useEffect(() => {
     services.user.read()
       .then(res => {
-        const studentList = res.data.filter(user => user.role && user.role.toLowerCase() === 'student');
+        const studentList = res.data.filter(user => user.role && user.role.toLowerCase() === 'student' && user.section === sectionId);
         setStudents(studentList);
-        setAttendance(new Array(studentList.length).fill(false)); // Initialize attendance array
+        setAttendance(new Array(studentList.length).fill(false));
+         
       })
       .catch(error => {
         console.log('Error fetching student data:', error);
       });
-  }, []);
+  }, [sectionId]);
 
   const markAttendance = () => {
-    const payload = {
-      sectionId: sectionId,
-      subjectId: subjectId,
-      attendance: attendance.map(status => status ? "true" : "false")
-    };
-
-    services.user.markattendance(payload)
+    services.user.markattendance({
+      sectionId, subjectId , attendance,
+    })
       .then(res => {
         console.log('Attendance marked successfully:', res.data);
-        // You can perform any additional actions after marking attendance
+        
       })
       .catch(error => {
-        console.error('Error marking attendance:', error);
+        console.log('Error marking attendance:', error);
       });
   };
+ 
 
+  const view = () => {
+    navigate(`/viewAttendance students=${students}`);
+  }
+  
   const toggleAttendance = (studentIndex, status) => {
     const updatedAttendance = [...attendance];
     updatedAttendance[studentIndex] = status;
@@ -166,6 +171,10 @@ const AttendanceSheet = () => {
         </div>
       ))}
       <button className="mark-button" onClick={markAttendance}>Submit Attendance </button>
+      <button className="view-button" onClick={view}>View attendance-list</button>
+    
+
+    
     </div>
   );
 };

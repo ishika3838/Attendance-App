@@ -1,11 +1,86 @@
-// // 
+// // // 
+import React, { useEffect, useState } from 'react';
+import { services } from '../../services';
+
+const ViewAttendance = ({ students }) => {
+  const [attendanceData, setAttendanceData] = useState([]);
+
+  useEffect(() => {
+    
+    services.user.getAttendance()
+      .then(res => {
+        setAttendanceData(res.data); 
+      })
+      .catch(error => {
+        console.error('Error fetching attendance data:', error);
+      });
+  }, []);
+
+  return (
+    <div className="view-attendance">
+      <h2>View Attendance List</h2>
+      {students.map((students, index) => (
+        <div className="attendance-row" key={students.id}>
+          <p>{students.name}</p>
+          <p>{attendanceData[index] ? 'Present' : 'Absent'}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ViewAttendance;
+
+
+// import React, { useState, useEffect } from 'react';
+// import { services } from '../../services';
+
+// const ViewAttendance = ({students,attendance}) => {
+  
+//   const [attendanceData, setAttendanceData] = useState([]);
+//   const studentsWithAttendance = students.filter(student =>
+//         attendanceData.hasOwnProperty(student.username)
+//       );
+//       console.log('Attendance Data State:', attendance);
+//   useEffect(() => {
+//     // Fetch attendance data based on selectedDate and selectedSubject
+    
+//       services.user.getAttendance()
+//         .then(res => {
+//           setAttendanceData(res.data);
+//           console.log(res.data);
+//         })
+//         .catch(error => {
+//           console.error('Error fetching attendance data:', error);
+//         });
+    
+//   }, []);
+
+//   return (
+//     <div className="view-attendance">
+//       <h2>View Attendance</h2>
+//       {studentsWithAttendance.length === 0 ? (
+//         <p>No attendance data available.</p>
+//       ) : (
+//         <div>
+//           <p>Attendance data available for:</p>
+//           <ul>
+//             {studentsWithAttendance.map(student => (
+//               <li key={student.username}>{student.username}</li>
+//             ))}
+//           </ul>
+//         </div>
+//       )}
+//       </div>
+//   );
+// };
+
+// export default ViewAttendance;
+
 // import React from 'react';
 // function ViewAttendance({ studentUsers, attendanceData }) {
 //   // Filter student users who have attendance data
-//   const studentsWithAttendance = studentUsers.filter(student =>
-//     attendanceData.hasOwnProperty(student.username)
-//   );
-//   console.log('Attendance Data State:', attendanceData);
+//   
 
 //    // Log attendance data to console for debugging
 

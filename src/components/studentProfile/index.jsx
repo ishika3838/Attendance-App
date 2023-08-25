@@ -1,19 +1,19 @@
 import React, { useEffect,useState } from 'react';
 import { services } from '../../services';
 const StudentProfile=({user})=> {
-//  
- // const [ contact,setContact] = useState("");
+ 
+ 
  const [studentData, setStudentData] = useState(null);
   
  useEffect(() => {
-  // Check if student profile data is in local storage
+ 
  
   if (user) {
-    // Fetch the user's data using the unique identifier (e.g., contact, username)
-    services.user.read({ userId: user.userId })
+    
+    services.user.getProfile(JSON.parse(window.localStorage.getItem("USER")).contact)
       .then(res => {
-        const student = res.data.find(user => user.role === 'student' && user.userId === user.id);
-        setStudentData(student);
+        
+        setStudentData(res.data.user);
 
         
       })

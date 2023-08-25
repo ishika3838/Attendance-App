@@ -12,6 +12,8 @@ import AttendanceSheet from "./components/attendancesheet";
 import NotFoundPage from "./components/notFoundPage";
 import WelcomeComponent from "./components/welcomePage";
 import ForgotPassword from "./components/forgotPassword";
+import ViewAttendance from "./components/viewAttendance";
+//import ViewAttendance from "./components/viewAttendance";
 const initialUsers = [
   {
     username: "student1",
@@ -95,6 +97,7 @@ const App = () => {
             }
           />
            <Route path='/attendanceSheet' element={<AttendanceSheet role={role} />} />
+           <Route path='/viewAttendance' element={<ViewAttendance />}/>
            <Route path='/*' element={<NotFoundPage/>}/>
            <Route path='/welcome' element={<WelcomeComponent/>}/>
         </Routes>
