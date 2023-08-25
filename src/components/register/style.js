@@ -8,6 +8,7 @@ const Wrapper = styled.div`
 // width:100%;
   h2{
     color:#773ced;
+    margin-bottom:15px;
   }
 // .container{
 //     position:relative;
@@ -76,18 +77,18 @@ p {
     text-decoration: none;
 }
 
-// button{
-//     width:40%;
-//     margin:10px 90px;
-//     font-size:1rem;
-//     background:#773ced;
-//     color: white;
-//     border-radius:6px;
-//     padding:5px 5px;
+button{
+    width:40%;
+    margin:10px 90px;
+    font-size:1rem;
+    background:#773ced;
+    color: white;
+    border-radius:6px;
+    padding:5px 5px;
     
-//      &:hover {
-//         cursor: pointer;
-//     }
+     &:hover {
+        cursor: pointer;
+    }
 
 
 // form{

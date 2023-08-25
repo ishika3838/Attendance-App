@@ -88,13 +88,13 @@ img{
 //     // background:grey;
 // }
 
-// input{
-//     width:100%;
-//     border:none;
-//     font-size:1.2rem;
-//     padding:6px 6px;
+input{
+    width:100%;
+    border:none;
+    font-size:1.2rem;
+    padding:6px 6px;
     
-// }
+}
 // .forgot{
 //     text-decoration:none;
 //     color:red;
@@ -108,26 +108,30 @@ form p{
 p{
     margin:0px auto 4px 30px;  
 }
-
-p a{
+.forgot{
+    
+    margin:15px auto 0px 30px;  
+    color:grey;
+}
+ a{
     text-decoration: none;
 
 }
 
-// button{
-//     width:40%;
-//     // margin-bottom:30px;
-//     margin : 10px 0;
-//     font-size:1rem;
-//     background:#773ced;
-//     color: white;
-//     border-radius:6px;
-//     padding:5px 5px;
+button{
+    width:40%;
+    // margin-bottom:30px;
+    margin : 10px 0;
+    font-size:1rem;
+    background:#773ced;
+    color: white;
+    border-radius:6px;
+    padding:5px 5px;
 
-//      &:hover {
-//         cursor: pointer;
+     &:hover {
+        cursor: pointer;
        
-//     }
+    }
 
 }
 

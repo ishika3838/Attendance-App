@@ -47,12 +47,10 @@ export const services = {
                 },{
                     id : 'EE-II-A',
                     name : 'EE-II-A'
-                },{
+                }
+                ,{
                     id : 'EE-III-A',
                     name : 'EE-III-A'
-                },{
-                    id : 'EE-IV-A',
-                    name : 'EE-IV-A'
                 }]
             })
         },1000)

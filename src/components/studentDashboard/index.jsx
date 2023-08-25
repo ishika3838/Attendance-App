@@ -122,7 +122,7 @@ import StudentProfile from '../studentProfile';
           )}
         </>
       ) : (
-        <StudentProfile user={user}/>
+        <StudentProfile user={user} studentData={studentData}/>
       )}
       
     </div>

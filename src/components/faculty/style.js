@@ -44,6 +44,8 @@
 } 
 .inner{
   margin:12px 3px;
+  display: flex;
+    flex-direction: column;
 }
 .imginner{
   display:flex;
@@ -68,11 +70,26 @@ input[type=search]{
   max-width:610px;
   
   
+  
 }
+.selectbutton{
+  width:100%;
+  margin:10px auto;
+  
+}
+ select{
+  background:transparent;
+  width:100%;
+  height:30px;
+  text-align:center;
+  border-radius:5px;
+ }
 input[type=button]{
   background:#bce2e2;
-
+  width:100%;
+  height:100%;
   border-radius:5px;
+ 
  
 }
 input[type=button]:hover{
@@ -87,7 +104,52 @@ input[type=button]:hover{
   text-align : center;
   line-height : 100px;
   flex : 1;
-  border : solid thin #ccc;
+ // border : solid thin #ccc;
   font-size : 1.2rem;
+ 
+
 }
+.gobutton{
+  margin:10px auto;
+  width:100%;
+
+ // height:240px;
+  
+}
+
+.gobutton button{
+  
+    width:100%;
+    // margin:0px 238px;
+    font-size:1rem;
+    background:#773ced;
+    color: white;
+    border-radius:6px;
+    padding:5px 5px;
+
+     &:hover {
+        cursor: pointer;
+       
+    }}
+
+.sectiondiv{
+  display: contents;
+}
+
+// @media screen and (min-width: 500px){
+//   select{
+//     width: 600px;
+//     margin: 15px auto;
+   
+
+
+//   }
+//   .selectbutton{
+//     margin:0px auto;
+
+//   }
+//   .gobutton{
+     
+//   }
+// }
 `;

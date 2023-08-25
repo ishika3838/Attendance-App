@@ -1,9 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { services } from '../../services';
-
-
-
+import { Wrapper } from './style';
 const AttendanceSheet = () => {
   let sectionId = new URLSearchParams(window.location.search).get('sectionId');
   let subjectId = new URLSearchParams(window.location.search).get('subjectId');
@@ -58,8 +56,12 @@ const AttendanceSheet = () => {
   };
 
   return (
-    <div className="attendance-sheet">
+  
+    <Wrapper>
       <h1>Mark Attendance</h1>
+      <div className="underline"></div>
+     <div className='inner'>
+
       {students.map((student, index) => (
         <div className="student-row" key={student.id}>
           <div className="student-info">
@@ -82,12 +84,13 @@ const AttendanceSheet = () => {
           </div>
         </div>
       ))}
+      </div>
       <button className="mark-button" onClick={markAttendance}>Submit Attendance </button>
       {/* <button className="view-button" onClick={view}>View attendance-list</button> */}
     
 
     
-    </div>
+    </Wrapper>
   );
 };
 

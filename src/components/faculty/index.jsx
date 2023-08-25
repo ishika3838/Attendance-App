@@ -68,22 +68,32 @@ function Faculty({setSelectedRole}) {
       }
       </div>
        */}
+        
        <div className="sections">
+       <div className='selectbutton'>
             <select value={selectedSubject} onChange={e => setSelectedSubject(e.target.value)}>
-              <option value="">Select Subject</option>
+              <option value="" disabled selected>---Select Subject---</option>
               <option value="Dbms">Dbms</option>
               <option value="OOPS">Oops</option>
               <option value="DSA">DSA</option>
               <option value="Software Engineering">Software Engineering</option>
               {/* Add more subjects as needed */}
             </select>
+            </div> 
+            <div className='sectiondiv'>
             {filteredSections.map(section => (
+            
               <div key={section.id} className="section">
                 <input type="button" value={section.name} onClick={() => setSelectedSection(section.id)} />
               </div>
+              
             ))}
+           </div>
+           <div className='gobutton'>
             <button onClick={gotoSheet}>Go to Attendance Sheet</button>
+            </div>
           </div>
+         
         </div>
       </section>
     
