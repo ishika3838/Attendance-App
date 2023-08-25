@@ -23,12 +23,6 @@ const Wrapper = styled.div`
 // top:18%;
 // }
 
-p a{
-    text-decoration: none;
-
-}
-
-
 h2{
     margin-bottom:4px;
     color : #773ced;
@@ -66,8 +60,9 @@ form{
 }
 
 img{
-    width:26px;
+    width:20px;
     margin:5px 5px;
+    padding:5px 5px;
 }
 .inputs{
     margin-top:30px;
@@ -80,46 +75,59 @@ img{
     // border: solid grey 1px;
 }
 
-.input{
-    display:flex;
-    gap :10px;
-    width:80%;
-    margin :10px 0;
-    font-size:1.5rem;
-    border: solid grey 1px;
-    border-radius:6px;
-    outline:none;
-    overflow:hidden;
-    // background:grey;
-}
+// .input{
+//     display:flex;
+//     gap :10px;
+//     width:80%;
+//     margin :10px 0;
+//     font-size:1.5rem;
+//     border: solid grey 1px;
+//     border-radius:6px;
+//     outline:none;
+//     overflow:hidden;
+//     // background:grey;
+// }
 
-input{
-    width:100%;
-    border:none;
-    font-size:1.2rem;
-    padding:6px 6px;
+// input{
+//     width:100%;
+//     border:none;
+//     font-size:1.2rem;
+//     padding:6px 6px;
     
-}
-.forgot{
-    text-decoration:none;
-    color:red;
-    margin-left:12px auto;
+// }
+// .forgot{
+//     text-decoration:none;
+//     color:red;
+//     margin-left:12px auto;
+// }
+
+form p{
+    margin:30px auto 4px 30px;
 }
 
-button{
-    width:40%;
-    // margin-bottom:30px;
-    margin : 10px 0;
-    font-size:1rem;
-    background:#773ced;
-    color: white;
-    border-radius:6px;
-    padding:5px 5px;
+p{
+    margin:0px auto 4px 30px;  
+}
 
-     &:hover {
-        cursor: pointer;
+p a{
+    text-decoration: none;
+
+}
+
+// button{
+//     width:40%;
+//     // margin-bottom:30px;
+//     margin : 10px 0;
+//     font-size:1rem;
+//     background:#773ced;
+//     color: white;
+//     border-radius:6px;
+//     padding:5px 5px;
+
+//      &:hover {
+//         cursor: pointer;
        
-    }
+//     }
 
 }
 

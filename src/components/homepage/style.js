@@ -65,7 +65,7 @@ export const Wrapper = styled.div`
   }
 
   button {
-    padding :30px 30px;
+    // padding :30px 30px;
     border-radius:16px;
     background: transparent;
     color:black;

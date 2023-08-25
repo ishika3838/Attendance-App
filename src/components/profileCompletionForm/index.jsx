@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { services } from '../../services';
+import Wrapper from './style';
+import profile_icon from '../assets/image-gallery.png'
+import rollnum from "../assets/id.png";
+import contact_icon from "../assets/phone-call.png";
+
+
 //import StudentProfile from '../studentProfile';
 //import profile_icon from "../assets/image-gallery.png";
 const ProfileCompletionForm = ({  onUpdate }) => {
@@ -21,34 +27,42 @@ const ProfileCompletionForm = ({  onUpdate }) => {
   };
 
   return (
-    <>    <form onSubmit={handleSubmit}>
+    <Wrapper className='inputs'>    
+    <form onSubmit={handleSubmit}>
+
+    <div className="heading">
       <h3>Complete Your Profile</h3>
-      <label>
-        UserID:
-        <input type="text"  required name='contact' value={userId}
+    </div>
+
+      <div className="input">
+      <img src={rollnum} alt="user_icon" />
+        <input type="text" name='contact' value={userId}
+        placeholder='User Id'
           onChange={(e)=>setuserId(e.target.value)} />
-      </label>
-      <label>
-        Contact:
+
+      </div>
+
+      <div className="input">
+      <img src={contact_icon} alt="user_icon" />
         <input type="text" name='contact' value={contact}
+        placeholder='Contact'
           onChange={(e)=>setContact(e.target.value)} />
-      </label>
-      <div>
+        
+      </div>
+      
               <div className="input">
-                {/* <img src={rollnum} alt="user_icon" /> */}
+              <img src={rollnum} alt="user_icon" />
+
                 <input
                   type="text"
-                  required
                   placeholder="Roll Number"
                   value={rollno}
                   onChange={(e) => setRollno(e.target.value)}
                 />
               </div>
-</div>
-      <div className="input">
-               
 
-                
+      <div className="input">
+      <img src={rollnum} alt="user_icon" />           
                 <select
                   value={section}
                   name='section'
@@ -94,32 +108,75 @@ const ProfileCompletionForm = ({  onUpdate }) => {
                   <option value="EC-IV-A">
                     EC-IV-A
                   </option>
-                 
-                </select>
+                </select>  
 
-               
               </div>
-              <p>Choose Profile Photo </p>
+
           <div className="input">
-            {/* <img src={profile_icon} alt="user_icon" /> */}
+              {/* <p>Choose Profile Photo </p> */}
+              <img src={profile_icon} alt="user_icon" />
             <input
               type="file"
-              required
               accept="image/*"
-             
               onChange={(e) =>
-                setPhotoUrl(URL.createObjectURL(e.target.files[0]))
-              }
+                setPhotoUrl(URL.createObjectURL(e.target.files[0])) }
             />
-            {/* </label> */}
+
           </div>
-     
+     <div className='button'>
       <button type="submit">Update Profile</button>
+     </div>
     </form>
     
-</>
+</Wrapper>
   );
 };
 
 export default ProfileCompletionForm;
 
+// import React, { useState } from 'react';
+
+// const ProfileCompletionForm = ({ studentData, onSubmit }) => {
+//   const [contact, setContact] = useState(studentData.contact || '');
+//   const [year, setYear] = useState(studentData.year || '');
+//   const [section, setSection] = useState(studentData.section || '');
+
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     const updatedData = {
+//       ...studentData,
+//       contact,
+//       year,
+//       section,
+      
+//     };
+//     onSubmit(updatedData);
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <div>
+//         <label>Contact:</label>
+//         <input
+//           type="text"
+//           value={contact}
+//           onChange={(e) => setContact(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label>Year:</label>
+//         <input
+//           type="text"
+//           value={year}
+//           onChange={(e) => setYear(e.target.value)}
+//         />
+//       </div>
+      
+        
+//       <button type="submit">Submit</button>
+//     </form>
+//   );
+// };
+
+// export default ProfileCompletionForm;

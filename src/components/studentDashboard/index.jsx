@@ -108,7 +108,7 @@ import StudentProfile from '../studentProfile';
         <a href="#logout" onClick={handleLogout}>Logout</a>
       </Menu>
       
-      <div className='profile'>
+      <div className='innerContainer'>
       <h3>Welcome to AttendEase</h3>
       {!profileComplete ? (
         <>

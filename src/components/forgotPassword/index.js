@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { services } from '../../services';
 import { useNavigate } from 'react-router-dom';
+import Wrapper from './styel';
 const ForgotPassword = () => {
   const [contact, setContact] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -40,20 +41,23 @@ const ForgotPassword = () => {
       });
   };
   return (
-    <div className="forgot-password">
+    <Wrapper>
       <h2>Forgot Password</h2>
-      <p>Enter your contact to reset your password:</p>
+      <div className="input">
+      {/* <p>Enter your contact to reset your password:</p> */}
       <input
         type="text"
-        placeholder="Enter your contact (email or username)"
+        placeholder="Enter your contact"
         value={contact}
         onChange={e => setContact(e.target.value)}
       />
+      </div>
+
       <button onClick={handleResetPassword}>Reset Password</button>
       <p>{message}</p>
       {message && (
-        <div>
-          <p className="message">{message}</p>
+            <div className="forgotInput">
+            {/* <p className="message">{message}</p> */}
           <p>Enter your new password:</p>
           <input
             type="password"
@@ -65,7 +69,7 @@ const ForgotPassword = () => {
           
         </div>
       )}
-    </div>
+    </Wrapper>
   );
 };
 

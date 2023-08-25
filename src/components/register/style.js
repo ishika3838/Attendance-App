@@ -37,28 +37,28 @@ img{
     padding:5px 5px;
 }
 
-.input{
-    display:flex;
-    gap :10px;
-    // width:80%;
-    font-size:1.5rem;
-    border: 1px solid grey;
-    border-radius:6px;
-    outline:none;
-    overflow:hidden;
-    margin : 10px 10px;
-    // background:grey;
+// .input{
+//     display:flex;
+//     gap :10px;
+//     // width:80%;
+//     font-size:1.5rem;
+//     border: 1px solid grey;
+//     border-radius:6px;
+//     outline:none;
+//     overflow:hidden;
+//     margin : 10px 10px;
+//     // background:grey;
 
-}
+// }
 
-input{
-    width:100%;
-    border:none;
-    outline:none;
-    font-size:1rem;
-    // overflow:hidden;
-    padding:6px 6px;
-}
+// input{
+//     width:100%;
+//     border:none;
+//     outline:none;
+//     font-size:1rem;
+//     // overflow:hidden;
+//     padding:6px 6px;
+// }
 // select{
 //     width:100%;
 //     border:none;
@@ -72,18 +72,22 @@ p {
     margin:10px 10px;
   }
 
-button{
-    width:40%;
-    margin:10px 90px;
-    font-size:1rem;
-    background:#773ced;
-    color: white;
-    border-radius:6px;
-    padding:5px 5px;
+  p a{
+    text-decoration: none;
+}
+
+// button{
+//     width:40%;
+//     margin:10px 90px;
+//     font-size:1rem;
+//     background:#773ced;
+//     color: white;
+//     border-radius:6px;
+//     padding:5px 5px;
     
-     &:hover {
-        cursor: pointer;
-    }
+//      &:hover {
+//         cursor: pointer;
+//     }
 
 
 // form{
@@ -93,7 +97,7 @@ button{
 // }
 
 
-}
+// }
 
 `
 export default Wrapper
