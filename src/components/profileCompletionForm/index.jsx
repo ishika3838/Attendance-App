@@ -4,6 +4,8 @@ import Wrapper from "./style";
 import profile_icon from "../assets/image-gallery.png";
 import rollnum from "../assets/id.png";
 import contact_icon from "../assets/phone-call.png";
+import sect from "../assets/section.png"
+
 const ProfileCompletionForm = ({ onUpdate }) => {
   const [userId, setuserId] = useState("");
   const [contact, setContact] = useState("");
@@ -31,17 +33,6 @@ const ProfileCompletionForm = ({ onUpdate }) => {
         </div>
 
         <div className="input">
-          <img src={rollnum} alt="user_icon" />
-          <input
-            type="text"
-            name="contact"
-            value={userId}
-            placeholder="User Id"
-            onChange={(e) => setuserId(e.target.value)}
-          />
-        </div>
-
-        <div className="input">
           <img src={contact_icon} alt="user_icon" />
           <input
             type="text"
@@ -64,7 +55,7 @@ const ProfileCompletionForm = ({ onUpdate }) => {
         </div>
 
         <div className="input">
-          <img src={rollnum} alt="user_icon" />
+          <img src={sect} alt="section_icon" />
           <select
             value={section}
             name="section"
@@ -90,7 +81,7 @@ const ProfileCompletionForm = ({ onUpdate }) => {
         </div>
 
         <div className="input">
-          <img src={profile_icon} alt="user_icon" />
+          <img src={profile_icon} alt="userPhoto_icon" />
           <input
             type="file"
             accept="image/*"

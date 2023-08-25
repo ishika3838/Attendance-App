@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { services } from "../../services";
+import { Wrapper } from "./style";
 const StudentProfile = ({ user }) => {
   const [studentData, setStudentData] = useState(null);
 
@@ -17,7 +18,7 @@ const StudentProfile = ({ user }) => {
   }, [user]);
 
   return (
-    <>
+    <Wrapper>
       {studentData && (
         <div>
           <h3> Your Profile {studentData.name} !!</h3>
@@ -29,13 +30,13 @@ const StudentProfile = ({ user }) => {
               alt="Profile"
             />
           )}
-          <p>usersname: {studentData.name}</p>
+          <p>User Name: {studentData.name}</p>
           <p>Section: {studentData.section}</p>
 
-          <p>Rollnumber: {studentData.rollno}</p>
+          <p>Roll Number: {studentData.rollno}</p>
         </div>
       )}
-    </>
+    </Wrapper>
   );
 };
 

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { services } from "../../services";
 import { useNavigate } from "react-router-dom";
 import Wrapper from "./style";
+import contact_icon from "../assets/phone-call.png";
+import pass from "../assets/padlock_icon.png";
+
+
 const ForgotPassword = () => {
   const [contact, setContact] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -42,7 +46,8 @@ const ForgotPassword = () => {
   return (
     <Wrapper>
       <h2>Forgot Password</h2>
-      <div className="input">
+      <div className="inputF">
+      <img src={contact_icon} alt="contact_icon" />
         <input
           type="text"
           placeholder="Enter your contact"
@@ -56,12 +61,16 @@ const ForgotPassword = () => {
       {message && (
         <div className="forgotInput">
           <p>Enter your new password:</p>
+
+          <div>
+          <img src={pass} alt="password_icon" />
           <input
             type="password"
             placeholder="Enter your new password"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
-          />
+            />
+            </div>
           <button onClick={handleNewPasswordSubmit}>Update Password</button>
         </div>
       )}
