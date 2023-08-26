@@ -46,7 +46,7 @@ const StudentDashboard = ({ setSelectedRole, user }) => {
         <h3>Welcome to AttendEase</h3>
         {!profileComplete ? (
           <>
-            <p>Update your profile:</p>
+            <p>Update your profile</p>
             {showProfileForm ? (
               renderProfileForm()
             ) : (

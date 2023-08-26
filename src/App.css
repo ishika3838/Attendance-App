@@ -1,29 +1,5 @@
 *{
   padding:0;
   margin:0;
-  font-family:'Times New Roman', Times, serif;
-}
 
-h1{
-  background-color: rgb(176, 172, 167);
-  color:black;
-  text-align: center;
-}
-
-nav{
-  background-color: rgb(53, 53, 53);
-  color:black;
-  display: block;
-}
-
-nav li{
-  list-style: none;
-  text-decoration: none;
-  display:flex;
-  justify-content: center;
-}
-
-nav li a{
-  text-decoration:none;
-  color:rgb(240, 237, 237);
 }

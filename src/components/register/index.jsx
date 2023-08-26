@@ -111,8 +111,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
-
-          
+ 
           <button type="submit">Register</button>
         </form>
         <p>
