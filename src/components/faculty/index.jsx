@@ -81,8 +81,8 @@ function Faculty({ setSelectedRole }) {
                 <option value="" disabled selected>
                   ---Select Subject---
                 </option>
-                <option value="Dbms">Dbms</option>
-                <option value="OOPS">Oops</option>
+                <option value="Dbms">DBMS</option>
+                <option value="OOPS">OOPs</option>
                 <option value="DSA">DSA</option>
               </select>
             </div>

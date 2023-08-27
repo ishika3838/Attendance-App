@@ -34,7 +34,6 @@ const StudentProfile = ({ user }) => {
           )}
           <p>User Name: {studentData.name}</p>
           <p>Section: {studentData.section}</p>
-
           <p>Roll Number: {studentData.rollno}</p>
         </div>
       )}

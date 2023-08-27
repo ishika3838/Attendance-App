@@ -49,7 +49,7 @@ const StudentDashboard = ({ setSelectedRole, user }) => {
         {/* checking if user profile is complete or not  */}
         {!profileComplete ? (
           <>
-            <p>Update your profile:</p>
+            <p>Update your profile</p>
             {showProfileForm ? (
               renderProfileForm()
             ) : (

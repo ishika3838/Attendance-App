@@ -82,12 +82,14 @@ const Login = ({ role }) => {
               />
             </div>
 
+
             <button type="submit">Login</button>
 
-            <Link className="forgot" to="/forgotPassword"> Forgot Password</Link>
+            <Link className="forgot" to="/forgotPassword">
+              Forgot Password
+            </Link>
           </div>
         </form>
-
         <p>
           Not registered yet?
           <Link className="register" to="/home">
