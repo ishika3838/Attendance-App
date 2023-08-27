@@ -25,7 +25,7 @@ const App = () => {
       <div className="App">
         <Routes>
           <Route
-            path="/home"
+            path = "/home"
             element={<Homepage role={role} setSelectedRole={setSelectedRole} />}
           />
           <Route
@@ -38,8 +38,8 @@ const App = () => {
               />
             }
           />
-          <Route path="/" element={<Login role={role} />} />
-          <Route path="/forgotPassword" element={<ForgotPassword />} />
+          <Route path = "/" element={<Login role={role} />} />
+          <Route path = "/forgotPassword" element={<ForgotPassword />} />
           <Route
             path="/studentdashboard"
             element={
@@ -51,14 +51,14 @@ const App = () => {
           />
 
           <Route
-            path="/facultydashboard"
+            path = "/facultydashboard"
             element={<Faculty setSelectedRole={setSelectedRole} />}
           />
           <Route
             path="/attendanceSheet"
             element={<AttendanceSheet role={role} />}
           />
-          <Route path="/*" element={<NotFoundPage />} />
+          <Route path = "/*" element={<NotFoundPage />} />
         </Routes>
       </div>
 

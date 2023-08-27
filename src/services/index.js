@@ -1,5 +1,4 @@
 import axios from "axios";
-
 export const services = {
     user : {
         login : payload => axios.post(`https://quizattendace.onrender.com/api/user/login`, payload),

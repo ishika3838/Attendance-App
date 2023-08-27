@@ -3,7 +3,7 @@ import Wrapper from "./style";
 import { Link } from "react-router-dom";
 
 const NotFoundPage = () => {
-  
+  //created a not found page so if any nonexist link he click it would take him to login page
   return (
     <Wrapper className="not-found">
       <h1>404 - Page Not Found</h1>

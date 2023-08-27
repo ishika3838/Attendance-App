@@ -14,6 +14,7 @@ const ProfileCompletionForm = ({ onUpdate }) => {
   const [rollno, setRollno] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    //call the api to update the user profile
     services.user
       .update({ contact, rollno, section, photoUrl })
       .then((res) => {

@@ -11,11 +11,11 @@ const Login = ({ role }) => {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     console.log("Logging in with:", contact, password);
     e.target.value = "wait";
     e.target.disabled = "true";
-
+   //Api call to read the login details .
     services.user
       .login({
         contact,
@@ -27,6 +27,7 @@ const Login = ({ role }) => {
 
         console.log(response.data.user.role);
         alert("Logged In Succesfully ");
+        //On basis of role navigating them
         if (response.data.user.role === "student") {
           window.localStorage.setItem( "USER", JSON.stringify(response.data.user));
          
@@ -80,17 +81,15 @@ const Login = ({ role }) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+
             <button type="submit">Login</button>
 
-            <Link className="forgot" to="/forgotPassword">
-              {" "}
-              Forgot Password
-            </Link>
+            <Link className="forgot" to="/forgotPassword"> Forgot Password</Link>
           </div>
         </form>
 
         <p>
-          Not registered yet?{" "}
+          Not registered yet?
           <Link className="register" to="/home">
             Register Here
           </Link>

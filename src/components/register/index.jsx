@@ -15,21 +15,22 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //checking if both password are equal
     if (password !== confirmPassword) {
       alert("Passwords do not match. Please try again.");
       return;
     }
-
+     
     const user = {
       name,
       password,
       contact,
       role: role,
-      attendance: [],
     };
 
     e.target.value = "registering";
     e.target.disabled = "true";
+    //api call to add the details of user 
     axios
       .post("https://quizattendace.onrender.com/api/user/add", {
         name,
@@ -46,7 +47,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
         console.error("Error registering user:", error);
       })
       .finally(() => {
-        e.target.value = "signup";
+        e.target.value = "registered";
         e.target.disabled = "false";
         setname("");
         setContact("");
@@ -54,7 +55,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
         setSelectedRole("");
       });
 
-    handleRegister(user);
+    handleRegister(user);//to add multiple user
     setname("");
     setPassword("");
     setConfirmPassword("");
@@ -65,6 +66,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
   return (
     <Wrapper className="maincontainer">
       <div className="container">
+        {/* created register form for student and faculty  */}
         {role === "student" && <h2>Student Registration</h2>}
 
         {role === "faculty" && <h2>Faculty Registration</h2>}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { services } from "../../services";
 import { Wrapper } from "./style";
 const AttendanceSheet = () => {
+  //get the selected subjectId and sectionId from url search
   let sectionId = new URLSearchParams(window.location.search).get("sectionId");
   let subjectId = new URLSearchParams(window.location.search).get("subjectId");
 
@@ -14,9 +15,11 @@ const AttendanceSheet = () => {
   const [attendance, setAttendance] = useState([]);
 
   useEffect(() => {
+    //Call teh api to read the details of user 
     services.user
       .read()
       .then((res) => {
+        //Showing the student list on basis of selected sectionId and role
         const studentList = res.data.filter(
           (user) =>
             user.role &&
@@ -24,6 +27,7 @@ const AttendanceSheet = () => {
             user.section === sectionId
         );
         setStudents(studentList);
+        //created attendance array containing true false in its array on basis of status
         setAttendance(new Array(studentList.length).fill(false));
       })
       .catch((error) => {
@@ -32,6 +36,7 @@ const AttendanceSheet = () => {
   }, [sectionId]);
 
   const markAttendance = () => {
+    //for marking attendance we have call teh api
     services.user
       .markattendance({
         sectionId,
@@ -40,13 +45,14 @@ const AttendanceSheet = () => {
       })
       .then((res) => {
         console.log("Attendance marked successfully:", res.data);
-        alert("attendance market successfully");
+        alert("attendance marked successfully");
       })
       .catch((error) => {
         console.log("Error marking attendance:", error);
       });
   };
-
+  //Created toggleAttendance so that we can update the attendance of basis of student index and update their 
+  //status there
   const toggleAttendance = (studentIndex, status) => {
     const updatedAttendance = [...attendance];
     updatedAttendance[studentIndex] = status;
@@ -58,6 +64,7 @@ const AttendanceSheet = () => {
       <h1>Mark Attendance</h1>
       <div className="underline"></div>
       <div className="inner">
+        {/* created a new array and mark their attendance on basis of their unique index no.*/}
         {students.map((student, index) => (
           <div className="student-row" key={student.id}>
             <div className="student-info">
@@ -82,7 +89,7 @@ const AttendanceSheet = () => {
         ))}
       </div>
       <button className="mark-button" onClick={markAttendance}>
-        Submit Attendance{" "}
+        Submit Attendance
       </button>
     </Wrapper>
   );
