@@ -13,7 +13,7 @@ const Login = ({ role }) => {
     e.preventDefault();
 
     console.log("Logging in with:", contact, password);
-    e.target.value = "wait";
+    e.target.value = "Loading";
     e.target.disabled = "true";
 
     services.user
@@ -41,7 +41,7 @@ const Login = ({ role }) => {
         alert("Login failed. Please check your credentials.");
       })
       .finally(() => {
-        e.target.value = "signup";
+        e.target.value = "Loaded";
         e.target.disabled = "false";
         setPassword("");
         setContact("");
@@ -71,7 +71,7 @@ const Login = ({ role }) => {
             </div>
 
             <div className="input">
-              <img src={password_icon} alt="contact_icon" />
+              <img src={password_icon} alt="password_icon" />
               <input
                 type="password"
                 required
