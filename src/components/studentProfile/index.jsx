@@ -5,6 +5,7 @@ const StudentProfile = ({ user }) => {
   const [studentData, setStudentData] = useState(null);
 
   useEffect(() => {
+    //if it is user then on basis of their contact no. we can get their profile from api call
     if (user) {
       services.user
         .getProfile(JSON.parse(window.localStorage.getItem("USER")).contact)
@@ -19,6 +20,7 @@ const StudentProfile = ({ user }) => {
 
   return (
     <Wrapper>
+      {/* showing the user profile if their is student data present their by that contact number */}
       {studentData && (
         <div>
           <h3> Your Profile {studentData.name} !!</h3>

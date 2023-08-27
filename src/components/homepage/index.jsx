@@ -8,6 +8,7 @@ const Homepage = ({ selectedRole, setSelectedRole }) => {
   const navigate = useNavigate();
 
   const handleRoleClick = (selectedRole) => {
+    //set the role 
     setSelectedRole(selectedRole);
     console.log(selectedRole);
     navigate(`/register`);

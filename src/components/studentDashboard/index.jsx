@@ -11,7 +11,8 @@ const StudentDashboard = ({ setSelectedRole, user }) => {
   const [studentData, setStudentData] = useState({});
   const [showProfileForm, setShowProfileForm] = useState(false);
   useEffect(() => {
-    if (!localStorage.getItem("USER")) window.location = "/";
+    if (!localStorage.getItem("USER"))
+        window.location = "/";
   }, []);
 
   const handleProfileFormSubmit = (updatedData) => {
@@ -32,6 +33,7 @@ const StudentDashboard = ({ setSelectedRole, user }) => {
   };
   return (
     <Wrapper>
+      {/* hambourgour menu bar */}
       <h2>Student Dashboard</h2>
       <Menu left>
         <Link to="/my-profile">My Profile</Link>
@@ -44,6 +46,7 @@ const StudentDashboard = ({ setSelectedRole, user }) => {
 
       <div className="innerContainer">
         <h3>Welcome to AttendEase</h3>
+        {/* checking if user profile is complete or not  */}
         {!profileComplete ? (
           <>
             <p>Update your profile</p>

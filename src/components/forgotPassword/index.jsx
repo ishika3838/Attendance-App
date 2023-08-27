@@ -15,6 +15,7 @@ const ForgotPassword = () => {
     const payload = {
       contact: contact,
     };
+    //api call to read the details of user(contact)
     services.user
       .read(payload)
       .then((response) => {
@@ -32,7 +33,7 @@ const ForgotPassword = () => {
       contact: contact,
       password: newPassword,
     };
-
+//for new password or reset the password we have call the api 
     services.user
       .resetpassword(payload)
       .then((response) => {
@@ -55,7 +56,7 @@ const ForgotPassword = () => {
           onChange={(e) => setContact(e.target.value)}
         />
       </div>
-
+  
       <button onClick={handleResetPassword}>Reset Password</button>
       <p>{message}</p>
       {message && (
