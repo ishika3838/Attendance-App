@@ -62,7 +62,7 @@ img{
 
 h1{
   background:transparent;
-
+  text-align: center;
 }
 
 .underline{
