@@ -64,7 +64,7 @@ const Login = ({ role }) => {
               <img src={contact_icon} alt="contact_icon" />
               <input
                 type="text"
-                placeholder="contact"
+                placeholder="Contact"
                 required
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
