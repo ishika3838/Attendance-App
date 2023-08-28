@@ -45,7 +45,7 @@ const StudentDashboard = ({ setSelectedRole, user }) => {
       </Menu>
 
       <div className="innerContainer">
-        <h3>Welcome to AttendEase</h3>
+        
         {/* checking if user profile is complete or not  */}
         {!profileComplete ? (
           <>

@@ -23,7 +23,7 @@ const StudentProfile = ({ user }) => {
       {/* showing the user profile if their is student data present their by that contact number */}
       {studentData && (
         <div>
-          <h3> Your Profile {studentData.name} !!</h3>
+          <h3> Welcome to AttendEase {studentData.name} !</h3>
           {studentData.photoUrl && (
             <img
               width="120"
