@@ -8,12 +8,12 @@ import password_icon from "../assets/padlock_icon.png";
 const Login = ({ role }) => {
   const [password, setPassword] = useState("");
   const [contact, setContact] = useState("");
+  
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     
     console.log("Logging in with:", contact, password);
-    e.target.value = "Loading";
     e.target.disabled = "true";
    //Api call to read the login details .
     services.user
@@ -42,13 +42,12 @@ const Login = ({ role }) => {
         alert("Login failed. Please check your credentials.");
       })
       .finally(() => {
-        e.target.value = "Loaded";
         e.target.disabled = "false";
         setPassword("");
         setContact("");
       });
   };
-
+  
   return (
     <Wrapper className="maincontainer">
       <div className="container">
@@ -91,7 +90,7 @@ const Login = ({ role }) => {
           </div>
         </form>
         <p>
-          Not registered yet?
+          Not registered yet? 
           <Link className="register" to="/home">
             Register Here
           </Link>

@@ -27,8 +27,6 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
       contact,
       role: role,
     };
-
-    e.target.value = "registering";
     e.target.disabled = "true";
     //api call to add the details of user 
     axios
@@ -47,7 +45,6 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
         console.error("Error registering user:", error);
       })
       .finally(() => {
-        e.target.value = "registered";
         e.target.disabled = "false";
         setname("");
         setContact("");
@@ -114,7 +111,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
             />
           </div>
  
-          <button type="submit">Register</button>
+          <button type="submit" >Register</button>
         </form>
         <p>
           Already registered <Link to="/">Click Here</Link>
