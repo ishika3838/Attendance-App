@@ -22,6 +22,14 @@ input{
     padding:6px 6px;
 }
 
+select{
+  width: 100%;
+  outline: none;
+  border: none;
+  color: grey;
+  font-weight: 500;
+}
+
 form{
   width:100%;
 }

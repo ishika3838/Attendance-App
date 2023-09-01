@@ -100,10 +100,12 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
         <div className="input">
           <img src={sect} alt="section_icon" />
           <select
+            id="sections"
             value={section}
             name="section"
             onChange={(e) => setSection(e.target.value)}
           >
+
             <option value="" selected disabled>
               --Select Section--
             </option>
@@ -120,6 +122,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
             <option value="EC-II-A">EC-II-A</option>
             <option value="EC-III-A">EC-III-A</option>
             <option value="EC-IV-A">EC-IV-A</option>
+
           </select>
         </div>
       )}

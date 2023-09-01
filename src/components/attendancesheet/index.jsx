@@ -258,6 +258,19 @@ const AttendanceSheet = () => {
     <Wrapper>
       <h1>Mark Attendance</h1>
       <div className="underline"></div>
+      <div className="attendance-summary">
+        <div>
+        <p>Present: {markedCount}</p>
+        <p>Absent: {unmarkedCount}</p>
+        </div>
+        <button
+          className="prev-button"
+          onClick={() => setCurrentStudentIndex(currentStudentIndex - 1)}
+          disabled={currentStudentIndex === 0}
+        >
+          Previous
+        </button>
+      </div>
       <div className="inner">
         <div className="student-carousel">
           {students.map((student, index) => (
@@ -292,18 +305,9 @@ const AttendanceSheet = () => {
             </div>
           ))}
         </div>
-        <button
-          className="prev-button"
-          onClick={() => setCurrentStudentIndex(currentStudentIndex - 1)}
-          disabled={currentStudentIndex === 0}
-        >
-          Previous
-        </button>
+       
       </div>
-      <div className="attendance-summary">
-        <p>Present: {markedCount}</p>
-        <p>Absent: {unmarkedCount}</p>
-      </div>
+      
       <button
         className="mark-button"
         onClick={markAttendance}

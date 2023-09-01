@@ -7,10 +7,18 @@ width:90%;
 margin:0px auto;
 
 .inner{
+  margin-top:30px;
 gap:30px;
 display:flex;
 flex-direction:column;
 }
+
+.attendance-summary{
+  display:flex;
+  justify-content:space-between;
+  margin-top:30px;
+}
+
 .student-carousel {
   display: flex;
   overflow: hidden;
@@ -26,15 +34,25 @@ flex-direction:column;
   display:flex;
    flex-direction:column;
   // border-radius:5px;
+  margin: 0px auto;
+
+  background:white;
+  border:solid grey 1px;
+  border-radius:5px;
+  width:100%;
+
 }
 
 
-.student-card img ,p{
-  width: 30%;
+.student-card img{
+  width: 80%;
   margin:10px auto;
   text-align:center;
+  
+}
 
-
+p{
+  margin: 10px auto;
 }
 
 .current {
@@ -68,9 +86,10 @@ flex-direction:column;
 
 .attendance-buttons{
   margin:5px auto;
-  width:60%;
+  width:100%;
   display:flex;
   justify-content:space-between;
+  gap:30px;
 }
 
 button{
@@ -86,6 +105,12 @@ button{
       cursor: pointer;
   }
 }
+
+.prev-button{
+  background:grey;
+  height:35px;
+}
+
 #absentbutton{
   background:#FF5733;
  
@@ -98,7 +123,7 @@ button{
 
 .mark-button{
   background:teal;
-  margin:10px auto;
+  margin:30px auto;
   margin-bottom:60px;
 }
 
