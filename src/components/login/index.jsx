@@ -30,7 +30,7 @@ const Login = ({ role }) => {
         //On basis of role navigating them
         if (response.data.user.role === "student") {
           window.localStorage.setItem( "USER", JSON.stringify(response.data.user));
-         
+          
           navigate("/studentdashboard");
         } else {
           navigate("/facultydashboard");

@@ -10,8 +10,12 @@ import Footer from "./components/footer";
 import AttendanceSheet from "./components/attendancesheet";
 import NotFoundPage from "./components/notFoundPage";
 import ForgotPassword from "./components/forgotPassword";
+import ViewAttendance from "./components/viewAttendance";
+import StudentAttendanceView from "./components/studentViewAttendance";
 
-const initialUsers = [];
+const initialUsers = [
+
+];
 const App = () => {
   const [users, setUsers] = useState(initialUsers);
   const [role, setSelectedRole] = useState("student");
@@ -59,7 +63,13 @@ const App = () => {
             path="/attendanceSheet"
             element={<AttendanceSheet role={role} />}
           />
-            <Route path = "/*" element={<NotFoundPage />} />
+           <Route
+            path="/view-attendance"
+            element={<ViewAttendance />}
+          />
+          <Route path="/student-view" element={<StudentAttendanceView/>}/>
+          
+          <Route path = "/*" element={<NotFoundPage />} />
         </Routes>
       </div>
 

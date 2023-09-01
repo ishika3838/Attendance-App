@@ -15,7 +15,7 @@ const StudentDashboard = ({ setSelectedRole, user }) => {
     if (!localStorage.getItem("USER"))
         window.location = "/";
   }, []);
-
+  
   const handleProfileFormSubmit = (updatedData) => {
     setStudentData(updatedData);
     setProfileComplete(true);
@@ -38,7 +38,7 @@ const StudentDashboard = ({ setSelectedRole, user }) => {
       <h2>Student Dashboard</h2>
       <Menu left>
         <Link to="/my-profile">My Profile</Link>
-        <Link to="/view-attendance">View Attendance</Link>
+        <Link to="/student-view">View Attendance</Link>
         <Link to="/feedback">Feedback</Link>
         <Link to="/" onClick={handleLogout}>
           Logout
