@@ -6,10 +6,11 @@ import StudentProfile from "../studentProfile";
 import { Link } from "react-router-dom";
 const StudentDashboard = ({ setSelectedRole, user }) => {
   const [profileComplete, setProfileComplete] = useState(
-    localStorage.getItem("profileCompleted") === "true"
+    localStorage.getItem("profileCompleted") === "false"
   );
   const [studentData, setStudentData] = useState({});
   const [showProfileForm, setShowProfileForm] = useState(false);
+
   useEffect(() => {
     if (!localStorage.getItem("USER"))
         window.location = "/";

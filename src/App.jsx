@@ -24,6 +24,7 @@ const App = () => {
     <Router>
       <div className="App">
         <Routes>
+
           <Route
             path = "/home"
             element={<Homepage role={role} setSelectedRole={setSelectedRole} />}
@@ -32,9 +33,9 @@ const App = () => {
             path="/register"
             element={
               <Register
-                handleRegister={handleRegister}
-                role={role}
-                setSelectedRole={setSelectedRole}
+              handleRegister={handleRegister}
+              role={role}
+              setSelectedRole={setSelectedRole}
               />
             }
           />
@@ -44,8 +45,8 @@ const App = () => {
             path="/studentdashboard"
             element={
               <StudentDashboard
-                setSelectedRole={setSelectedRole}
-                user={users}
+              setSelectedRole={setSelectedRole}
+              user={users}
               />
             }
           />
@@ -58,7 +59,7 @@ const App = () => {
             path="/attendanceSheet"
             element={<AttendanceSheet role={role} />}
           />
-          <Route path = "/*" element={<NotFoundPage />} />
+            <Route path = "/*" element={<NotFoundPage />} />
         </Routes>
       </div>
 

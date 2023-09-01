@@ -73,13 +73,13 @@ const AttendanceSheet = () => {
             </div>
             <div className="attendance-buttons">
               <button
-                className={attendance[index] === true ? "present" : ""}
+                className={attendance[index] ? "present" : ""}
                 onClick={() => toggleAttendance(index, true)}
               >
                 Present
               </button>
               <button
-                className={attendance[index] === false ? "absent" : ""}
+                className={!attendance[index] ? "absent" : ""}
                 onClick={() => toggleAttendance(index, false)}
               >
                 Absent

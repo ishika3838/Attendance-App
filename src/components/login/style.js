@@ -53,6 +53,7 @@ img{
 input{
     width:100%;
     border:none;
+    outline:none;
     font-size:1.2rem;
     padding:6px 6px;   
 }
@@ -62,16 +63,24 @@ form p{
 }
 
 p{
-    margin:0px auto 4px 30px;  
+    margin:10px 0;  
 }
 
 .forgot{
-    margin:15px auto 0px 30px;  
+    // margin:15px auto 0px 30px;  
     color:grey;
 }
 
  a{
     text-decoration: none;
+}
+
+.button{
+    display:flex;
+    margin:10px;
+    align-items:center;
+    justify-content:center;
+    justify-content:space-between;
 }
 
 button{

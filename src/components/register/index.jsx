@@ -114,7 +114,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
           <button type="submit" >Register</button>
         </form>
         <p>
-          Already registered <Link to="/">Click Here</Link>
+          Already registered <Link to="/"> Click Here</Link>
         </p>
       </div>
     </Wrapper>

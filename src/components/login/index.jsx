@@ -8,7 +8,7 @@ import password_icon from "../assets/padlock_icon.png";
 const Login = ({ role }) => {
   const [password, setPassword] = useState("");
   const [contact, setContact] = useState("");
-  
+
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,7 +46,10 @@ const Login = ({ role }) => {
         setPassword("");
         setContact("");
       });
-  };
+
+    };
+
+    
   
   return (
     <Wrapper className="maincontainer">
@@ -57,8 +60,8 @@ const Login = ({ role }) => {
         <div className="underline"></div>
         <h2>Login</h2>
 
-        <form onSubmit={handleSubmit}>
           <div className="inputs">
+        <form onSubmit={handleSubmit}>
             <div className="input">
               <img src={contact_icon} alt="contact_icon" />
               <input
@@ -81,19 +84,18 @@ const Login = ({ role }) => {
               />
             </div>
 
-
+            <div className="button">
             <button type="submit">Login</button>
-
             <Link className="forgot" to="/forgotPassword">
-              Forgot Password
+              Forgot Password ?
             </Link>
-          </div>
+            </div>
+
         </form>
+          </div>
         <p>
           Not registered yet? 
-          <Link className="register" to="/home">
-            Register Here
-          </Link>
+          <Link className="register" to="/home"> Register Here</Link>
         </p>
       </div>
     </Wrapper>

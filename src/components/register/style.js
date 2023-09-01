@@ -18,7 +18,12 @@ input{
     border:none;
     outline:none;
     font-size:1rem;
+    margin : 0px 5px;
     padding:6px 6px;
+}
+
+form{
+  width:100%;
 }
 
 p {
