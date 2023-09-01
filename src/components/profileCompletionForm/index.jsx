@@ -4,19 +4,19 @@ import Wrapper from "./style";
 import profile_icon from "../assets/image-gallery.png";
 import rollnum from "../assets/id.png";
 import contact_icon from "../assets/phone-call.png";
-import sect from "../assets/section.png"
+// import sect from "../assets/section.png"
 
 const ProfileCompletionForm = ({ onUpdate }) => {
  
   const [contact, setContact] = useState("");
-  const [section, setSection] = useState("");
+  
   const [photoUrl, setPhotoUrl] = useState("");
   const [rollno, setRollno] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     //call the api to update the user profile
     services.user
-      .update({ contact, rollno, section, photoUrl })
+      .update({ contact, rollno,  photoUrl })
       .then((res) => {
         console.log(res.data);
         onUpdate(res.data);
@@ -55,7 +55,7 @@ const ProfileCompletionForm = ({ onUpdate }) => {
           />
         </div>
 
-        <div className="input">
+        {/* <div className="input">
           <img src={sect} alt="section_icon" />
           <select
             value={section}
@@ -79,7 +79,7 @@ const ProfileCompletionForm = ({ onUpdate }) => {
             <option value="EC-III-A">EC-III-A</option>
             <option value="EC-IV-A">EC-IV-A</option>
           </select>
-        </div>
+        </div> */}
 
         <div className="input">
           <img src={profile_icon} alt="userPhoto_icon" />

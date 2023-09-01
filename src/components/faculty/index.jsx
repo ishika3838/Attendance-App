@@ -55,7 +55,6 @@ function Faculty({ setSelectedRole }) {
       <Menu left>
         <Link to="/teacher-profile">My Profile</Link>
         <Link to="/mark-attendance">Mark Attendance</Link>
-        <Link to="/view-attendance">View Attendance</Link>
         <Link to="/feedback">Feedback</Link>
         <Link to="/" onClick={handleLogout}>
           Logout

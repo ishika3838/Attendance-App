@@ -5,10 +5,11 @@ import Wrapper from "./style";
 import user_icon from "../assets/user_icon.png";
 import contact_icon from "../assets/phone-call.png";
 import pass from "../assets/padlock_icon.png";
-
+import sect from "../assets/section.png"
 const Register = ({ handleRegister, role, setSelectedRole }) => {
   const [name, setname] = useState("");
   const [contact, setContact] = useState("");
+  const [section, setSection] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
       name,
       password,
       contact,
+      section,
       role: role,
     };
     e.target.disabled = "true";
@@ -33,6 +35,7 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
       .post("https://quizattendace.onrender.com/api/user/add", {
         name,
         contact,
+        section,
         password,
         role,
       })
@@ -48,14 +51,18 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
         e.target.disabled = "false";
         setname("");
         setContact("");
+        setSection("");
         setPassword("");
         setSelectedRole("");
       });
 
     handleRegister(user);//to add multiple user
     setname("");
+    setContact("");
+    setSection("");
     setPassword("");
     setConfirmPassword("");
+    setSelectedRole("");
     alert("Registration successful! Please proceed to login.");
     navigate("/");
   };
@@ -89,7 +96,33 @@ const Register = ({ handleRegister, role, setSelectedRole }) => {
               onChange={(e) => setContact(e.target.value)}
             />
           </div>
-
+        {role === "student" && (
+        <div className="input">
+          <img src={sect} alt="section_icon" />
+          <select
+            value={section}
+            name="section"
+            onChange={(e) => setSection(e.target.value)}
+          >
+            <option value="" selected disabled>
+              --Select Section--
+            </option>
+            <option value="CS-I-A">CS-I-A</option>
+            <option value="CS-II-A">CS-II-A</option>
+            <option value="CS-III-A">CS-III-A</option>
+            <option value="CS-IV-A">CS-IV-A</option>
+            <option value="IT-I-A">IT-I-A</option>
+            <option value="ME-I-A">ME-I-A</option>
+            <option value="ME-II-A">ME-II-A</option>
+            <option value="ME-III-A">ME-III-A</option>
+            <option value="ME-IV-A">ME-IV-A</option>
+            <option value="EC-I-A">EC-I-A</option>
+            <option value="EC-II-A">EC-II-A</option>
+            <option value="EC-III-A">EC-III-A</option>
+            <option value="EC-IV-A">EC-IV-A</option>
+          </select>
+        </div>
+      )}
           <div className="input">
             <img src={pass} alt="password_icon" />
             <input

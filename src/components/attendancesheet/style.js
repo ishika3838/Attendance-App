@@ -11,6 +11,40 @@ gap:30px;
 display:flex;
 flex-direction:column;
 }
+.student-carousel {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.student-card {
+  flex: 0 0 calc(100% / 3);/* Set the width of each student card */
+  transition: transform 0.5s ease-in-out;
+  justify-content:center;
+ /* Add some spacing between cards */
+  // border: solid grey 1px;
+  display:flex;
+   flex-direction:column;
+  // border-radius:5px;
+}
+
+
+.student-card img ,p{
+  width: 30%;
+  margin:10px auto;
+  text-align:center;
+
+
+}
+
+.current {
+  transform: translateX(150%);
+  position: absolute;
+  left: 120%; /* Slide the card to the left */
+}
+
+
+
 
 .student-row{
   border: solid grey 1px;
@@ -18,15 +52,19 @@ flex-direction:column;
   border-radius:5px;
 }
 
-.student-info{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
+// .student-info{
+//   display:flex;
+//   flex-direction:column;
+//   justify-content:center;
+// }
 
-.student-info img,p{
-  margin:12px auto;
-}
+// .student-info p,img{
+//   margin:12px auto;
+//   text-align:center;
+//   width:30%;
+  
+// }
+
 
 .attendance-buttons{
   margin:5px auto;
@@ -39,7 +77,7 @@ button{
   width:120;
   margin : 10px 0;
   font-size:1rem;
-  background:#773ced;
+  // background:#773ced;
   color: white;
   border-radius:6px;
   padding:5px 5px;
@@ -47,6 +85,15 @@ button{
    &:hover {
       cursor: pointer;
   }
+}
+#absentbutton{
+  background:#FF5733;
+ 
+}
+
+#presentbutton{
+  background:#32CD32;
+  
 }
 
 .mark-button{
@@ -76,5 +123,9 @@ h1{
 @media (min-width:500px){
   width:50%;
 }
-
+@media (min-width: 400px) {
+  .student-card {
+    max-width: 400px; /* Adjust this value as needed */
+  }
+}
 `

@@ -41,8 +41,8 @@ export const services = {
                     id : 'ME-IV-A',
                     name : 'ME-IV-A'
                 },{
-                    id : 'EC-I-A',
-                    name : 'EC-I-A'
+                    id : 'EC-III-A',
+                    name : 'EC-III-A'
                 },{
                     id : 'EE-II-A',
                     name : 'EE-II-A'
@@ -55,3 +55,4 @@ export const services = {
         },1000)
     })
 }
+export const subjects = ['Dbms','OOPS','DSA']
