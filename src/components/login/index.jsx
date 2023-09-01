@@ -86,7 +86,8 @@ const Login = ({ role }) => {
 
             <div className="button">
             <button type="submit">Login</button>
-            <Link className="forgot" to="/forgotPassword">
+
+            <Link className="forgot" to="/resetPassword">
               Forgot Password ?
             </Link>
             </div>

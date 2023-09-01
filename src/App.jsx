@@ -44,13 +44,13 @@ const App = () => {
             }
           />
           <Route path = "/" element={<Login role={role} />} />
-          <Route path = "/forgotPassword" element={<ForgotPassword />} />
+          <Route path = "/resetPassword" element={<ForgotPassword />} />
           <Route
             path="/studentdashboard"
             element={
               <StudentDashboard
-              setSelectedRole={setSelectedRole}
-              user={users}
+                setSelectedRole={setSelectedRole}
+                
               />
             }
           />
@@ -77,5 +77,6 @@ const App = () => {
     </Router>
   );
 };
+
 
 export default App;
