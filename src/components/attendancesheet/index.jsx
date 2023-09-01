@@ -307,7 +307,7 @@ const AttendanceSheet = () => {
       <button
         className="mark-button"
         onClick={markAttendance}
-        // disabled={attendanceSubmitted || localStorage.getItem(`attendanceSubmitted_${sectionId}${subjectId}`, true)}
+        disabled={attendanceSubmitted || localStorage.getItem(`attendanceSubmitted_${sectionId}${subjectId}`, true)}
       >
         Submit Attendance
       </button>

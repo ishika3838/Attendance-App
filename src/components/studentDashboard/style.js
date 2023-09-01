@@ -1,5 +1,21 @@
 import { styled } from "styled-components";
  export const Wrapper = styled.div`
+ .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+
+  color: white;
+}
+
+.contact-icon {
+  display:flex;
+  flex-direction:wrap;
+  width: 10px;
+  height: 5px;
+  cursor: pointer;
+}
  
  h2{
   margin:12px auto;
