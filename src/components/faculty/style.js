@@ -96,7 +96,7 @@ input[type=button]{
 input[type=button]:hover{
   cursor:pointer;
   background:teal;
-  color:white
+  color:white;
 }
 
 .section{

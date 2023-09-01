@@ -85,7 +85,7 @@ p{
 
 
 .attendance-buttons{
-  margin:5px auto;
+  margin:5px 0px auto;
   width:100%;
   display:flex;
   justify-content:space-between;
@@ -113,12 +113,14 @@ button{
 
 #absentbutton{
   background:#FF5733;
+  margin:0;
  
 }
 
 #presentbutton{
   background:#32CD32;
-  
+  margin:0;
+
 }
 
 .mark-button{
