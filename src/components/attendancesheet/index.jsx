@@ -286,7 +286,12 @@ const AttendanceSheet = () => {
                 alt={student.name}
               />
               <p>{student.name}</p>
-              <div className="attendance-buttons">
+              
+            </div>
+            
+          ))}
+        </div>
+        <div className="attendance-buttons">
                 <button
                   id="presentbutton"
                   className={attendance[currentStudentIndex] === true ? "present" : ""}
@@ -302,10 +307,6 @@ const AttendanceSheet = () => {
                   Absent
                 </button>
               </div>
-            </div>
-          ))}
-        </div>
-       
       </div>
       
       <button

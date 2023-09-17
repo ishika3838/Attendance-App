@@ -83,13 +83,11 @@ const Login = ({ role }) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-
-            <div className="button">
-            <button type="submit">Login</button>
-
             <Link className="forgot" to="/resetPassword">
               Forgot Password ?
             </Link>
+            <div className="button">
+            <button type="submit">Login</button>
             </div>
 
         </form>

@@ -7,7 +7,7 @@ width:90%;
 margin:0px auto;
 
 .inner{
-  margin-top:30px;
+  margin:30px auto;
 gap:30px;
 display:flex;
 flex-direction:column;
@@ -23,6 +23,9 @@ flex-direction:column;
   display: flex;
   overflow: hidden;
   position: relative;
+  gap:40%;
+  width:250px;
+  margin: 10px auto
 }
 
 .student-card {
@@ -39,7 +42,7 @@ flex-direction:column;
   background:white;
   border:solid grey 1px;
   border-radius:5px;
-  width:100%;
+  width:412px;
 
 }
 
@@ -87,13 +90,15 @@ p{
 .attendance-buttons{
   margin:5px 0px auto;
   width:100%;
+  height:60px;
   display:flex;
   justify-content:space-between;
-  gap:30px;
+  gap:60px;
 }
 
 button{
-  width:120;
+  width:120px;
+  height:100%;
   margin : 10px 0;
   font-size:1rem;
   // background:#773ced;
@@ -125,6 +130,7 @@ button{
 
 .mark-button{
   background:teal;
+  width:300px;
   margin:30px auto;
   margin-bottom:60px;
 }

@@ -24,18 +24,45 @@ const StudentProfile = ({ user }) => {
       {studentData && (
         <div>
           <h3> Welcome to AttendEase {studentData.name} !</h3>
+          <div className="card">
+          <div className="card-photo">
           {studentData.photoUrl && (
+            <div className="photo-frame">
             <img
-              width="120"
-              height="120"
-              src={studentData.photoUrl}
-              alt="Profile"
+            width="120"
+            height="120"
+            src={studentData.photoUrl}
+            alt="Profile"
             />
-          )}
-          <p>User Name: {studentData.name}</p>
-          <p>Section: {studentData.section}</p>
-          <p>Roll Number: {studentData.rollno}</p>
+            </div>
+            )}
+            </div>
+            <div className="card-details">
+            <div className="card-detail">
+            <div>Name</div><div>{studentData.name}</div>
+            </div>
+            <div className="card-detail">
+            <div>Section</div><div>{studentData.section}</div>
+            </div>
+            <div className="card-detail">
+            <div>Roll number</div><div>{studentData.rollno}</div>
+            </div>
+            <div className="card-detail">
+            <div>Branch</div><div>{studentData.branch}</div>
+            </div>
+            <div className="card-detail">
+            <div>Email</div><div>{studentData.email}</div>
+            </div>
+            <div className="card-detail">
+            <div>Phone</div><div>{studentData.contact}</div>
+            </div>
+            <div className="card-detail">
+            <div>Address</div><div>{studentData.address}</div>
+            </div>
 
+            </div>
+
+            </div>
         </div>
       )}
     </Wrapper>

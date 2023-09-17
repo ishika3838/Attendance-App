@@ -161,20 +161,20 @@ const StudentDashboard = ({ setSelectedRole }) => {
 
   return (
     <Wrapper>
-       <h2>Student Dashboard</h2>
        <div className="header">
       <Menu left>
       
-        <Link to="/my-profile">My Profile</Link>
+        <Link to="/#studentprofile">My Profile</Link>
         <Link to="/student-view">View Attendance</Link>
         <Link to="/feedback">Feedback</Link>
         <Link to="/" onClick={handleLogout}>
           Logout
         </Link>
       </Menu>
+       <h2>Student Dashboard</h2>
       
-        
         <img
+          style={{width:36,padding:5}}
           src={ currentUser.photourl || userphoto }
           alt="userphoto"
           className="userphoto"
@@ -190,7 +190,7 @@ const StudentDashboard = ({ setSelectedRole }) => {
       ) : (
         // Render the StudentProfile component by default
         <div>
-          <h3>Student Profile</h3>
+          {/* <h3>Student Profile</h3> */}
           <StudentProfile user={currentUser} />
         </div>
       )}

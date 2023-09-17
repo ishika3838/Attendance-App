@@ -32,7 +32,7 @@ h2{
 
 form{
     width:100%;
-    margin-bottom:10px;
+    // margin-bottom:10px;
 }
 
 img{
@@ -69,24 +69,30 @@ p{
 .forgot{
     // margin:15px auto 0px 30px;  
     color:grey;
+    // margin-left: 178px;
+    position:absolute;
+    right:22px;
+
 }
 
  a{
     text-decoration: none;
+    text-align:right;
 }
 
 .button{
     display:flex;
-    margin:10px;
+    margin: 50px 10px 0 10px;
     align-items:center;
     justify-content:center;
-    justify-content:space-between;
+    // justify-content:space-between;
 }
 
 button{
-    width:40%;
+    width:50%;
+    height:50px;
     margin : 10px 0;
-    font-size:1rem;
+    font-size:1.5rem;
     background:#773ced;
     color: white;
     border-radius:6px;

@@ -3,10 +3,11 @@ import { styled } from "styled-components";
  .header {
   display: flex;
   justify-content: space-between;
+  justify-content:center;
   align-items: center;
-  padding: 16px 24px;
+  // padding: 16px 24px;
 
-  color: white;
+  // color: white;
 }
 
 .contact-icon {
@@ -17,18 +18,18 @@ import { styled } from "styled-components";
   cursor: pointer;
 }
  
- h2{
+ h2,h3{
   margin:12px auto;
   text-align:center;
   margin-top:15px; 
  }
 
 .bm-burger-button {
-  position: fixed;
+  position:relative;
   width: 36px;
   height: 25px;
   left: 20px;
-  top: 20px;
+  top: 3px;
 }
 
 .bm-burger-bars {
@@ -61,6 +62,10 @@ import { styled } from "styled-components";
  p{
   font-family:
  }
+
+//  img{
+//   width:26px;
+//  }
 
  .innerContainer{
 

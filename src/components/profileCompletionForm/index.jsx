@@ -167,12 +167,15 @@ const ProfileCompletionForm = ({ onUpdate, user, onBack }) => {
   const [name, setName] = useState(user.name || "");
   const [photoUrl, setPhotoUrl] = useState("");
   const [rollno, setRollno] = useState("");
+  const [branch , setBranch] = useState("");
+  const [email ,setEmail] = useState("");
+  const [address , setAddress] = useState("");
   const [isUpdated, setIsUpdated] = useState(false); 
   
   const handleSubmit = (e) => {
     e.preventDefault();
     services.user
-      .update({ contact, name, rollno, photoUrl })
+      .update({ contact, name, rollno, photoUrl ,branch,email,address})
       .then((res) => {
         console.log(res.data);
         onUpdate(res.data);
@@ -186,7 +189,8 @@ const ProfileCompletionForm = ({ onUpdate, user, onBack }) => {
   };
 
   return (
-    <Wrapper className="inputs">
+    <Wrapper className="box">
+      <div className="inputs">
       {isUpdated && ( // Display success message when profile is updated
         <div className="alert success">
           Your profile is updated! <button onClick={onBack}>Back</button>
@@ -205,7 +209,7 @@ const ProfileCompletionForm = ({ onUpdate, user, onBack }) => {
           />
         </div>
                 <div className="input">
-         <img src={contact_icon} alt="user_icon" />
+         <img src={profile_icon} alt="user_icon" />
         <input
             type="text"
             name="name"
@@ -226,6 +230,36 @@ const ProfileCompletionForm = ({ onUpdate, user, onBack }) => {
         </div>
 
         <div className="input">
+          <img src={rollnum} alt="user_icon" />
+          <input
+            type="text"
+            placeholder="Branch"
+            value={branch}
+            onChange={(e) => setBranch(e.target.value)}
+          />
+        </div>
+
+        <div className="input">
+          <img src={rollnum} alt="user_icon" />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <div className="input">
+          <img src={rollnum} alt="user_icon" />
+          <input
+            type="text"
+            placeholder="Address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+        </div>
+
+        <div className="input">
           <img src={profile_icon} alt="userPhoto_icon" />
           <input
             type="file"
@@ -240,6 +274,7 @@ const ProfileCompletionForm = ({ onUpdate, user, onBack }) => {
           <button type="submit">Update Profile</button>
         </div>
       </form>
+      </div>
     </Wrapper>
   );
 };
