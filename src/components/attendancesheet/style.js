@@ -90,7 +90,7 @@ p{
 .attendance-buttons{
   margin:5px 0px auto;
   width:100%;
-  height:60px;
+  height:40px;
   display:flex;
   justify-content:space-between;
   gap:60px;

@@ -150,7 +150,7 @@ import React, { useEffect, useState } from "react";
 import { services } from "../../services";
 import { Wrapper } from "./style";
 import ViewAttendance from "../viewAttendance";
-import defaultplaceholder from "../assets/defaultplaceholder.png";
+import defaultplaceholder from "../assets/user1.png";
 
 const AttendanceSheet = () => {
   let sectionId = new URLSearchParams(window.location.search).get("sectionId");
